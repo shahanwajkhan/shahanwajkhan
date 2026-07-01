@@ -27,25 +27,6 @@
       font-size: 13px;
       fill: #8B949E;
     }
-    .badge {
-      font-family: 'Fira Code', monospace;
-      font-size: 11px;
-      fill: #8B949E;
-      transition: fill 0.3s ease;
-    }
-    .badge-bg {
-      fill: #161B22;
-      stroke: #30363D;
-      stroke-width: 1;
-      transition: all 0.3s ease;
-    }
-    .card:hover .badge-bg {
-      stroke: #EC4899;
-      fill: #2B1620;
-    }
-    .card:hover .badge {
-      fill: #E6EDF0;
-    }
     .btn {
       fill: #21262D;
       stroke: #30363D;
@@ -71,9 +52,9 @@
       transform-origin: 40px 70px;
     }
     .card:hover .icon-container {
-      transform: scale(1.12) rotate(-10deg);
+      transform: scale(1.15) rotate(-10deg);
     }
-    .icon-bag {
+    .icon-draw {
       fill: none;
       stroke: #EC4899;
       stroke-width: 2;
@@ -81,10 +62,111 @@
       stroke-linecap: round;
       transition: stroke 0.3s ease;
     }
-    .card:hover .icon-bag {
+    .card:hover .icon-draw {
       stroke: #EC4899;
       filter: drop-shadow(0 0 3px #EC4899);
     }
+    
+    /* Staggered Badge Wave Animation */
+    .badge-item {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    }
+    .card:hover .badge-1 { transform: translateY(-3px); }
+    .card:hover .badge-2 { transform: translateY(-3px); transition-delay: 0.04s; }
+    .card:hover .badge-3 { transform: translateY(-3px); transition-delay: 0.08s; }
+    .card:hover .badge-4 { transform: translateY(-3px); transition-delay: 0.12s; }
+    .card:hover .badge-5 { transform: translateY(-3px); transition-delay: 0.16s; }
+
+    /* Default badge style */
+    .badge-bg {
+      fill: #161B22;
+      stroke: #30363D;
+      stroke-width: 1;
+      transition: all 0.3s ease;
+    }
+    .badge-text {
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      fill: #8B949E;
+      transition: all 0.3s ease;
+    }
+    .card:hover .badge-text {
+      fill: #E6EDF0;
+    }
+
+    /* Brand Colors Hover Styling */
+    .card:hover .bg-react { fill: #14232C; stroke: #61DAFB; }
+    .card:hover .txt-react { fill: #61DAFB; }
+    
+    .card:hover .bg-node { fill: #142517; stroke: #339933; }
+    .card:hover .txt-node { fill: #339933; }
+    
+    .card:hover .bg-express { fill: #1A1A1A; stroke: #FFFFFF; }
+    .card:hover .txt-express { fill: #FFFFFF; }
+    
+    .card:hover .bg-mongodb { fill: #112516; stroke: #47A248; }
+    .card:hover .txt-mongodb { fill: #47A248; }
+    
+    .card:hover .bg-tailwind { fill: #11252C; stroke: #06B6D4; }
+    .card:hover .txt-tailwind { fill: #06B6D4; }
+    
+    .card:hover .bg-socket { fill: #1A1A1A; stroke: #FFFFFF; }
+    .card:hover .txt-socket { fill: #FFFFFF; }
+    
+    .card:hover .bg-django { fill: #0B251B; stroke: #092E20; }
+    .card:hover .txt-django { fill: #44B78B; }
+    
+    .card:hover .bg-sqlite { fill: #111F2C; stroke: #003B57; }
+    .card:hover .txt-sqlite { fill: #40A6F2; }
+    
+    .card:hover .bg-html { fill: #2C1A14; stroke: #E34F26; }
+    .card:hover .txt-html { fill: #E34F26; }
+    
+    .card:hover .bg-css { fill: #111F2C; stroke: #1572B6; }
+    .card:hover .txt-css { fill: #1572B6; }
+    
+    .card:hover .bg-bootstrap { fill: #20142C; stroke: #7952B3; }
+    .card:hover .txt-bootstrap { fill: #9B72D3; }
+    
+    .card:hover .bg-laravel { fill: #2C1415; stroke: #FF2D20; }
+    .card:hover .txt-laravel { fill: #FF2D20; }
+    
+    .card:hover .bg-gis { fill: #142820; stroke: #10B981; }
+    .card:hover .txt-gis { fill: #10B981; }
+    
+    .card:hover .bg-python { fill: #111F2C; stroke: #3776AB; }
+    .card:hover .txt-python { fill: #FFD43B; }
+    
+    .card:hover .bg-flask { fill: #1A1A1A; stroke: #FFFFFF; }
+    .card:hover .txt-flask { fill: #FFFFFF; }
+    
+    .card:hover .bg-otp { fill: #2C1F11; stroke: #F59E0B; }
+    .card:hover .txt-otp { fill: #F59E0B; }
+    
+    .card:hover .bg-recharts { fill: #112525; stroke: #3182CE; }
+    .card:hover .txt-recharts { fill: #3182CE; }
+    
+    .card:hover .bg-storage { fill: #1A222C; stroke: #718096; }
+    .card:hover .txt-storage { fill: #A0AEC0; }
+    
+    .card:hover .bg-gemini { fill: #14202F; stroke: #15C3FF; }
+    .card:hover .txt-gemini { fill: #15C3FF; }
+    
+    .card:hover .bg-cpp { fill: #111F2C; stroke: #00599C; }
+    .card:hover .txt-cpp { fill: #00599C; }
+    
+    .card:hover .bg-java { fill: #2C1E11; stroke: #ED8B00; }
+    .card:hover .txt-java { fill: #ED8B00; }
+    
+    .card:hover .bg-files { fill: #1C2420; stroke: #10B981; }
+    .card:hover .txt-files { fill: #10B981; }
+    
+    .card:hover .bg-framer { fill: #2C1122; stroke: #F107A3; }
+    .card:hover .txt-framer { fill: #F107A3; }
+    
+    .card:hover .bg-js { fill: #2C2B11; stroke: #F7DF1E; }
+    .card:hover .txt-js { fill: #F7DF1E; }
+
   </style>
   <defs>
     <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -98,8 +180,8 @@
   <!-- Icon Wrapper -->
   <g class="icon-container">
     <circle cx="40" cy="70" r="22" fill="#161B22" stroke="#30363D" stroke-width="1" />
-    <path class="icon-bag" d="M32 63 L32 79 L48 79 L48 63 Z" />
-    <path class="icon-bag" d="M36 63 C36 57 44 57 44 63" />
+    <path class="icon-draw" d="M32 63 L32 79 L48 79 L48 63 Z" />
+    <path class="icon-draw" d="M36 63 C36 57 44 57 44 63" />
   </g>
   
   <!-- Content -->
@@ -108,21 +190,22 @@
   
   <!-- Tech Stack Badges -->
   <g transform="translate(80, 85)">
-    <!-- Badge 1 -->
-    <rect x="0" y="0" width="70" height="22" rx="4" class="badge-bg" />
-    <text x="35" y="15" text-anchor="middle" class="badge">HTML5</text>
-    
-    <!-- Badge 2 -->
-    <rect x="78" y="0" width="70" height="22" rx="4" class="badge-bg" />
-    <text x="113" y="15" text-anchor="middle" class="badge">CSS3</text>
-    
-    <!-- Badge 3 -->
-    <rect x="156" y="0" width="75" height="22" rx="4" class="badge-bg" />
-    <text x="193.5" y="15" text-anchor="middle" class="badge">ES6 JS</text>
-    
-    <!-- Badge 4 -->
-    <rect x="239" y="0" width="90" height="22" rx="4" class="badge-bg" />
-    <text x="284" y="15" text-anchor="middle" class="badge">OTP Auth</text>
+    <g class="badge-item badge-1" transform="translate(0, 0)">
+      <rect x="0" y="0" width="70" height="22" rx="4" class="badge-bg bg-html" />
+      <text x="35.0" y="15" text-anchor="middle" class="badge-text txt-html">HTML5</text>
+    </g>
+    <g class="badge-item badge-2" transform="translate(78, 0)">
+      <rect x="0" y="0" width="70" height="22" rx="4" class="badge-bg bg-css" />
+      <text x="35.0" y="15" text-anchor="middle" class="badge-text txt-css">CSS3</text>
+    </g>
+    <g class="badge-item badge-3" transform="translate(156, 0)">
+      <rect x="0" y="0" width="75" height="22" rx="4" class="badge-bg bg-js" />
+      <text x="37.5" y="15" text-anchor="middle" class="badge-text txt-js">ES6 JS</text>
+    </g>
+    <g class="badge-item badge-4" transform="translate(239, 0)">
+      <rect x="0" y="0" width="90" height="22" rx="4" class="badge-bg bg-otp" />
+      <text x="45.0" y="15" text-anchor="middle" class="badge-text txt-otp">OTP Auth</text>
+    </g>
   </g>
   
   <!-- Button "View Project" -->
