@@ -1,105 +1,227 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
   <style>
-    .title {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    /* Seamless Moving Grid Background */
+    .grid-moving {
+      animation: grid-move 20s linear infinite;
+    }
+    @keyframes grid-move {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(40px, 40px); }
+    }
+
+    /* Shifting Text Colors and Pulse Glow */
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-weight: 800;
       font-size: 42px;
       fill: url(#text-grad);
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
+      filter: drop-shadow(0 0 8px rgba(188, 52, 250, 0.35));
+      animation: text-pulse 4s ease-in-out infinite alternate;
     }
-    .subtitle {
+    .subtitle-text {
       font-family: "Courier New", Courier, monospace;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 17px;
       fill: #8B949E;
+      letter-spacing: 1px;
     }
-    .glow {
-      animation: pulse 4s infinite alternate;
+    @keyframes text-pulse {
+      0% { filter: drop-shadow(0 0 4px rgba(88, 166, 255, 0.25)); }
+      100% { filter: drop-shadow(0 0 12px rgba(188, 52, 250, 0.55)); }
     }
-    @keyframes pulse {
-      0% { opacity: 0.3; filter: drop-shadow(0 0 2px #58A6FF); }
-      100% { opacity: 1; filter: drop-shadow(0 0 10px #BC34FA); }
+
+    /* Holographic Scanline Effect */
+    .scanline {
+      animation: scan 6s linear infinite;
     }
-    .node-group {
-      animation: float 8s ease-in-out infinite;
+    @keyframes scan {
+      0% { transform: translateY(-10px); }
+      100% { transform: translateY(210px); }
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
+
+    /* Orbiting Node Revolutions */
+    .revolve-left {
+      animation: rotate-left 12s linear infinite;
+      transform-origin: 100px 100px;
     }
-    .pulse-ring {
-      animation: ripple 3s linear infinite;
-      transform-origin: 150px 80px;
+    .revolve-right {
+      animation: rotate-right 16s linear infinite;
+      transform-origin: 700px 100px;
     }
-    @keyframes ripple {
-      0% { r: 4px; opacity: 1; }
-      100% { r: 24px; opacity: 0; }
+    @keyframes rotate-left {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
-    
-    /* Flowing background line animation */
-    .flow-line {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: flow 10s linear infinite;
+    @keyframes rotate-right {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
     }
-    @keyframes flow {
-      to {
-        stroke-dashoffset: 0;
-      }
+
+    /* Floating Particles (Simulated Parallax) */
+    .particle {
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+    .p1 { animation: float-1 8s infinite alternate; }
+    .p2 { animation: float-2 10s infinite alternate; }
+    .p3 { animation: float-3 7s infinite alternate; }
+    .p4 { animation: float-4 9s infinite alternate; }
+
+    @keyframes float-1 {
+      0% { transform: translate(0, 0); opacity: 0.2; }
+      100% { transform: translate(12px, -15px); opacity: 0.7; }
+    }
+    @keyframes float-2 {
+      0% { transform: translate(0, 0); opacity: 0.15; }
+      100% { transform: translate(-10px, -8px); opacity: 0.6; }
+    }
+    @keyframes float-3 {
+      0% { transform: translate(0, 0); opacity: 0.3; }
+      100% { transform: translate(8px, 10px); opacity: 0.8; }
+    }
+    @keyframes float-4 {
+      0% { transform: translate(0, 0); opacity: 0.2; }
+      100% { transform: translate(-14px, 12px); opacity: 0.7; }
+    }
+
+    /* Diagonal Shooting Stars */
+    .shooting-star {
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-dasharray: 45 220;
+      stroke-dashoffset: 265;
+    }
+    .s1 {
+      stroke: url(#star-grad-1);
+      animation: shoot-1 7s ease-in-out infinite;
+    }
+    .s2 {
+      stroke: url(#star-grad-2);
+      animation: shoot-2 10s ease-in-out infinite;
+      animation-delay: 3s;
+    }
+    @keyframes shoot-1 {
+      0% { stroke-dashoffset: 265; opacity: 0; }
+      12% { stroke-dashoffset: 0; opacity: 1; }
+      24% { stroke-dashoffset: -265; opacity: 0; }
+      100% { stroke-dashoffset: -265; opacity: 0; }
+    }
+    @keyframes shoot-2 {
+      0% { stroke-dashoffset: 265; opacity: 0; }
+      10% { stroke-dashoffset: 0; opacity: 1; }
+      20% { stroke-dashoffset: -265; opacity: 0; }
+      100% { stroke-dashoffset: -265; opacity: 0; }
+    }
+
+    /* Glowing Node Drop Shadows */
+    .glow-cyan { filter: drop-shadow(0 0 5px #00F2FE); }
+    .glow-purple { filter: drop-shadow(0 0 5px #BC34FA); }
+    .glow-coral { filter: drop-shadow(0 0 5px #FF7B72); }
+
+    /* Animated Connection Line Flow */
+    .connection-flow {
+      stroke-dasharray: 12, 48;
+      animation: flow-data 6s linear infinite;
+    }
+    @keyframes flow-data {
+      to { stroke-dashoffset: -120; }
     }
   </style>
   <defs>
+    <!-- Seamless Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262D" stroke-width="0.75" />
+    </pattern>
+
+    <!-- Animated Shifting Gradient for Text -->
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#58A6FF" />
-      <stop offset="50%" stop-color="#BC34FA" />
-      <stop offset="100%" stop-color="#FF7B72" />
+      <stop offset="0%" stop-color="#58A6FF">
+        <animate attributeName="stop-color" values="#58A6FF;#BC34FA;#FF7B72;#58A6FF" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" stop-color="#BC34FA">
+        <animate attributeName="stop-color" values="#BC34FA;#FF7B72;#58A6FF;#BC34FA" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#FF7B72">
+        <animate attributeName="stop-color" values="#FF7B72;#58A6FF;#BC34FA;#FF7B72" dur="8s" repeatCount="indefinite" />
+      </stop>
     </linearGradient>
-    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0.1" />
-      <stop offset="50%" stop-color="#BC34FA" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#FF7B72" stop-opacity="0.1" />
+
+    <!-- Holographic Scanline Gradient -->
+    <linearGradient id="scan-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BC34FA" stop-opacity="0" />
+      <stop offset="50%" stop-color="#58A6FF" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0" />
     </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#BC34FA" flood-opacity="0.25"/>
-    </filter>
+
+    <!-- Shooting Star Gradients -->
+    <linearGradient id="star-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="1" />
+    </linearGradient>
+    <linearGradient id="star-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BC34FA" stop-opacity="0" />
+      <stop offset="100%" stop-color="#FF7B72" stop-opacity="1" />
+    </linearGradient>
   </defs>
-  
-  <!-- Background Grid Effect -->
+
+  <!-- Solid Dark Background -->
   <rect width="800" height="200" fill="#0D1117" rx="8" />
-  <g stroke="#21262D" stroke-width="0.75" stroke-dasharray="2 4">
-    <line x1="100" y1="0" x2="100" y2="200" />
-    <line x1="200" y1="0" x2="200" y2="200" />
-    <line x1="300" y1="0" x2="300" y2="200" />
-    <line x1="400" y1="0" x2="400" y2="200" />
-    <line x1="500" y1="0" x2="500" y2="200" />
-    <line x1="600" y1="0" x2="600" y2="200" />
-    <line x1="700" y1="0" x2="700" y2="200" />
-    
-    <line x1="0" y1="50" x2="800" y2="50" />
-    <line x1="0" y1="100" x2="800" y2="100" />
-    <line x1="0" y1="150" x2="800" y2="150" />
+
+  <!-- Moving Grid Layer -->
+  <g>
+    <rect width="840" height="240" fill="url(#grid)" class="grid-moving" x="-40" y="-40" opacity="0.8" />
   </g>
-  
-  <!-- Flowing Connection Line -->
-  <path class="flow-line" d="M 50 100 Q 200 40 400 130 T 750 100" fill="none" stroke="url(#line-grad)" stroke-width="3" />
-  
-  <!-- Animated Node Network (AI Vibe) -->
-  <g class="node-group">
-    <!-- Pulse Effect -->
-    <circle cx="150" cy="80" r="10" fill="none" stroke="#58A6FF" stroke-width="1" class="pulse-ring" />
-    <circle cx="150" cy="80" r="5" fill="#58A6FF" class="glow" />
-    
-    <circle cx="650" cy="120" r="6" fill="#BC34FA" class="glow" />
-    <circle cx="650" cy="120" r="15" fill="none" stroke="#BC34FA" stroke-width="0.5" opacity="0.5" />
-    
-    <circle cx="700" cy="60" r="4" fill="#FF7B72" class="glow" />
-    
-    <!-- Connectors -->
-    <line x1="150" y1="80" x2="250" y2="110" stroke="#30363D" stroke-width="1.5" />
-    <line x1="650" y1="120" x2="700" y2="60" stroke="#30363D" stroke-width="1.5" />
+
+  <!-- Shooting Stars (Fast Foreground Element) -->
+  <path d="M 50 -50 L 250 150" class="shooting-star s1" />
+  <path d="M 550 -50 L 750 150" class="shooting-star s2" />
+
+  <!-- Floating Particles (Parallax Background) -->
+  <g>
+    <circle cx="120" cy="50" r="2.5" fill="#00F2FE" class="particle p1" />
+    <circle cx="680" cy="150" r="3" fill="#BC34FA" class="particle p2" />
+    <circle cx="250" cy="160" r="1.5" fill="#FF7B72" class="particle p3" />
+    <circle cx="550" cy="40" r="2" fill="#58A6FF" class="particle p4" />
   </g>
-  
-  <!-- Title & Subtitle -->
-  <text x="50%" y="95" text-anchor="middle" class="title" filter="url(#shadow)">SHAHANWAJ KHAN</text>
-  <text x="50%" y="135" text-anchor="middle" class="subtitle">AI Engineer &amp; Full Stack Developer</text>
+
+  <!-- Connected Nodes & Flow Lines (Left System) -->
+  <g>
+    <path d="M 50 100 Q 150 40 300 120 T 500 100" fill="none" stroke="#21262D" stroke-width="1.5" />
+    <path d="M 50 100 Q 150 40 300 120 T 500 100" fill="none" stroke="url(#star-grad-1)" stroke-width="1.5" class="connection-flow" />
+  </g>
+
+  <!-- Left Orbit Node System -->
+  <g>
+    <!-- Orbit Track -->
+    <circle cx="100" cy="100" r="40" fill="none" stroke="#21262D" stroke-dasharray="3 3" />
+    <!-- Revolving Node -->
+    <g class="revolve-left">
+      <circle cx="140" cy="100" r="5.5" fill="#00F2FE" class="glow-cyan" />
+      <circle cx="140" cy="100" r="11" fill="none" stroke="#00F2FE" stroke-width="0.5" opacity="0.3" class="glow-cyan" />
+    </g>
+    <!-- Central Node -->
+    <circle cx="100" cy="100" r="4" fill="#58A6FF" class="glow-cyan" />
+  </g>
+
+  <!-- Right Orbit Node System -->
+  <g>
+    <!-- Orbit Track -->
+    <circle cx="700" cy="100" r="46" fill="none" stroke="#21262D" stroke-dasharray="3 3" />
+    <!-- Revolving Node -->
+    <g class="revolve-right">
+      <circle cx="746" cy="100" r="5.5" fill="#BC34FA" class="glow-purple" />
+      <circle cx="746" cy="100" r="11" fill="none" stroke="#BC34FA" stroke-width="0.5" opacity="0.3" class="glow-purple" />
+    </g>
+    <!-- Central Node -->
+    <circle cx="700" cy="100" r="4" fill="#FF7B72" class="glow-coral" />
+  </g>
+
+  <!-- Central Title Text -->
+  <text x="50%" y="95" text-anchor="middle" class="title-text">SHAHANWAJ KHAN</text>
+  <text x="50%" y="135" text-anchor="middle" class="subtitle-text">AI Engineer &amp; Full Stack Developer</text>
+
+  <!-- Holographic Scanline Overlay -->
+  <rect width="800" height="6" fill="url(#scan-grad)" class="scanline" opacity="0.7" />
 </svg>
