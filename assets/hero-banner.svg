@@ -65,10 +65,10 @@
     .subtitle-text {
       font-family: "Courier New", Courier, monospace;
       font-weight: 600;
-      font-size: 16px;
-      fill: #C9D1D9;
+      font-size: 15px;
+      fill: #00F2FE;
       letter-spacing: 2px;
-      filter: drop-shadow(0 0 2px rgba(88, 166, 255, 0.4));
+      filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.4));
     }
 
     /* HUD Corner Blinking */
@@ -196,6 +196,13 @@
       <feGaussianBlur stdDeviation="4" />
     </filter>
 
+    <!-- Typewriter Clip Path (Repeats 4s typing animation) -->
+    <clipPath id="typewriter-clip">
+      <rect x="250" y="110" width="0" height="30">
+        <animate attributeName="width" values="0; 300; 300; 0; 0" keyTimes="0; 0.45; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+
     <!-- Fading 3D Perspective Grid Gradient -->
     <linearGradient id="grid-fade" x1="0" y1="200" x2="0" y2="110" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.35" />
@@ -251,7 +258,7 @@
     <circle cx="450" cy="95" r="90" class="ambient-glow glow-coral-nebula" />
   </g>
 
-  <!-- Layer 2: Moving Reflection Light Beams (Ambient Sweeps) -->
+  <!-- Layer 2: Moving Reflection Light Beams -->
   <g filter="url(#blur-reflection)" opacity="0.32">
     <line x1="-150" y1="0" x2="50" y2="200" stroke="#00F2FE" stroke-width="40">
       <animate attributeName="x1" values="-300;900" dur="14s" repeatCount="indefinite" />
@@ -442,8 +449,25 @@
     <!-- Toplayer: Sharp White Hot Core -->
     <text x="50%" y="90" text-anchor="middle" class="title-main-layer">SHAHANWAJ KHAN</text>
   </g>
-  
-  <text x="50%" y="130" text-anchor="middle" class="subtitle-text">AI Engineer &amp; Full Stack Developer</text>
+
+  <!-- Subtitle Text Cycling Group with Typewriter effect -->
+  <g class="subtitle-text">
+    <!-- Subtitle Role 1 -->
+    <g clip-path="url(#typewriter-clip)">
+      <text x="325" y="130">🚀 AI Engineer</text>
+      <animate attributeName="opacity" values="1;1;0;0;0;0;1" keyTimes="0;0.32;0.33;0.65;0.66;0.98;1" dur="12s" repeatCount="indefinite" />
+    </g>
+    <!-- Subtitle Role 2 -->
+    <g clip-path="url(#typewriter-clip)" opacity="0">
+      <text x="300" y="130">💻 Full Stack Developer</text>
+      <animate attributeName="opacity" values="0;0;1;1;0;0;0" keyTimes="0;0.32;0.33;0.65;0.66;0.98;1" dur="12s" repeatCount="indefinite" />
+    </g>
+    <!-- Subtitle Role 3 -->
+    <g clip-path="url(#typewriter-clip)" opacity="0">
+      <text x="310" y="130">🧠 Generative AI Dev</text>
+      <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.65;0.66;0.98;0.99;0.99;1" dur="12s" repeatCount="indefinite" />
+    </g>
+  </g>
 
   <!-- Holographic Scanline Overlay -->
   <rect width="800" height="6" fill="url(#scan-grad)" class="scanline" opacity="0.65" />
