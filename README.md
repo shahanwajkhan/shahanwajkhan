@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Full+Stack+Developer;AI+Engineer;Cloud+Practitioner;Building+intelligent+solutions" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=20&amp;duration=3000&amp;pause=1000&amp;color=58A6FF&amp;center=true&amp;vCenter=true&amp;width=500&amp;lines=Full+Stack+Developer;AI+Engineer;Cloud+Practitioner;Building+intelligent+solutions" alt="Typing SVG" />
 </p>
 
 
@@ -96,7 +96,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 #### 🛠 Tools & Deployment
 <p align="left">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub" />
   <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
   <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code" />
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma" />
@@ -223,8 +223,8 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 ### 📊 GitHub Analytics
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=shahanwajkhan&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="Shahanwaj's GitHub Stats" height="190" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shahanwajkhan&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="190" />
+  <img src="https://github-readme-stats.vercel.app/api?username=shahanwajkhan&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;count_private=true" alt="Shahanwaj's GitHub Stats" height="190" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shahanwajkhan&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" alt="Top Languages" height="190" />
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
@@ -233,19 +233,19 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 <p align="left">
   <a href="mailto:shahanwajkhan.work@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Email" />
   </a>
   <a href="https://linkedin.com/in/shahanwaj-khan" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://shahanwaj.com" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&amp;logo=About.me&amp;logoColor=white" alt="Portfolio" />
   </a>
   <a href="https://github.com/shahanwajkhan" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub" />
   </a>
   <a href="#" target="_blank">
-    <img src="https://img.shields.io/badge/Resume-58A6FF?style=for-the-badge&logo=Read-the-Docs&logoColor=white" alt="Resume" />
+    <img src="https://img.shields.io/badge/Resume-58A6FF?style=for-the-badge&amp;logo=Read-the-Docs&amp;logoColor=white" alt="Resume" />
   </a>
 </p>
 
