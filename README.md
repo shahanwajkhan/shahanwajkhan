@@ -1,6 +1,6 @@
 <!-- Hero Section -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/hero-banner.svg?v=8" width="100%" alt="Shahanwaj Khan Banner" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/hero-banner.svg?v=9" width="100%" alt="Shahanwaj Khan Banner" />
 </p>
 
 <p align="center">

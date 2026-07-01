@@ -2,7 +2,7 @@
   <style>
     /* Seamless Grid Movement */
     .grid-moving {
-      animation: grid-move 15s linear infinite;
+      animation: grid-move 14s linear infinite;
     }
     @keyframes grid-move {
       0% { transform: translate(0, 0); }
@@ -11,15 +11,15 @@
 
     /* Ambient Nebula Glow Breathing */
     .ambient-glow {
-      animation: breathe 7s ease-in-out infinite alternate;
+      animation: breathe 8s ease-in-out infinite alternate;
     }
     .glow-cyan-nebula { fill: #00F2FE; animation-duration: 6s; }
     .glow-purple-nebula { fill: #BC34FA; animation-duration: 9s; }
     .glow-coral-nebula { fill: #FF7B72; animation-duration: 7.5s; }
 
     @keyframes breathe {
-      0% { opacity: 0.08; }
-      100% { opacity: 0.22; }
+      0% { opacity: 0.12; }
+      100% { opacity: 0.32; }
     }
 
     /* Rotating Cyber Core */
@@ -40,32 +40,46 @@
       to { transform: rotate(0deg); }
     }
 
-    /* Glitch Title Text */
-    .title-text {
+    /* Realistic Neon Stacked Title Animations */
+    .title-glow-layer {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-weight: 800;
       font-size: 42px;
-      fill: url(#text-grad);
+      fill: #BC34FA;
       letter-spacing: 3px;
+      filter: url(#neon-blur-heavy);
+      animation: neon-pulse 4s ease-in-out infinite alternate;
+    }
+    .title-main-layer {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: #FFFFFF;
+      letter-spacing: 3px;
+      filter: drop-shadow(0 0 3px #00F2FE);
       animation: glitch-pulse 6s infinite;
     }
     
+    @keyframes neon-pulse {
+      0% { opacity: 0.55; }
+      100% { opacity: 0.95; }
+    }
+
     @keyframes glitch-pulse {
       0%, 94%, 98%, 100% {
         transform: translate(0);
-        text-shadow: 0 0 10px rgba(188, 52, 250, 0.45);
+        filter: drop-shadow(0 0 3px #00F2FE);
       }
       95% {
-        transform: translate(-3px, 1.5px);
-        text-shadow: -2.5px 0 #00F2FE, 2.5px 0 #FF7B72;
+        transform: translate(-2px, 1px);
+        filter: drop-shadow(-2px 0 #00F2FE) drop-shadow(2px 0 #FF7B72);
       }
       96% {
-        transform: translate(3px, -1.5px);
-        text-shadow: -2.5px 0 #FF7B72, 2.5px 0 #00F2FE;
+        transform: translate(2px, -1px);
+        filter: drop-shadow(-2px 0 #FF7B72) drop-shadow(2px 0 #00F2FE);
       }
       97% {
-        transform: translate(-1px, -3px);
-        text-shadow: 0 0 15px rgba(188, 52, 250, 0.7);
+        transform: translate(-1px, -2px);
       }
     }
 
@@ -74,11 +88,12 @@
       font-family: "Courier New", Courier, monospace;
       font-weight: 600;
       font-size: 16px;
-      fill: #8B949E;
+      fill: #C9D1D9;
       letter-spacing: 2px;
+      filter: drop-shadow(0 0 2px rgba(88, 166, 255, 0.4));
     }
 
-    /* HUD Blinking indicators */
+    /* HUD Corner Blinking */
     .hud-blink {
       animation: blink 2s infinite alternate;
     }
@@ -91,10 +106,10 @@
       font-family: "Courier New", Courier, monospace;
       font-size: 9px;
       fill: #58A6FF;
-      opacity: 0.65;
+      opacity: 0.7;
     }
 
-    /* Orbiting systems */
+    /* Orbiting Systems */
     .revolve-left {
       animation: rotate-left 10s linear infinite;
       transform-origin: 80px 100px;
@@ -112,16 +127,16 @@
       to { transform: rotate(0deg); }
     }
 
-    /* Holographic Scanline Overlay */
+    /* Holographic Scanline */
     .scanline {
-      animation: scan 4.5s linear infinite;
+      animation: scan 4s linear infinite;
     }
     @keyframes scan {
       0% { transform: translateY(-10px); }
       100% { transform: translateY(210px); }
     }
 
-    /* Floating Particles (Simulated Parallax) */
+    /* Floating Particles (Depth of Field Blur) */
     .particle {
       animation-iteration-count: infinite;
       animation-timing-function: ease-in-out;
@@ -132,75 +147,81 @@
     .p4 { animation: float-4 9s infinite alternate; }
 
     @keyframes float-1 {
-      0% { transform: translate(0, 0); opacity: 0.2; }
-      100% { transform: translate(15px, -20px); opacity: 0.8; }
+      0% { transform: translate(0, 0); opacity: 0.3; }
+      100% { transform: translate(15px, -20px); opacity: 0.9; }
     }
     @keyframes float-2 {
-      0% { transform: translate(0, 0); opacity: 0.15; }
-      100% { transform: translate(-12px, -10px); opacity: 0.6; }
+      0% { transform: translate(0, 0); opacity: 0.2; }
+      100% { transform: translate(-12px, -10px); opacity: 0.7; }
     }
     @keyframes float-3 {
-      0% { transform: translate(0, 0); opacity: 0.3; }
-      100% { transform: translate(10px, 15px); opacity: 0.9; }
+      0% { transform: translate(0, 0); opacity: 0.4; }
+      100% { transform: translate(10px, 15px); opacity: 1.0; }
     }
     @keyframes float-4 {
-      0% { transform: translate(0, 0); opacity: 0.2; }
-      100% { transform: translate(-16px, 14px); opacity: 0.7; }
+      0% { transform: translate(0, 0); opacity: 0.3; }
+      100% { transform: translate(-16px, 14px); opacity: 0.8; }
     }
 
     /* Shooting Stars */
     .shooting-star {
       fill: none;
-      stroke-width: 1.5;
+      stroke-width: 2;
       stroke-linecap: round;
-      stroke-dasharray: 45 220;
-      stroke-dashoffset: 265;
+      stroke-dasharray: 50 250;
+      stroke-dashoffset: 300;
     }
     .s1 { stroke: url(#star-grad-1); animation: shoot-1 8s ease-in-out infinite; }
     .s2 { stroke: url(#star-grad-2); animation: shoot-2 11s ease-in-out infinite; animation-delay: 4s; }
     
     @keyframes shoot-1 {
-      0% { stroke-dashoffset: 265; opacity: 0; }
+      0% { stroke-dashoffset: 300; opacity: 0; }
       10% { stroke-dashoffset: 0; opacity: 1; }
-      20% { stroke-dashoffset: -265; opacity: 0; }
-      100% { stroke-dashoffset: -265; opacity: 0; }
+      20% { stroke-dashoffset: -300; opacity: 0; }
+      100% { stroke-dashoffset: -300; opacity: 0; }
     }
     @keyframes shoot-2 {
-      0% { stroke-dashoffset: 265; opacity: 0; }
+      0% { stroke-dashoffset: 300; opacity: 0; }
       8% { stroke-dashoffset: 0; opacity: 1; }
-      16% { stroke-dashoffset: -265; opacity: 0; }
-      100% { stroke-dashoffset: -265; opacity: 0; }
+      16% { stroke-dashoffset: -300; opacity: 0; }
+      100% { stroke-dashoffset: -300; opacity: 0; }
     }
 
-    /* Neon glow effect filters */
-    .glow-cyan { filter: drop-shadow(0 0 5px #00F2FE); }
-    .glow-purple { filter: drop-shadow(0 0 5px #BC34FA); }
+    /* Glowing Styles */
+    .glow-cyan-elem { filter: drop-shadow(0 0 6px #00F2FE); }
+    .glow-purple-elem { filter: drop-shadow(0 0 6px #BC34FA); }
 
-    /* Animated Connection Line Flow */
+    /* Flowing Pathway Data Line */
     .connection-flow {
-      stroke-dasharray: 15, 65;
-      animation: flow-data 5s linear infinite;
+      stroke-dasharray: 20, 80;
+      animation: flow-data 4.5s linear infinite;
     }
     @keyframes flow-data {
-      to { stroke-dashoffset: -160; }
+      to { stroke-dashoffset: -200; }
     }
   </style>
   <defs>
-    <!-- Gaussian Blur Filters for Soft Background Nebula & reflection sweeps -->
+    <!-- Gaussian Blur Filters for Soft Background Nebula -->
     <filter id="blur-nebula">
-      <feGaussianBlur stdDeviation="30" />
+      <feGaussianBlur stdDeviation="28" />
     </filter>
     <filter id="blur-reflection">
-      <feGaussianBlur stdDeviation="15" />
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+    <filter id="neon-blur-heavy">
+      <feGaussianBlur stdDeviation="7" />
+    </filter>
+    <filter id="bokeh-blur">
+      <feGaussianBlur stdDeviation="3" />
     </filter>
 
     <!-- Seamless Grid Pattern -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#161B22" stroke-width="0.75" />
-      <circle cx="40" cy="40" r="1" fill="#58A6FF" opacity="0.15" />
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#141922" stroke-width="0.75" />
+      <circle cx="40" cy="40" r="1.2" fill="#58A6FF" opacity="0.2" />
     </pattern>
 
-    <!-- Animated Shifting Gradient for Text -->
+    <!-- Animated Shifting Gradient for Text/Background Elements -->
     <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#58A6FF">
         <animate attributeName="stop-color" values="#58A6FF;#BC34FA;#FF7B72;#58A6FF" dur="8s" repeatCount="indefinite" />
@@ -232,37 +253,37 @@
   </defs>
 
   <!-- Dark Base Canvas -->
-  <rect width="800" height="200" fill="#080C10" rx="8" />
+  <rect width="800" height="200" fill="#07090E" rx="8" />
 
   <!-- Layer 1: Ambient Nebula Glowing Background (Breathing Neon) -->
   <g filter="url(#blur-nebula)">
-    <!-- Cyan Glow on Left -->
-    <circle cx="150" cy="100" r="85" class="ambient-glow glow-cyan-nebula" />
-    <!-- Magenta Glow in Center -->
-    <circle cx="400" cy="100" r="70" class="ambient-glow glow-coral-nebula" />
-    <!-- Purple Glow on Right -->
-    <circle cx="650" cy="100" r="90" class="ambient-glow glow-purple-nebula" />
+    <!-- Cyan Nebula Glow on Left -->
+    <circle cx="200" cy="100" r="100" class="ambient-glow glow-cyan-nebula" />
+    <!-- Purple Nebula Glow on Right -->
+    <circle cx="600" cy="100" r="110" class="ambient-glow glow-purple-nebula" />
+    <!-- Coral/Magenta Glow in Center-Right -->
+    <circle cx="450" cy="100" r="85" class="ambient-glow glow-coral-nebula" />
   </g>
 
-  <!-- Layer 2: Moving Reflection Light Beams -->
-  <g filter="url(#blur-reflection)" opacity="0.25">
-    <line x1="-150" y1="0" x2="50" y2="200" stroke="#00F2FE" stroke-width="30">
-      <animate attributeName="x1" values="-300;800" dur="15s" repeatCount="indefinite" />
-      <animate attributeName="x2" values="-100;1000" dur="15s" repeatCount="indefinite" />
+  <!-- Layer 2: Moving Reflection Light Beams (Reflection Sweeps) -->
+  <g filter="url(#blur-reflection)" opacity="0.3">
+    <line x1="-150" y1="0" x2="50" y2="200" stroke="#00F2FE" stroke-width="40">
+      <animate attributeName="x1" values="-300;900" dur="14s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="-100;1100" dur="14s" repeatCount="indefinite" />
     </line>
-    <line x1="-100" y1="0" x2="100" y2="200" stroke="#BC34FA" stroke-width="25">
-      <animate attributeName="x1" values="-500;600" dur="18s" repeatCount="indefinite" />
-      <animate attributeName="x2" values="-300;800" dur="18s" repeatCount="indefinite" />
+    <line x1="-100" y1="0" x2="100" y2="200" stroke="#BC34FA" stroke-width="35">
+      <animate attributeName="x1" values="-500;700" dur="17s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="-300;900" dur="17s" repeatCount="indefinite" />
     </line>
   </g>
 
   <!-- Layer 3: Moving Grid Pattern Overlay -->
   <g>
-    <rect width="840" height="240" fill="url(#grid)" class="grid-moving" x="-40" y="-40" opacity="0.8" />
+    <rect width="840" height="240" fill="url(#grid)" class="grid-moving" x="-40" y="-40" opacity="0.85" />
   </g>
 
   <!-- Layer 4: HUD Radar concentric targets (Left and Right Background) -->
-  <g opacity="0.12">
+  <g opacity="0.16">
     <!-- Left Radar Target -->
     <g transform="translate(80, 100)">
       <circle r="45" fill="none" stroke="#58A6FF" stroke-width="0.5" />
@@ -280,14 +301,14 @@
   </g>
 
   <!-- Cyber Core Containment Rings (Central Background Animation) -->
-  <g opacity="0.18">
-    <circle cx="400" cy="100" r="60" fill="none" stroke="#58A6FF" stroke-width="1" stroke-dasharray="10 20" class="rotate-cw" />
-    <circle cx="400" cy="100" r="75" fill="none" stroke="#BC34FA" stroke-width="1.5" stroke-dasharray="40 40" class="rotate-ccw" />
+  <g opacity="0.22">
+    <circle cx="400" cy="100" r="60" fill="none" stroke="#58A6FF" stroke-width="1.2" stroke-dasharray="10 20" class="rotate-cw" />
+    <circle cx="400" cy="100" r="75" fill="none" stroke="#BC34FA" stroke-width="1.8" stroke-dasharray="40 40" class="rotate-ccw" />
     <circle cx="400" cy="100" r="90" fill="none" stroke="#00F2FE" stroke-width="0.75" stroke-dasharray="4 8" class="rotate-cw" />
   </g>
 
   <!-- Binary Data Streams (Scrolling Background Elements) -->
-  <g opacity="0.1" fill="#58A6FF" font-family="monospace" font-size="9">
+  <g opacity="0.12" fill="#58A6FF" font-family="monospace" font-size="9">
     <text x="170" y="0">101011<animate attributeName="y" values="-50;250" dur="11s" repeatCount="indefinite" /></text>
     <text x="290" y="0">011010<animate attributeName="y" values="-50;250" dur="8s" repeatCount="indefinite" /></text>
     <text x="510" y="0">110101<animate attributeName="y" values="-50;250" dur="14s" repeatCount="indefinite" /></text>
@@ -298,16 +319,23 @@
   <path d="M 100 -50 L 300 150" class="shooting-star s1" />
   <path d="M 500 -50 L 700 150" class="shooting-star s2" />
 
-  <!-- Floating Particles (Parallax Layer) -->
+  <!-- Floating Particles & Bokeh (Depth of Field Layer) -->
   <g>
-    <circle cx="120" cy="45" r="2.5" fill="#00F2FE" class="particle p1" />
-    <circle cx="680" cy="155" r="3" fill="#BC34FA" class="particle p2" />
+    <!-- Soft Blurred Bokeh Circles -->
+    <g filter="url(#bokeh-blur)">
+      <circle cx="160" cy="60" r="5" fill="#00F2FE" class="particle p1" />
+      <circle cx="660" cy="140" r="7" fill="#BC34FA" class="particle p2" />
+      <circle cx="560" cy="50" r="6" fill="#58A6FF" class="particle p4" />
+    </g>
+    <!-- Sharp Small Sparkles -->
     <circle cx="230" cy="165" r="1.5" fill="#FF7B72" class="particle p3" />
+    <circle cx="120" cy="45" r="2" fill="#00F2FE" class="particle p1" />
+    <circle cx="680" cy="155" r="2.5" fill="#BC34FA" class="particle p2" />
     <circle cx="580" cy="35" r="2" fill="#58A6FF" class="particle p4" />
   </g>
 
   <!-- Data Flow Pathway (Behind Text) -->
-  <g opacity="0.35">
+  <g opacity="0.38">
     <path d="M 60 100 Q 230 30 400 100 T 740 100" fill="none" stroke="#1F2633" stroke-width="1.5" />
     <path d="M 60 100 Q 230 30 400 100 T 740 100" fill="none" stroke="url(#star-grad-1)" stroke-width="1.5" class="connection-flow" />
   </g>
@@ -316,7 +344,8 @@
   <g>
     <circle cx="80" cy="100" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
     <g class="revolve-left">
-      <circle cx="110" cy="100" r="4.5" fill="#00F2FE" class="glow-cyan" />
+      <circle cx="110" cy="100" r="5" fill="#00F2FE" class="glow-cyan-elem" />
+      <circle cx="110" cy="100" r="10" fill="none" stroke="#00F2FE" stroke-width="0.5" opacity="0.4" class="glow-cyan-elem" />
     </g>
     <circle cx="80" cy="100" r="3" fill="#58A6FF" />
   </g>
@@ -325,33 +354,35 @@
   <g>
     <circle cx="720" cy="100" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
     <g class="revolve-right">
-      <circle cx="750" cy="100" r="4.5" fill="#BC34FA" class="glow-purple" />
+      <circle cx="750" cy="100" r="5" fill="#BC34FA" class="glow-purple-elem" />
+      <circle cx="750" cy="100" r="10" fill="none" stroke="#BC34FA" stroke-width="0.5" opacity="0.4" class="glow-purple-elem" />
     </g>
     <circle cx="720" cy="100" r="3" fill="#FF7B72" />
   </g>
 
   <!-- HUD Soundwave / Equalizer Pulse (Bottom Center) -->
-  <g transform="translate(360, 160)" opacity="0.4">
-    <rect x="0" y="0" width="2" height="15" fill="#00F2FE" rx="1"><animate attributeName="height" values="4;16;4" dur="1s" repeatCount="indefinite" /></rect>
-    <rect x="6" y="0" width="2" height="15" fill="#58A6FF" rx="1"><animate attributeName="height" values="8;24;8" dur="0.8s" repeatCount="indefinite" /></rect>
-    <rect x="12" y="0" width="2" height="15" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;12;3" dur="1.4s" repeatCount="indefinite" /></rect>
-    <rect x="18" y="0" width="2" height="15" fill="#FF7B72" rx="1"><animate attributeName="height" values="6;20;6" dur="1.1s" repeatCount="indefinite" /></rect>
-    <rect x="24" y="0" width="2" height="15" fill="#BC34FA" rx="1"><animate attributeName="height" values="10;28;10" dur="0.9s" repeatCount="indefinite" /></rect>
-    <rect x="30" y="0" width="2" height="15" fill="#58A6FF" rx="1"><animate attributeName="height" values="5;18;5" dur="1.2s" repeatCount="indefinite" /></rect>
-    <rect x="36" y="0" width="2" height="15" fill="#00F2FE" rx="1"><animate attributeName="height" values="3;10;3" dur="1.5s" repeatCount="indefinite" /></rect>
-    <rect x="42" y="0" width="2" height="15" fill="#FF7B72" rx="1"><animate attributeName="height" values="7;22;7" dur="0.7s" repeatCount="indefinite" /></rect>
-    <rect x="48" y="0" width="2" height="15" fill="#00F2FE" rx="1"><animate attributeName="height" values="4;15;4" dur="1.3s" repeatCount="indefinite" /></rect>
-    <rect x="54" y="0" width="2" height="15" fill="#BC34FA" rx="1"><animate attributeName="height" values="6;20;6" dur="1.1s" repeatCount="indefinite" /></rect>
-    <rect x="60" y="0" width="2" height="15" fill="#58A6FF" rx="1"><animate attributeName="height" values="2;10;2" dur="1.7s" repeatCount="indefinite" /></rect>
-    <rect x="66" y="0" width="2" height="15" fill="#00F2FE" rx="1"><animate attributeName="height" values="5;16;5" dur="1s" repeatCount="indefinite" /></rect>
-    <rect x="72" y="0" width="2" height="15" fill="#FF7B72" rx="1"><animate attributeName="height" values="8;24;8" dur="0.8s" repeatCount="indefinite" /></rect>
-    <rect x="78" y="0" width="2" height="15" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;12;3" dur="1.4s" repeatCount="indefinite" /></rect>
+  <g transform="translate(360, 158)" opacity="0.45">
+    <rect x="0" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="5;20;5" dur="1s" repeatCount="indefinite" /></rect>
+    <rect x="6" y="0" width="2" height="18" fill="#58A6FF" rx="1"><animate attributeName="height" values="9;28;9" dur="0.8s" repeatCount="indefinite" /></rect>
+    <rect x="12" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;15;3" dur="1.4s" repeatCount="indefinite" /></rect>
+    <rect x="18" y="0" width="2" height="18" fill="#FF7B72" rx="1"><animate attributeName="height" values="7;24;7" dur="1.1s" repeatCount="indefinite" /></rect>
+    <rect x="24" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="12;32;12" dur="0.9s" repeatCount="indefinite" /></rect>
+    <rect x="30" y="0" width="2" height="18" fill="#58A6FF" rx="1"><animate attributeName="height" values="6;22;6" dur="1.2s" repeatCount="indefinite" /></rect>
+    <rect x="36" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="3;12;3" dur="1.5s" repeatCount="indefinite" /></rect>
+    <rect x="42" y="0" width="2" height="18" fill="#FF7B72" rx="1"><animate attributeName="height" values="8;26;8" dur="0.7s" repeatCount="indefinite" /></rect>
+    <rect x="48" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="5;19;5" dur="1.3s" repeatCount="indefinite" /></rect>
+    <rect x="54" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="7;24;7" dur="1.1s" repeatCount="indefinite" /></rect>
+    <rect x="60" y="0" width="2" height="18" fill="#58A6FF" rx="1"><animate attributeName="height" values="2;12;2" dur="1.7s" repeatCount="indefinite" /></rect>
+    <rect x="66" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="6;20;6" dur="1s" repeatCount="indefinite" /></rect>
+    <rect x="72" y="0" width="2" height="18" fill="#FF7B72" rx="1"><animate attributeName="height" values="9;28;9" dur="0.8s" repeatCount="indefinite" /></rect>
+    <rect x="78" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;15;3" dur="1.4s" repeatCount="indefinite" /></rect>
   </g>
 
-  <!-- HUD Corner Decor & Framing -->
+  <!-- HUD Outer Frame Overlay -->
   <g>
-    <!-- Border Box -->
-    <rect x="12" y="12" width="776" height="176" fill="none" stroke="#1C232E" stroke-width="1" />
+    <!-- Border Box (Glowing) -->
+    <rect x="12" y="12" width="776" height="176" fill="none" stroke="#21262D" stroke-width="1" />
+    <rect x="12" y="12" width="776" height="176" fill="none" stroke="#58A6FF" stroke-width="1.2" opacity="0.3" class="glow-cyan-elem" />
     
     <!-- HUD Text Indicators -->
     <text x="25" y="27" class="hud-text">SYS_STATUS: ACTIVE</text>
@@ -360,18 +391,24 @@
     <text x="690" y="182" class="hud-text">GRID_MODE: AUTO</text>
 
     <!-- Glowing Corner Brackets -->
-    <path d="M 12 32 L 12 12 L 32 12" fill="none" stroke="#58A6FF" stroke-width="2" class="glow-cyan" />
-    <path d="M 788 32 L 788 12 L 768 12" fill="none" stroke="#58A6FF" stroke-width="2" class="glow-cyan" />
-    <path d="M 12 168 L 12 188 L 32 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple" />
-    <path d="M 788 168 L 788 188 L 768 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple" />
+    <path d="M 12 32 L 12 12 L 32 12" fill="none" stroke="#58A6FF" stroke-width="2" class="glow-cyan-elem" />
+    <path d="M 788 32 L 788 12 L 768 12" fill="none" stroke="#58A6FF" stroke-width="2" class="glow-cyan-elem" />
+    <path d="M 12 168 L 12 188 L 32 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple-elem" />
+    <path d="M 788 168 L 788 188 L 768 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple-elem" />
 
     <!-- Blinking Sys Nodes -->
     <circle cx="140" cy="24" r="2.5" fill="#58A6FF" class="hud-blink" />
     <circle cx="680" cy="24" r="2.5" fill="#00F2FE" class="hud-blink" />
   </g>
 
-  <!-- Central Title Text -->
-  <text x="50%" y="95" text-anchor="middle" class="title-text">SHAHANWAJ KHAN</text>
+  <!-- Central Title Text Stack (Realistic Neon Light Glow) -->
+  <g>
+    <!-- Deep Blurred Underlayer (Emits the Neon Gas Glow) -->
+    <text x="50%" y="95" text-anchor="middle" class="title-glow-layer">SHAHANWAJ KHAN</text>
+    <!-- Sharp Hot-Core Toplayer -->
+    <text x="50%" y="95" text-anchor="middle" class="title-main-layer">SHAHANWAJ KHAN</text>
+  </g>
+  
   <text x="50%" y="135" text-anchor="middle" class="subtitle-text">AI Engineer &amp; Full Stack Developer</text>
 
   <!-- Holographic Scanline Overlay -->
