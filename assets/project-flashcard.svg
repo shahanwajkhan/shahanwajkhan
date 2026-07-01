@@ -79,92 +79,159 @@
 
     /* Default badge style */
     .badge-bg {
-      fill: #161B22;
-      stroke: #30363D;
       stroke-width: 1;
       transition: all 0.3s ease;
     }
     .badge-text {
       font-family: 'Fira Code', monospace;
       font-size: 11px;
-      fill: #8B949E;
       transition: all 0.3s ease;
     }
-    .card:hover .badge-text {
-      fill: #E6EDF0;
-    }
 
-    /* Brand Colors Hover Styling */
-    .card:hover .bg-react { fill: #14232C; stroke: #61DAFB; }
+    /* Brand Colors - Default State & Hover State */
+    
+    /* React */
+    .bg-react { fill: #0E1A24; stroke: rgba(97, 218, 251, 0.35); }
+    .txt-react { fill: #61DAFB; }
+    .card:hover .bg-react { fill: #14232C; stroke: #61DAFB; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(97, 218, 251, 0.5)); }
     .card:hover .txt-react { fill: #61DAFB; }
     
-    .card:hover .bg-node { fill: #142517; stroke: #339933; }
+    /* Node */
+    .bg-node { fill: #0E1B12; stroke: rgba(51, 153, 51, 0.35); }
+    .txt-node { fill: #339933; }
+    .card:hover .bg-node { fill: #142517; stroke: #339933; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(51, 153, 51, 0.5)); }
     .card:hover .txt-node { fill: #339933; }
     
-    .card:hover .bg-express { fill: #1A1A1A; stroke: #FFFFFF; }
+    /* Express */
+    .bg-express { fill: #131314; stroke: rgba(255, 255, 255, 0.2); }
+    .txt-express { fill: #C9D1D9; }
+    .card:hover .bg-express { fill: #1A1A1A; stroke: #FFFFFF; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)); }
     .card:hover .txt-express { fill: #FFFFFF; }
     
-    .card:hover .bg-mongodb { fill: #112516; stroke: #47A248; }
+    /* MongoDB */
+    .bg-mongodb { fill: #0E1B12; stroke: rgba(71, 162, 72, 0.35); }
+    .txt-mongodb { fill: #47A248; }
+    .card:hover .bg-mongodb { fill: #112516; stroke: #47A248; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(71, 162, 72, 0.5)); }
     .card:hover .txt-mongodb { fill: #47A248; }
     
-    .card:hover .bg-tailwind { fill: #11252C; stroke: #06B6D4; }
+    /* Tailwind */
+    .bg-tailwind { fill: #0E1A24; stroke: rgba(6, 182, 212, 0.35); }
+    .txt-tailwind { fill: #06B6D4; }
+    .card:hover .bg-tailwind { fill: #11252C; stroke: #06B6D4; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(6, 182, 212, 0.5)); }
     .card:hover .txt-tailwind { fill: #06B6D4; }
     
-    .card:hover .bg-socket { fill: #1A1A1A; stroke: #FFFFFF; }
+    /* Socket.io */
+    .bg-socket { fill: #131314; stroke: rgba(255, 255, 255, 0.2); }
+    .txt-socket { fill: #C9D1D9; }
+    .card:hover .bg-socket { fill: #1A1A1A; stroke: #FFFFFF; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)); }
     .card:hover .txt-socket { fill: #FFFFFF; }
     
-    .card:hover .bg-django { fill: #0B251B; stroke: #092E20; }
+    /* Django */
+    .bg-django { fill: #0E1B15; stroke: rgba(68, 183, 139, 0.35); }
+    .txt-django { fill: #44B78B; }
+    .card:hover .bg-django { fill: #0B251B; stroke: #44B78B; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(68, 183, 139, 0.5)); }
     .card:hover .txt-django { fill: #44B78B; }
     
-    .card:hover .bg-sqlite { fill: #111F2C; stroke: #003B57; }
+    /* SQLite */
+    .bg-sqlite { fill: #0E1724; stroke: rgba(64, 166, 242, 0.35); }
+    .txt-sqlite { fill: #40A6F2; }
+    .card:hover .bg-sqlite { fill: #111F2C; stroke: #40A6F2; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(64, 166, 242, 0.5)); }
     .card:hover .txt-sqlite { fill: #40A6F2; }
     
-    .card:hover .bg-html { fill: #2C1A14; stroke: #E34F26; }
+    /* HTML */
+    .bg-html { fill: #1B120E; stroke: rgba(227, 79, 38, 0.35); }
+    .txt-html { fill: #E34F26; }
+    .card:hover .bg-html { fill: #2C1A14; stroke: #E34F26; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(227, 79, 38, 0.5)); }
     .card:hover .txt-html { fill: #E34F26; }
     
-    .card:hover .bg-css { fill: #111F2C; stroke: #1572B6; }
+    /* CSS */
+    .bg-css { fill: #0E1724; stroke: rgba(21, 114, 182, 0.35); }
+    .txt-css { fill: #1572B6; }
+    .card:hover .bg-css { fill: #111F2C; stroke: #1572B6; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(21, 114, 182, 0.5)); }
     .card:hover .txt-css { fill: #1572B6; }
     
-    .card:hover .bg-bootstrap { fill: #20142C; stroke: #7952B3; }
+    /* Bootstrap */
+    .bg-bootstrap { fill: #170E24; stroke: rgba(155, 114, 211, 0.35); }
+    .txt-bootstrap { fill: #9B72D3; }
+    .card:hover .bg-bootstrap { fill: #20142C; stroke: #9B72D3; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(155, 114, 211, 0.5)); }
     .card:hover .txt-bootstrap { fill: #9B72D3; }
     
-    .card:hover .bg-laravel { fill: #2C1415; stroke: #FF2D20; }
+    /* Laravel */
+    .bg-laravel { fill: #1B0E0F; stroke: rgba(255, 45, 32, 0.35); }
+    .txt-laravel { fill: #FF2D20; }
+    .card:hover .bg-laravel { fill: #2C1415; stroke: #FF2D20; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(255, 45, 32, 0.5)); }
     .card:hover .txt-laravel { fill: #FF2D20; }
     
-    .card:hover .bg-gis { fill: #142820; stroke: #10B981; }
+    /* GIS */
+    .bg-gis { fill: #0E1B15; stroke: rgba(16, 185, 129, 0.35); }
+    .txt-gis { fill: #10B981; }
+    .card:hover .bg-gis { fill: #142820; stroke: #10B981; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.5)); }
     .card:hover .txt-gis { fill: #10B981; }
     
-    .card:hover .bg-python { fill: #111F2C; stroke: #3776AB; }
+    /* Python */
+    .bg-python { fill: #0E1724; stroke: rgba(55, 118, 171, 0.37); }
+    .txt-python { fill: #40A6F2; }
+    .card:hover .bg-python { fill: #111F2C; stroke: #3776AB; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(55, 118, 171, 0.5)); }
     .card:hover .txt-python { fill: #FFD43B; }
     
-    .card:hover .bg-flask { fill: #1A1A1A; stroke: #FFFFFF; }
+    /* Flask */
+    .bg-flask { fill: #131314; stroke: rgba(255, 255, 255, 0.2); }
+    .txt-flask { fill: #C9D1D9; }
+    .card:hover .bg-flask { fill: #1A1A1A; stroke: #FFFFFF; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)); }
     .card:hover .txt-flask { fill: #FFFFFF; }
     
-    .card:hover .bg-otp { fill: #2C1F11; stroke: #F59E0B; }
+    /* OTP */
+    .bg-otp { fill: #1B150E; stroke: rgba(245, 158, 11, 0.35); }
+    .txt-otp { fill: #F59E0B; }
+    .card:hover .bg-otp { fill: #2C1F11; stroke: #F59E0B; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.5)); }
     .card:hover .txt-otp { fill: #F59E0B; }
     
-    .card:hover .bg-recharts { fill: #112525; stroke: #3182CE; }
+    /* Recharts */
+    .bg-recharts { fill: #0E1A24; stroke: rgba(49, 130, 206, 0.35); }
+    .txt-recharts { fill: #3182CE; }
+    .card:hover .bg-recharts { fill: #112525; stroke: #3182CE; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(49, 130, 206, 0.5)); }
     .card:hover .txt-recharts { fill: #3182CE; }
     
-    .card:hover .bg-storage { fill: #1A222C; stroke: #718096; }
+    /* Storage */
+    .bg-storage { fill: #13171C; stroke: rgba(113, 128, 150, 0.35); }
+    .txt-storage { fill: #A0AEC0; }
+    .card:hover .bg-storage { fill: #1A222C; stroke: #718096; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(113, 128, 150, 0.5)); }
     .card:hover .txt-storage { fill: #A0AEC0; }
     
-    .card:hover .bg-gemini { fill: #14202F; stroke: #15C3FF; }
+    /* Gemini */
+    .bg-gemini { fill: #0E1724; stroke: rgba(21, 195, 255, 0.35); }
+    .txt-gemini { fill: #15C3FF; }
+    .card:hover .bg-gemini { fill: #14202F; stroke: #15C3FF; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(21, 195, 255, 0.5)); }
     .card:hover .txt-gemini { fill: #15C3FF; }
     
-    .card:hover .bg-cpp { fill: #111F2C; stroke: #00599C; }
+    /* C++ */
+    .bg-cpp { fill: #0E1724; stroke: rgba(0, 89, 156, 0.35); }
+    .txt-cpp { fill: #40A6F2; }
+    .card:hover .bg-cpp { fill: #111F2C; stroke: #00599C; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(0, 89, 156, 0.5)); }
     .card:hover .txt-cpp { fill: #00599C; }
     
-    .card:hover .bg-java { fill: #2C1E11; stroke: #ED8B00; }
+    /* Java */
+    .bg-java { fill: #1B150E; stroke: rgba(237, 139, 0, 0.35); }
+    .txt-java { fill: #ED8B00; }
+    .card:hover .bg-java { fill: #2C1E11; stroke: #ED8B00; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(237, 139, 0, 0.5)); }
     .card:hover .txt-java { fill: #ED8B00; }
     
-    .card:hover .bg-files { fill: #1C2420; stroke: #10B981; }
+    /* Files */
+    .bg-files { fill: #0E1B15; stroke: rgba(16, 185, 129, 0.35); }
+    .txt-files { fill: #10B981; }
+    .card:hover .bg-files { fill: #1C2420; stroke: #10B981; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.5)); }
     .card:hover .txt-files { fill: #10B981; }
     
-    .card:hover .bg-framer { fill: #2C1122; stroke: #F107A3; }
+    /* Framer */
+    .bg-framer { fill: #1B0E16; stroke: rgba(241, 7, 163, 0.35); }
+    .txt-framer { fill: #F107A3; }
+    .card:hover .bg-framer { fill: #2C1122; stroke: #F107A3; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(241, 7, 163, 0.5)); }
     .card:hover .txt-framer { fill: #F107A3; }
     
-    .card:hover .bg-js { fill: #2C2B11; stroke: #F7DF1E; }
+    /* JS */
+    .bg-js { fill: #1B1A0E; stroke: rgba(247, 223, 30, 0.35); }
+    .txt-js { fill: #F7DF1E; }
+    .card:hover .bg-js { fill: #2C2B11; stroke: #F7DF1E; stroke-width: 1.5; filter: drop-shadow(0 0 2px rgba(247, 223, 30, 0.5)); }
     .card:hover .txt-js { fill: #F7DF1E; }
 
   </style>
