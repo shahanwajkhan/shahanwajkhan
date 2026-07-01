@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
+  <style>
+    /* Fonts and styles */
+    .hud-text {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 9px;
+      fill: #58A6FF;
+      opacity: 0.65;
+    }
+    .label {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 700;
+      font-size: 11px;
+      fill: #8B949E;
+    }
+    .value {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      fill: #C9D1D9;
+    }
+    .mission-value {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #58A6FF;
+      filter: drop-shadow(0 0 1px rgba(88, 166, 255, 0.3));
+    }
+    
+    /* Blinking animations */
+    .hud-blink {
+      animation: blink 2s infinite alternate;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    
+    /* Heartbeat status indicator */
+    .status-pulse {
+      animation: pulse 1.8s ease-in-out infinite alternate;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.4; filter: drop-shadow(0 0 2px #22C55E); }
+      100% { opacity: 1; filter: drop-shadow(0 0 8px #22C55E); }
+    }
+
+    /* Ambient Nebulae */
+    .ambient-glow {
+      animation: breathe 8s ease-in-out infinite alternate;
+    }
+    .glow-cyan { fill: #00F2FE; animation-duration: 6s; }
+    .glow-purple { fill: #BC34FA; animation-duration: 9s; }
+    @keyframes breathe {
+      0% { opacity: 0.08; }
+      100% { opacity: 0.22; }
+    }
+    
+    /* Progress bar diagonal pattern animation */
+    .bar-flow {
+      stroke-dasharray: 8 8;
+      animation: flow 2s linear infinite;
+    }
+    @keyframes flow {
+      to { stroke-dashoffset: -16; }
+    }
+  </style>
+  <defs>
+    <!-- Gaussian Blur Filters -->
+    <filter id="blur-nebula">
+      <feGaussianBlur stdDeviation="30" />
+    </filter>
+    <filter id="glow-filter">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Glass Reflection Gradient -->
+    <linearGradient id="glass-edge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0.4" />
+      <stop offset="40%" stop-color="#21262D" stroke-opacity="0.1" />
+      <stop offset="60%" stop-color="#21262D" stroke-opacity="0.1" />
+      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Progress Bar Gradient -->
+    <linearGradient id="bar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A78BFA" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <clipPath id="hud-clip">
+      <rect x="12" y="12" width="776" height="176" rx="6" />
+    </clipPath>
+  </defs>
+
+  <!-- Dark Base Canvas -->
+  <rect width="800" height="200" fill="#06080D" rx="8" />
+
+  <!-- Layer 1: Ambient Nebula Glow (Uniform with banner) -->
+  <g filter="url(#blur-nebula)">
+    <circle cx="200" cy="100" r="85" class="ambient-glow glow-cyan" />
+    <circle cx="600" cy="100" r="95" class="ambient-glow glow-purple" />
+  </g>
+
+  <!-- Layer 2: Grid Background Lines -->
+  <g stroke="#141922" stroke-width="0.75">
+    <line x1="40" y1="12" x2="40" y2="188" />
+    <line x1="400" y1="12" x2="400" y2="188" stroke="#161B22" stroke-width="1.2" />
+    <line x1="760" y1="12" x2="760" y2="188" />
+    <line x1="12" y1="50" x2="788" y2="50" />
+    <line x1="12" y1="150" x2="788" y2="150" />
+  </g>
+
+  <!-- Title Indicator -->
+  <g>
+    <text x="35" y="38" class="label" fill="#58A6FF" style="letter-spacing: 1px;">🤖 AI SYSTEM STATUS DASHBOARD</text>
+    <line x1="35" y1="44" x2="230" y2="44" stroke="#58A6FF" stroke-width="1.5" opacity="0.6" />
+    <!-- Blinking Online Node -->
+    <circle cx="245" cy="35" r="2.5" fill="#22C55E" class="hud-blink" />
+    <text x="255" y="38" class="hud-text" fill="#22C55E">SYSTEMS_INTEGRATED: OK</text>
+  </g>
+
+  <!-- Left Column Data -->
+  <g transform="translate(35, 55)">
+    <!-- Row 1: Status -->
+    <g transform="translate(0, 20)">
+      <circle cx="6" cy="11" r="5" fill="#22C55E" class="status-pulse" />
+      <text x="22" y="14" class="label">🟢 STATUS</text>
+      <text x="120" y="14" class="value" fill="#22C55E">ONLINE // SECURE</text>
+    </g>
+
+    <!-- Row 2: AI Engine -->
+    <g transform="translate(0, 50)">
+      <text x="0" y="14" class="label">🧠 AI ENGINE</text>
+      <text x="120" y="14" class="value">Active (Gemini / Django / MERN)</text>
+    </g>
+
+    <!-- Row 3: Location -->
+    <g transform="translate(0, 80)">
+      <text x="0" y="14" class="label">📍 LOCATION</text>
+      <text x="120" y="14" class="value">Punjab, India</text>
+    </g>
+  </g>
+
+  <!-- Right Column Data -->
+  <g transform="translate(420, 55)">
+    <!-- Row 1: Current Role -->
+    <g transform="translate(0, 20)">
+      <text x="0" y="14" class="label">💻 CURRENT ROLE</text>
+      <text x="130" y="14" class="value">Full Stack Dev &amp; AI Engineer</text>
+    </g>
+
+    <!-- Row 2: Current Focus -->
+    <g transform="translate(0, 50)">
+      <text x="0" y="14" class="label">🚀 CURRENT FOCUS</text>
+      <text x="130" y="14" class="value">MERN • Django • Generative AI</text>
+    </g>
+
+    <!-- Row 3: Coffee Level (Animated Progress Bar) -->
+    <g transform="translate(0, 80)">
+      <text x="0" y="14" class="label">☕ COFFEE LEVEL</text>
+      <!-- Progress Bar Track -->
+      <rect x="130" y="4" width="160" height="12" rx="3" fill="#161B22" stroke="#21262D" stroke-width="1" />
+      <!-- Animated Fill -->
+      <rect x="130" y="4" width="0" height="12" rx="3" fill="url(#bar-grad)" filter="url(#glow-filter)">
+        <animate attributeName="width" values="0; 144" dur="2s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" />
+      </rect>
+      <!-- Flowing Pattern Overlay inside Bar -->
+      <g clip-path="url(#hud-clip)">
+        <line x1="130" y1="4" x2="290" y2="4" stroke="rgba(255, 255, 255, 0.15)" stroke-width="12" class="bar-flow" style="clip-path: inset(0 16px 0 0);" />
+      </g>
+      <!-- Value Label -->
+      <text x="300" y="14" class="value" fill="#8B5CF6">90%</text>
+    </g>
+  </g>
+
+  <!-- Bottom Row Data: Mission -->
+  <g transform="translate(35, 172)">
+    <text x="0" y="0" class="label">🎯 MISSION</text>
+    <text x="120" y="0" class="mission-value">Building production-grade, AI-powered solutions that solve real-world problems.<tspan fill="#00F2FE" class="hud-blink">_</tspan></text>
+  </g>
+
+  <!-- HUD Container Outline Frame -->
+  <g>
+    <!-- Glass border -->
+    <rect x="12" y="12" width="776" height="176" fill="none" stroke="url(#glass-edge-grad)" stroke-width="1.5" rx="6" />
+
+    <!-- Corner Brackets -->
+    <path d="M 12 32 L 12 12 L 32 12" fill="none" stroke="#00F2FE" stroke-width="2" class="glow-cyan" />
+    <path d="M 788 32 L 788 12 L 768 12" fill="none" stroke="#00F2FE" stroke-width="2" class="glow-cyan" />
+    <path d="M 12 168 L 12 188 L 32 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple" />
+    <path d="M 788 168 L 788 188 L 768 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple" />
+
+    <!-- HUD text parameters -->
+    <text x="690" y="27" class="hud-text">TEMP: 34C</text>
+    <text x="690" y="182" class="hud-text">SYS_SYNC: OK</text>
+
+    <!-- Blinking indicators -->
+    <circle cx="680" cy="24" r="2.5" fill="#00F2FE" class="hud-blink" />
+  </g>
+
+  <!-- Glass Sheen Reflective Overlay -->
+  <g clip-path="url(#hud-clip)">
+    <polygon points="0,0 240,0 60,-240" fill="#FFFFFF" opacity="0.04" />
+    <polygon points="450,-240 650,0 800,0 800,-240" fill="#FFFFFF" opacity="0.015" />
+  </g>
+</svg>

@@ -9,33 +9,9 @@
 
 
 <!-- AI Status Dashboard -->
-<blockquote>
-  <h3>🤖 AI System Status</h3>
-  <table>
-    <tr>
-      <td><strong>🟢 Status</strong></td>
-      <td>Online</td>
-      <td><strong>💻 Current Role</strong></td>
-      <td>Full Stack Developer & AI Engineer</td>
-    </tr>
-    <tr>
-      <td><strong>🧠 AI Engine</strong></td>
-      <td>Active (Gemini / Django / MERN)</td>
-      <td><strong>🚀 Current Focus</strong></td>
-      <td>MERN • Django • Generative AI Applications</td>
-    </tr>
-    <tr>
-      <td><strong>📍 Location</strong></td>
-      <td>Punjab, India</td>
-      <td><strong>☕ Coffee Level</strong></td>
-      <td><code>█████████░</code> 90%</td>
-    </tr>
-    <tr>
-      <td><strong>🎯 Mission</strong></td>
-      <td colspan="3">Building production-grade, AI-powered solutions that solve real-world problems.</td>
-    </tr>
-  </table>
-</blockquote>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/status-dashboard.svg?v=1" width="100%" alt="AI System Status" />
+</p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
 
