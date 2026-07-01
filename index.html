@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shahanwaj Khan - Full Stack Developer & AI Engineer Portfolio. An immersive interactive cyberpunk command center.">
+    <title>SHAHANWAJ_AI v3.2 // Portfolio Command Center</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cyberpunk-theme">
+    <!-- Starfield Background Canvas -->
+    <canvas id="starfield-canvas"></canvas>
+
+    <!-- Scanline overlays for CRT terminal effect -->
+    <div class="scanlines"></div>
+    <div class="crt-flicker"></div>
+
+    <!-- Main Container -->
+    <div class="dashboard-wrapper">
+        
+        <!-- ================= HEADER SYSTEM ================= -->
+        <header class="system-header">
+            <div class="header-logo">
+                <div class="logo-icon"><i class="fa-solid fa-microchip"></i></div>
+                <div class="logo-text">
+                    <h1>SHAHANWAJ_AI <span class="version-tag">v3.2</span></h1>
+                    <p class="subtitle">// COGNITIVE CONTROL CENTER</p>
+                </div>
+            </div>
+            
+            <div class="header-telemetry">
+                <div class="telemetry-item hide-mobile">
+                    <span class="label">COORDINATES:</span>
+                    <span class="value cyan-text" id="sys-coords">RA 18h 36m / DEC +38° 47′</span>
+                </div>
+                <div class="telemetry-item hide-mobile">
+                    <span class="label">CORE TEMP:</span>
+                    <span class="value text-glow-green" id="sys-temp">36.4°C</span>
+                </div>
+                <div class="telemetry-item">
+                    <span class="label">COFFEE INTENSITY:</span>
+                    <span class="value orange-text">30%</span>
+                </div>
+                <div class="telemetry-item">
+                    <span class="label">SYS STATUS:</span>
+                    <span class="status-indicator online"></span>
+                    <span class="value text-glow-green">ONLINE</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button id="audio-toggle" class="cyber-btn mini-btn" aria-label="Toggle ambient soundtrack">
+                    <i class="fa-solid fa-volume-xmark" id="audio-icon"></i>
+                    <span id="audio-text">AUDIO: MUTED</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- ================= MAIN LAYOUT ================= -->
+        <main class="dashboard-grid">
+            
+            <!-- LEFT COLUMN: TERMINAL & RADAR -->
+            <section class="grid-panel left-panel" id="telemetry-panel">
+                <!-- Terminal Panel -->
+                <div class="cyber-card terminal-card" id="card-terminal">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-terminal"></i> WEB TERMINAL v1.0.8</div>
+                        <div class="card-controls">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card-content terminal-body">
+                        <div class="terminal-output" id="terminal-output">
+                            <p class="system-message">Booting system interface...</p>
+                            <p class="system-message">✓ Developer: Shahanwaj Khan</p>
+                            <p class="system-message">✓ Class: Full Stack Developer / AI Engineer</p>
+                            <p class="system-message">✓ AI Module: Online & Awaiting Queries</p>
+                            <p class="system-message text-glow-blue">Type 'help' to list available system operations.</p>
+                            <p class="prompt-line">&nbsp;</p>
+                        </div>
+                        <div class="terminal-input-wrapper">
+                            <span class="terminal-prompt">guest@shahanwaj_ai:~$</span>
+                            <input type="text" id="terminal-input" autocomplete="off" autofocus aria-label="Terminal Command Input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar Telemetry Panel -->
+                <div class="cyber-card radar-card" id="card-radar">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-crosshairs"></i> SKILLS TELEMETRY RADAR</div>
+                        <div class="card-status" id="radar-sweep-status">SCANNING FREQUENCIES...</div>
+                    </div>
+                    <div class="card-content radar-body">
+                        <canvas id="radar-canvas"></canvas>
+                        <div class="radar-legend">
+                            <span class="legend-item"><span class="color-dot ai"></span>AI</span>
+                            <span class="legend-item"><span class="color-dot fe"></span>FE</span>
+                            <span class="legend-item"><span class="color-dot be"></span>BE</span>
+                            <span class="legend-item"><span class="color-dot db"></span>DB</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CENTER COLUMN: SOLAR PROJECT EXPLORER -->
+            <section class="grid-panel center-panel" id="solar-panel">
+                <div class="cyber-card solar-explorer-card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-circle-nodes"></i> PROJECT SOLAR SYSTEM</div>
+                        <span class="card-status-pulse">CLICK ON PLANET TO ANALYZE</span>
+                    </div>
+                    <div class="card-content solar-body">
+                        <!-- Orbiting Project Sphere UI -->
+                        <div class="solar-system-container" id="solar-system">
+                            
+                            <!-- Sun (Shahanwaj Khan Core) -->
+                            <div class="solar-sun-core" id="sun-core">
+                                <div class="sun-glow"></div>
+                                <div class="sun-content">
+                                    <span class="sun-label">CORE</span>
+                                    <span class="sun-name">SHAHANWAJ</span>
+                                </div>
+                            </div>
+
+                            <!-- Orbits & Planets -->
+                            <!-- Orbit 1: SkillGuard AI -->
+                            <div class="planet-orbit orbit-1"></div>
+                            <div class="planet-wrapper planet-1-wrap" id="planet-1" data-project="skillguard">
+                                <div class="planet planet-cyber-blue"></div>
+                                <div class="planet-label">SkillGuard AI</div>
+                            </div>
+
+                            <!-- Orbit 2: FlashMind -->
+                            <div class="planet-orbit orbit-2"></div>
+                            <div class="planet-wrapper planet-2-wrap" id="planet-2" data-project="flashmind">
+                                <div class="planet planet-neural-purple"></div>
+                                <div class="planet-label">FlashMind</div>
+                            </div>
+
+                            <!-- Orbit 3: Traffic Management -->
+                            <div class="planet-orbit orbit-3"></div>
+                            <div class="planet-wrapper planet-3-wrap" id="planet-3" data-project="traffic">
+                                <div class="planet planet-neon-green"></div>
+                                <div class="planet-label">Traffic Management</div>
+                            </div>
+
+                            <!-- Orbit 4: CycleTrack -->
+                            <div class="planet-orbit orbit-4"></div>
+                            <div class="planet-wrapper planet-4-wrap" id="planet-4" data-project="cycletrack">
+                                <div class="planet planet-cosmic-orange"></div>
+                                <div class="planet-label">CycleTrack</div>
+                            </div>
+                        </div>
+
+                        <!-- Project Details Hologram Overlay (Initially Hidden) -->
+                        <div class="project-details-overlay" id="project-details-overlay">
+                            <button class="close-overlay-btn" id="close-overlay" aria-label="Close Project Details Overlay"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="hologram-grid">
+                                <div class="hologram-column-left">
+                                    <div class="holo-header">
+                                        <div class="holo-project-tag">PROJECT DIAGNOSTICS</div>
+                                        <h2 id="holo-title">SKILLGUARD AI</h2>
+                                    </div>
+                                    <div class="holo-stat-box">
+                                        <div class="stat-row">
+                                            <span class="stat-label">CLASSIFICATION:</span>
+                                            <span class="stat-val text-glow-blue" id="holo-class">AI Web Application</span>
+                                        </div>
+                                        <div class="stat-row">
+                                            <span class="stat-label">SYSTEM DEVELOPMENT:</span>
+                                            <span class="stat-val text-glow-green" id="holo-progress">90% COMPLETE</span>
+                                        </div>
+                                        <div class="stat-row">
+                                            <span class="stat-label">OPERATING STATE:</span>
+                                            <span class="stat-val text-glow-blue" id="holo-state">ACTIVE</span>
+                                        </div>
+                                    </div>
+                                    <p class="holo-desc" id="holo-desc">Intelligent skill validation platform powered by AI assessment nodes and proctoring algorithms.</p>
+                                </div>
+                                <div class="hologram-column-right">
+                                    <div class="holo-sub-section">
+                                        <span class="holo-label">CORE TECHNOLOGIES</span>
+                                        <div class="tech-badge-container" id="holo-tech">
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge">React</span>
+                                            <span class="tech-badge">Gemini AI</span>
+                                        </div>
+                                    </div>
+                                    <div class="holo-action-links">
+                                        <a href="#" target="_blank" class="cyber-btn" id="holo-github-link">
+                                            <i class="fa-brands fa-github"></i> REPO_SOURCE
+                                        </a>
+                                        <a href="#" target="_blank" class="cyber-btn neon-glow-green" id="holo-live-link">
+                                            <i class="fa-solid fa-rocket"></i> LAUNCH_STAGING
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN: JARVIS & SKILLS MATRIX -->
+            <section class="grid-panel right-panel" id="assistant-panel">
+                <!-- JARVIS Dashboard Assistant -->
+                <div class="cyber-card assistant-card" id="card-assistant">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-robot"></i> JARVIS CORE AI v3.2</div>
+                        <div class="pulse-ring"></div>
+                    </div>
+                    <div class="card-content assistant-body">
+                        <div class="ai-chat-screen">
+                            <div class="ai-avatar-container">
+                                <div class="avatar-ring-outer"></div>
+                                <div class="avatar-ring-inner"></div>
+                                <div class="avatar-core"><i class="fa-solid fa-brain"></i></div>
+                            </div>
+                            <div class="ai-dialogue-box">
+                                <div class="ai-name">JARVIS:</div>
+                                <p class="ai-text" id="assistant-text">System loaded. Welcome back, user. AI protocols active. How shall I assist you in investigating Shahanwaj's portfolio diagnostics?</p>
+                            </div>
+                        </div>
+                        <div class="ai-suggested-queries">
+                            <button class="query-btn" data-query="mission">Current Mission</button>
+                            <button class="query-btn" data-query="skills">Full Skill Tree</button>
+                            <button class="query-btn" data-query="experience">Achievements</button>
+                            <button class="query-btn" data-query="contact">Initiate Contact</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills RPG Tree -->
+                <div class="cyber-card skills-card" id="card-skills">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fa-solid fa-gamepad"></i> SKILL ARSENAL (LVL 22)</div>
+                        <span class="xp-value">CLASS: FULL STACK</span>
+                    </div>
+                    <div class="card-content skills-body">
+                        <!-- Skill Progress Bars -->
+                        <div class="skill-meter-group">
+                            <div class="skill-meter-header">
+                                <span class="skill-name">HTML / CSS</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-meter-bar">
+                                <div class="skill-meter-fill glow-blue" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-group">
+                            <div class="skill-meter-header">
+                                <span class="skill-name">JavaScript (ES6+)</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-meter-bar">
+                                <div class="skill-meter-fill glow-purple" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-group">
+                            <div class="skill-meter-header">
+                                <span class="skill-name">Python / AI integration</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-meter-bar">
+                                <div class="skill-meter-fill glow-green" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-group">
+                            <div class="skill-meter-header">
+                                <span class="skill-name">PHP / Backend logic</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-meter-bar">
+                                <div class="skill-meter-fill glow-orange" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-meter-group">
+                            <div class="skill-meter-header">
+                                <span class="skill-name">MySQL / Databases</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-meter-bar">
+                                <div class="skill-meter-fill glow-cyan" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ================= SYSTEM LOG FOOTER ================= -->
+        <footer class="system-footer">
+            <div class="footer-log-ticker">
+                <i class="fa-solid fa-microchip status-icon pulse"></i>
+                <div class="ticker-content" id="log-ticker">
+                    INITIALIZING SYSTEM LOGS... CONNECTING PORTFOLIO DATA STREAMS... ESTABLISHING SECURE SSH TUNNEL...
+                </div>
+            </div>
+            
+            <div class="footer-social-links">
+                <a href="https://github.com/shahanwajkhan" target="_blank" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/shahanwajkhan" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:shahanwajkhan@example.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-system-version">
+                SECURE ACCESS // PORT 8080 // &copy; 2026 SHAHANWAJ KHAN
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script src="app.js"></script>
+</body>
+</html>

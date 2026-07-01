@@ -1,0 +1,1231 @@
+/* ==========================================
+   SHAHANWAJ_AI SYSTEM STYLESHEET
+   Aesthetic: Cyberpunk Sci-Fi Control Center
+   ========================================== */
+
+/* --- Custom Property Tokens --- */
+:root {
+    --bg-dark: #04060f;
+    --bg-card: rgba(10, 16, 32, 0.7);
+    --bg-terminal: rgba(5, 8, 18, 0.9);
+    --border-glow: rgba(0, 243, 255, 0.35);
+    
+    /* Neon Colors */
+    --neon-cyan: #00f3ff;
+    --neon-purple: #d300ff;
+    --neon-green: #39ff14;
+    --neon-orange: #ff6c00;
+    --neon-blue: #0072ff;
+    --neon-red: #ff3366;
+    
+    /* Text colors */
+    --text-main: #c4d9fc;
+    --text-bright: #ffffff;
+    --text-dim: #5c759c;
+    
+    /* Font families */
+    --font-header: 'Orbitron', sans-serif;
+    --font-mono: 'Share Tech Mono', monospace;
+    --font-sans: 'Rajdhani', sans-serif;
+    
+    /* Neon Shadow Filters */
+    --shadow-cyan: 0 0 15px rgba(0, 243, 255, 0.6);
+    --shadow-purple: 0 0 15px rgba(211, 0, 255, 0.6);
+    --shadow-green: 0 0 15px rgba(57, 255, 20, 0.6);
+    --shadow-orange: 0 0 15px rgba(255, 108, 0, 0.6);
+    --shadow-blue: 0 0 15px rgba(0, 114, 255, 0.6);
+}
+
+/* --- Base Resets & Structure --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* --- Background Starfield --- */
+#starfield-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: radial-gradient(circle at center, #0f172e 0%, #03050b 100%);
+}
+
+/* --- CRT Screen & Scanline Filters --- */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 4px, 3px 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.crt-flicker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(18, 16, 16, 0);
+    opacity: 0.15;
+    z-index: 999;
+    pointer-events: none;
+    animation: monitor-flicker 0.15s infinite;
+}
+
+@keyframes monitor-flicker {
+    0% { opacity: 0.075; }
+    50% { opacity: 0.085; }
+    100% { opacity: 0.075; }
+}
+
+/* --- Core Layout Wrapper --- */
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+/* ==========================================
+   1. SYSTEM HEADER SYSTEM
+   ========================================== */
+.system-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-bottom: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    font-size: 26px;
+    color: var(--neon-cyan);
+    text-shadow: var(--shadow-cyan);
+    animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.logo-text h1 {
+    font-family: var(--font-header);
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-bright);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.version-tag {
+    font-size: 11px;
+    background: rgba(0, 243, 255, 0.15);
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 1px 6px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.subtitle {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.header-telemetry {
+    display: flex;
+    gap: 30px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+}
+
+.telemetry-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.telemetry-item .label {
+    color: var(--text-dim);
+}
+
+.telemetry-item .value {
+    font-weight: bold;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-indicator.online {
+    background-color: var(--neon-green);
+    box-shadow: 0 0 8px var(--neon-green);
+}
+
+/* ==========================================
+   2. DASHBOARD GRID & GENERAL CARDS
+   ========================================== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 24% 50% 24%;
+    gap: 10px;
+    flex-grow: 1;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+}
+
+.grid-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Glassmorphism Cyber-Card */
+.cyber-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid var(--neon-cyan);
+    border-left: 2px solid var(--neon-cyan);
+}
+
+.cyber-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid var(--neon-cyan);
+    border-right: 2px solid var(--neon-cyan);
+}
+
+.cyber-card:hover {
+    border-color: rgba(0, 243, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+
+.card-header {
+    background: rgba(0, 243, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 243, 255, 0.15);
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-header);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--text-bright);
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+}
+
+.card-title i {
+    color: var(--neon-cyan);
+}
+
+.card-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.card-controls .dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(0, 243, 255, 0.3);
+    border-radius: 50%;
+}
+
+.card-content {
+    padding: 12px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* ==========================================
+   3. LEFT PANEL: TERMINAL & RADAR
+   ========================================== */
+.terminal-card {
+    flex-grow: 3;
+    background: var(--bg-terminal);
+}
+
+.terminal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: #a4cbf5;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.terminal-output p {
+    word-break: break-all;
+}
+
+.system-message {
+    color: var(--text-dim);
+}
+
+.terminal-prompt-prefix {
+    color: var(--neon-purple);
+}
+
+.terminal-input-wrapper {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0, 243, 255, 0.1);
+    padding-top: 8px;
+}
+
+.terminal-prompt {
+    color: var(--neon-cyan);
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-bright);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    flex-grow: 1;
+    caret-color: var(--neon-cyan);
+}
+
+/* Radar Card */
+.radar-card {
+    flex-grow: 2;
+}
+
+.radar-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+    min-height: 180px;
+}
+
+#radar-canvas {
+    width: 100%;
+    max-height: 190px;
+}
+
+.radar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-dim);
+}
+
+.color-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.color-dot.ai { background-color: var(--neon-cyan); }
+.color-dot.fe { background-color: var(--neon-purple); }
+.color-dot.be { background-color: var(--neon-green); }
+.color-dot.db { background-color: var(--neon-orange); }
+
+/* ==========================================
+   4. CENTER PANEL: SOLAR PROJECT EXPLORER
+   ========================================== */
+.solar-explorer-card {
+    height: 100%;
+}
+
+.solar-body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.card-status-pulse {
+    font-family: var(--font-header);
+    font-size: 10px;
+    color: var(--neon-cyan);
+    animation: flash-pulse 1.5s infinite;
+}
+
+.solar-system-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sun Core (Shahanwaj Khan) */
+.solar-sun-core {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sun-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,243,255,0.4) 0%, rgba(211,0,255,0.1) 70%, transparent 100%);
+    box-shadow: 0 0 35px rgba(0, 243, 255, 0.4), inset 0 0 15px rgba(0, 243, 255, 0.2);
+    border: 1px solid rgba(0, 243, 255, 0.5);
+    animation: sun-pulsate 4s infinite alternate ease-in-out;
+}
+
+.sun-content {
+    text-align: center;
+    z-index: 11;
+    font-family: var(--font-header);
+}
+
+.sun-label {
+    display: block;
+    font-size: 8px;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+}
+
+.sun-name {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--text-bright);
+    letter-spacing: 1px;
+}
+
+/* Orbits Base CSS */
+.planet-orbit {
+    position: absolute;
+    border: 1px dashed rgba(0, 243, 255, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: rotateX(70deg); /* Tilt for 3D effect */
+}
+
+/* Planet Wrappers controlling rotational orbits */
+.planet-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.planet {
+    pointer-events: auto;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 5;
+}
+
+.planet-label {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    pointer-events: none;
+    white-space: nowrap;
+    text-shadow: 0 0 4px #000000;
+    transform: translateY(22px);
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.planet:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 25px currentColor !important;
+}
+
+.planet:hover + .planet-label {
+    color: var(--text-bright);
+    font-size: 12px;
+}
+
+/* Specific Orbit and Planet Positions */
+/* Orbit 1: SkillGuard AI */
+.orbit-1 {
+    width: 170px;
+    height: 170px;
+}
+.planet-1-wrap {
+    animation: orbit-rotate 16s infinite linear;
+}
+.planet-1-wrap .planet {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 30% 30%, #00f3ff, #0045c5, #001240);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    color: var(--neon-cyan);
+    /* Travel offset along the tilted orbit */
+    transform: translate(85px) rotateY(0deg); 
+}
+/* Re-orient labels to face screen directly */
+.planet-1-wrap .planet-label {
+    transform: translate(85px) translateY(22px);
+}
+
+/* Orbit 2: FlashMind */
+.orbit-2 {
+    width: 250px;
+    height: 250px;
+}
+.planet-2-wrap {
+    animation: orbit-rotate 24s infinite linear;
+}
+.planet-2-wrap .planet {
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle at 30% 30%, #d300ff, #7900b2, #260040);
+    box-shadow: 0 0 12px rgba(211, 0, 255, 0.5);
+    color: var(--neon-purple);
+    transform: translate(125px);
+}
+.planet-2-wrap .planet-label {
+    transform: translate(125px) translateY(24px);
+}
+
+/* Orbit 3: Traffic Management */
+.orbit-3 {
+    width: 330px;
+    height: 330px;
+}
+.planet-3-wrap {
+    animation: orbit-rotate 32s infinite linear;
+}
+.planet-3-wrap .planet {
+    width: 26px;
+    height: 26px;
+    background: radial-gradient(circle at 30% 30%, #39ff14, #008f11, #002d00);
+    box-shadow: 0 0 12px rgba(57, 255, 20, 0.5);
+    color: var(--neon-green);
+    transform: translate(165px);
+}
+.planet-3-wrap .planet-label {
+    transform: translate(165px) translateY(26px);
+}
+
+/* Orbit 4: CycleTrack */
+.orbit-4 {
+    width: 415px;
+    height: 415px;
+}
+.planet-4-wrap {
+    animation: orbit-rotate 40s infinite linear;
+}
+.planet-4-wrap .planet {
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle at 30% 30%, #ff8f00, #b24700, #401100);
+    box-shadow: 0 0 10px rgba(255, 108, 0, 0.5);
+    color: var(--neon-orange);
+    transform: translate(207px);
+}
+.planet-4-wrap .planet-label {
+    transform: translate(207px) translateY(22px);
+}
+
+/* Hologram Project Details overlay panel */
+.project-details-overlay {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background: rgba(4, 8, 20, 0.95);
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.4), inset 0 0 15px rgba(0, 243, 255, 0.15);
+    border-radius: 4px;
+    z-index: 100;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-details-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.close-overlay-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-overlay-btn:hover {
+    color: var(--neon-red);
+    text-shadow: 0 0 5px rgba(255, 51, 102, 0.6);
+}
+
+.hologram-grid {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 20px;
+    align-items: center;
+}
+
+.holo-project-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--neon-purple);
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+#holo-title {
+    font-family: var(--font-header);
+    font-size: 24px;
+    color: var(--text-bright);
+    letter-spacing: 1px;
+    text-shadow: var(--shadow-cyan);
+    margin-bottom: 15px;
+}
+
+.holo-stat-box {
+    background: rgba(0, 243, 255, 0.05);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-label {
+    color: var(--text-dim);
+}
+
+.holo-desc {
+    font-size: 14px;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.holo-sub-section {
+    margin-bottom: 20px;
+}
+
+.holo-label {
+    display: block;
+    font-family: var(--font-header);
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.tech-badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    background: rgba(211, 0, 255, 0.1);
+    border: 1px solid rgba(211, 0, 255, 0.4);
+    color: var(--neon-purple);
+    padding: 2px 8px;
+    border-radius: 3px;
+    text-shadow: 0 0 3px rgba(211, 0, 255, 0.3);
+}
+
+.holo-action-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ==========================================
+   5. RIGHT PANEL: JARVIS & SKILLS MATRIX
+   ========================================== */
+.assistant-card {
+    flex-grow: 3;
+}
+
+.assistant-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.ai-chat-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.ai-avatar-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-ring-outer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed var(--neon-purple);
+    animation: spin-clockwise 10s infinite linear;
+}
+
+.avatar-ring-inner {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 1px solid var(--neon-cyan);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.3);
+    animation: spin-counter-clockwise 6s infinite linear;
+}
+
+.avatar-core {
+    font-size: 18px;
+    color: var(--neon-cyan);
+    text-shadow: var(--shadow-cyan);
+    z-index: 2;
+    animation: heartbeat 2s infinite ease-in-out;
+}
+
+.ai-dialogue-box {
+    background: rgba(211, 0, 255, 0.03);
+    border: 1px solid rgba(211, 0, 255, 0.15);
+    border-radius: 4px;
+    padding: 10px 14px;
+    width: 100%;
+    min-height: 80px;
+    text-align: left;
+}
+
+.ai-name {
+    font-family: var(--font-header);
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--neon-purple);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.ai-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-main);
+    min-height: 48px;
+}
+
+.ai-suggested-queries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.query-btn {
+    background: rgba(10, 16, 32, 0.5);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.query-btn:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    background: rgba(0, 243, 255, 0.08);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.15);
+}
+
+/* Skills progress meters */
+.skills-card {
+    flex-grow: 2;
+}
+
+.skills-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skill-meter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.skill-meter-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-header);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.skill-name {
+    color: var(--text-bright);
+}
+
+.skill-percentage {
+    font-family: var(--font-mono);
+    color: var(--text-dim);
+}
+
+.skill-meter-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-meter-fill {
+    height: 100%;
+    border-radius: 4px;
+    width: 0%; /* Populated in html inline/animated */
+    transition: width 1.5s ease-out;
+}
+
+.skill-meter-fill.glow-blue {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+.skill-meter-fill.glow-purple {
+    background: linear-gradient(90deg, #9900ff, var(--neon-purple));
+    box-shadow: 0 0 8px var(--neon-purple);
+}
+.skill-meter-fill.glow-green {
+    background: linear-gradient(90deg, #00b300, var(--neon-green));
+    box-shadow: 0 0 8px var(--neon-green);
+}
+.skill-meter-fill.glow-orange {
+    background: linear-gradient(90deg, #cc5200, var(--neon-orange));
+    box-shadow: 0 0 8px var(--neon-orange);
+}
+.skill-meter-fill.glow-cyan {
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-cyan));
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* ==========================================
+   6. CORE CYBER BUTTONS & INTERACTIVES
+   ========================================== */
+.cyber-btn {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: var(--font-header);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    text-shadow: 0 0 2px rgba(0, 243, 255, 0.3);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 243, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.cyber-btn:hover::before {
+    left: 100%;
+}
+
+.cyber-btn:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: var(--shadow-cyan);
+    text-shadow: 0 0 6px var(--neon-cyan);
+}
+
+.cyber-btn.neon-glow-green {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+    text-shadow: 0 0 2px rgba(57, 255, 20, 0.3);
+}
+
+.cyber-btn.neon-glow-green:hover {
+    background: rgba(57, 255, 20, 0.1);
+    box-shadow: var(--shadow-green);
+    text-shadow: 0 0 6px var(--neon-green);
+}
+
+.cyber-btn.mini-btn {
+    padding: 6px 12px;
+    font-size: 10px;
+}
+
+/* ==========================================
+   7. SYSTEM LOG FOOTER
+   ========================================== */
+.system-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    backdrop-filter: blur(12px);
+    border-radius: 4px;
+    padding: 8px 20px;
+    margin-top: 10px;
+    height: 38px;
+}
+
+.footer-log-ticker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.status-icon {
+    color: var(--neon-cyan);
+}
+
+.status-icon.pulse {
+    animation: flash-pulse 1s infinite ease-in-out;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: ticker-slide 20s linear infinite;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.social-icon {
+    color: var(--text-dim);
+    font-size: 16px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--neon-cyan);
+    text-shadow: var(--shadow-cyan);
+}
+
+.footer-system-version {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+}
+
+/* ==========================================
+   8. ANIMATION KEYFRAMES
+   ========================================== */
+@keyframes orbit-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-counter-clockwise {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 12px var(--neon-cyan); }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+@keyframes sun-pulsate {
+    0% {
+        box-shadow: 0 0 25px rgba(0, 243, 255, 0.35), inset 0 0 10px rgba(0, 243, 255, 0.15);
+    }
+    100% {
+        box-shadow: 0 0 45px rgba(0, 243, 255, 0.55), inset 0 0 20px rgba(0, 243, 255, 0.35);
+    }
+}
+
+@keyframes flash-pulse {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes pulse-glow {
+    0% { opacity: 0.8; filter: drop-shadow(0 0 2px var(--neon-cyan)); }
+    50% { opacity: 1; filter: drop-shadow(0 0 8px var(--neon-cyan)); }
+    100% { opacity: 0.8; filter: drop-shadow(0 0 2px var(--neon-cyan)); }
+}
+
+@keyframes ticker-slide {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ==========================================
+   9. RESPONSIVE DESIGN MEDIA RULES
+   ========================================== */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: 30% 70%;
+        height: auto;
+        overflow-y: auto;
+    }
+    
+    .right-panel {
+        grid-column: 1 / span 2;
+        flex-direction: row;
+    }
+    
+    .right-panel .cyber-card {
+        flex: 1;
+    }
+    
+    .solar-system-container {
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 100%;
+        height: auto;
+    }
+    
+    .left-panel, .center-panel, .right-panel {
+        grid-column: 1;
+    }
+    
+    .right-panel {
+        flex-direction: column;
+    }
+    
+    .system-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-logo {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .header-telemetry {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .solar-system-container {
+        min-height: 380px;
+        transform: scale(0.85);
+    }
+    
+    .project-details-overlay {
+        padding: 15px;
+    }
+    
+    .hologram-grid {
+        grid-template-columns: 100%;
+        gap: 15px;
+    }
+    
+    .holo-action-links {
+        flex-direction: row;
+    }
+    
+    .holo-action-links a {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .solar-system-container {
+        transform: scale(0.65);
+        min-height: 280px;
+    }
+    
+    .holo-action-links {
+        flex-direction: column;
+    }
+}
