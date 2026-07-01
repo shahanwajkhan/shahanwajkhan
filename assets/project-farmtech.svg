@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140" width="100%" height="140">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&amp;family=Fira+Code:wght@500&amp;display=swap');
+    /* Clean fallback fonts so no external imports are needed */
     .card {
       fill: #0D1117;
       stroke: #21262D;
@@ -13,7 +13,7 @@
       filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.25));
     }
     .title {
-      font-family: 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       font-weight: 700;
       font-size: 19px;
       fill: #C9D1D9;
@@ -23,7 +23,7 @@
       fill: #10B981;
     }
     .desc {
-      font-family: 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-size: 13px;
       fill: #8B949E;
     }
@@ -34,7 +34,7 @@
       transition: all 0.3s ease;
     }
     .btn-text {
-      font-family: 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-weight: 600;
       font-size: 12px;
       fill: #8B949E;
@@ -83,7 +83,7 @@
       transition: all 0.3s ease;
     }
     .badge-text {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Fira Code', 'Courier New', Courier, monospace;
       font-size: 11px;
       transition: all 0.3s ease;
     }

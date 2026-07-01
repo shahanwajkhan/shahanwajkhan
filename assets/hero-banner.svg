@@ -1,16 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;family=Fira+Code:wght@500&amp;display=swap');
-    
     .title {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
       font-weight: 800;
       font-size: 42px;
       fill: url(#text-grad);
       letter-spacing: 2px;
     }
     .subtitle {
-      font-family: 'Fira Code', monospace;
+      font-family: "Courier New", Courier, monospace;
       font-weight: 500;
       font-size: 18px;
       fill: #8B949E;
