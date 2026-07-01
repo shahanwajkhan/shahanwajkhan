@@ -1,13 +1,12 @@
 <!-- Hero Section -->
-<div align="center">
-  <h1>Hi 👋, I'm <span style="color:#58A6FF;">Shahanwaj Khan</span></h1>
-  <h3>🚀 Full Stack Developer | 🤖 AI Engineer | ☁️ Cloud Practitioner</h3>
-  <p align="center">
-    <strong>Building intelligent, scalable web applications that bridge the gap between AI and traditional software.</strong>
-  </p>
-</div>
+<p align="center">
+  <img src="assets/hero-banner.svg" width="100%" alt="Shahanwaj Khan Banner" />
+</p>
 
-<br/>
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Full+Stack+Developer;AI+Engineer;Cloud+Practitioner;Building+intelligent+solutions" alt="Typing SVG" />
+</p>
+
 
 <!-- AI Status Dashboard -->
 <blockquote>
@@ -38,7 +37,7 @@
   </table>
 </blockquote>
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 🚀 About Me
 
@@ -52,7 +51,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   - Designing custom AI agents and agentic workflows.
 - 🎯 **The Goal**: To build high-impact, scalable SaaS and AI products used by millions worldwide.
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### ⚡ Tech Stack
 
@@ -106,7 +105,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   <img src="https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white" alt="XAMPP" />
 </p>
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 📚 Core Fundamentals
 
@@ -117,7 +116,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 - ✔ **Authentication, Authorization & Role-Based Access Control (RBAC)**
 - ✔ **Socket Programming & Real-time Web Communication**
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 🌟 Featured Projects
 
@@ -191,7 +190,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 - **Features**: Smooth animations, fully responsive grid, performance-optimized load times, and dynamic asset management.
 - **Tech Stack**: `React.js` • `Tailwind CSS` • `Framer Motion` • [Live Demo](https://my-portfolio-omega-umber-92.vercel.app)
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 📜 Certifications & Achievements
 
@@ -208,7 +207,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 - 🎤 **Student Volunteer** organizing technical community events.
 - 💻 Built and deployed **multiple full-stack web applications**.
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 📊 Currently Working On & 2026 Goals
 
@@ -240,7 +239,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   </tr>
 </table>
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 📊 GitHub Analytics
 <p align="center">
@@ -248,7 +247,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shahanwajkhan&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" height="190" />
 </p>
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 🌍 Connect With Me
 
@@ -270,7 +269,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   </a>
 </p>
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 ### 💭 Developer Quote
 ```javascript
@@ -287,7 +286,7 @@ while (status !== "success") {
 - 🚀 Turning complex ideas into user-centric digital products is my jam.
 - 🌍 Always reading up on the latest advances in LLMs and agentic workflows.
 
----
+<p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
 <div align="center">
   <p>⭐ Thanks for visiting my profile! If you like my work, feel free to leave a ⭐ on my repositories.</p>

@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;family=Fira+Code:wght@500&amp;display=swap');
+    
+    .title {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      fill: url(#text-grad);
+      letter-spacing: 2px;
+    }
+    .subtitle {
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+      font-size: 18px;
+      fill: #8B949E;
+    }
+    .glow {
+      animation: pulse 4s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; filter: drop-shadow(0 0 2px #58A6FF); }
+      100% { opacity: 1; filter: drop-shadow(0 0 10px #BC34FA); }
+    }
+    .node-group {
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    .pulse-ring {
+      animation: ripple 3s linear infinite;
+      transform-origin: 150px 80px;
+    }
+    @keyframes ripple {
+      0% { r: 4px; opacity: 1; }
+      100% { r: 24px; opacity: 0; }
+    }
+    
+    /* Flowing background line animation */
+    .flow-line {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: flow 10s linear infinite;
+    }
+    @keyframes flow {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+  <defs>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58A6FF" />
+      <stop offset="50%" stop-color="#BC34FA" />
+      <stop offset="100%" stop-color="#FF7B72" />
+    </linearGradient>
+    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#BC34FA" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#FF7B72" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#BC34FA" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Grid Effect -->
+  <rect width="800" height="200" fill="#0D1117" rx="8" />
+  <g stroke="#21262D" stroke-width="0.75" stroke-dasharray="2 4">
+    <line x1="100" y1="0" x2="100" y2="200" />
+    <line x1="200" y1="0" x2="200" y2="200" />
+    <line x1="300" y1="0" x2="300" y2="200" />
+    <line x1="400" y1="0" x2="400" y2="200" />
+    <line x1="500" y1="0" x2="500" y2="200" />
+    <line x1="600" y1="0" x2="600" y2="200" />
+    <line x1="700" y1="0" x2="700" y2="200" />
+    
+    <line x1="0" y1="50" x2="800" y2="50" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+  </g>
+  
+  <!-- Flowing Connection Line -->
+  <path class="flow-line" d="M 50 100 Q 200 40 400 130 T 750 100" fill="none" stroke="url(#line-grad)" stroke-width="3" />
+  
+  <!-- Animated Node Network (AI Vibe) -->
+  <g class="node-group">
+    <!-- Pulse Effect -->
+    <circle cx="150" cy="80" r="10" fill="none" stroke="#58A6FF" stroke-width="1" class="pulse-ring" />
+    <circle cx="150" cy="80" r="5" fill="#58A6FF" class="glow" />
+    
+    <circle cx="650" cy="120" r="6" fill="#BC34FA" class="glow" />
+    <circle cx="650" cy="120" r="15" fill="none" stroke="#BC34FA" stroke-width="0.5" opacity="0.5" />
+    
+    <circle cx="700" cy="60" r="4" fill="#FF7B72" class="glow" />
+    
+    <!-- Connectors -->
+    <line x1="150" y1="80" x2="250" y2="110" stroke="#30363D" stroke-width="1.5" />
+    <line x1="650" y1="120" x2="700" y2="60" stroke="#30363D" stroke-width="1.5" />
+  </g>
+  
+  <!-- Title & Subtitle -->
+  <text x="50%" y="95" text-anchor="middle" class="title" filter="url(#shadow)">SHAHANWAJ KHAN</text>
+  <text x="50%" y="135" text-anchor="middle" class="subtitle">AI Engineer &amp; Full Stack Developer</text>
+</svg>
