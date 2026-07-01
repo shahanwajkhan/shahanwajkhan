@@ -1,35 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
   <style>
-    /* Seamless Grid Movement */
-    .grid-moving {
-      animation: grid-move 14s linear infinite;
-    }
-    @keyframes grid-move {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(40px, 40px); }
-    }
-
-    /* Ambient Nebula Glow Breathing */
-    .ambient-glow {
-      animation: breathe 8s ease-in-out infinite alternate;
-    }
-    .glow-cyan-nebula { fill: #00F2FE; animation-duration: 6s; }
-    .glow-purple-nebula { fill: #BC34FA; animation-duration: 9s; }
-    .glow-coral-nebula { fill: #FF7B72; animation-duration: 7.5s; }
-
-    @keyframes breathe {
-      0% { opacity: 0.12; }
-      100% { opacity: 0.32; }
-    }
-
-    /* Rotating Cyber Core */
+    /* Cyber Core Rotations */
     .rotate-cw {
       animation: rot-cw 25s linear infinite;
-      transform-origin: 400px 100px;
+      transform-origin: 400px 95px;
     }
     .rotate-ccw {
       animation: rot-ccw 30s linear infinite;
-      transform-origin: 400px 100px;
+      transform-origin: 400px 95px;
     }
     @keyframes rot-cw {
       from { transform: rotate(0deg); }
@@ -40,7 +18,7 @@
       to { transform: rotate(0deg); }
     }
 
-    /* Realistic Neon Stacked Title Animations */
+    /* Realistic Neon Stacked Title (Hot-Core Glow) */
     .title-glow-layer {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       font-weight: 800;
@@ -61,7 +39,7 @@
     }
     
     @keyframes neon-pulse {
-      0% { opacity: 0.55; }
+      0% { opacity: 0.6; }
       100% { opacity: 0.95; }
     }
 
@@ -72,11 +50,11 @@
       }
       95% {
         transform: translate(-2px, 1px);
-        filter: drop-shadow(-2px 0 #00F2FE) drop-shadow(2px 0 #FF7B72);
+        filter: drop-shadow(-2.5px 0 #00F2FE) drop-shadow(2.5px 0 #FF7B72);
       }
       96% {
         transform: translate(2px, -1px);
-        filter: drop-shadow(-2px 0 #FF7B72) drop-shadow(2px 0 #00F2FE);
+        filter: drop-shadow(-2.5px 0 #FF7B72) drop-shadow(2.5px 0 #00F2FE);
       }
       97% {
         transform: translate(-1px, -2px);
@@ -112,11 +90,11 @@
     /* Orbiting Systems */
     .revolve-left {
       animation: rotate-left 10s linear infinite;
-      transform-origin: 80px 100px;
+      transform-origin: 80px 95px;
     }
     .revolve-right {
       animation: rotate-right 14s linear infinite;
-      transform-origin: 720px 100px;
+      transform-origin: 720px 95px;
     }
     @keyframes rotate-left {
       from { transform: rotate(0deg); }
@@ -127,9 +105,9 @@
       to { transform: rotate(0deg); }
     }
 
-    /* Holographic Scanline */
+    /* Holographic Scanline Overlay */
     .scanline {
-      animation: scan 4s linear infinite;
+      animation: scan 4.5s linear infinite;
     }
     @keyframes scan {
       0% { transform: translateY(-10px); }
@@ -187,58 +165,64 @@
       100% { stroke-dashoffset: -300; opacity: 0; }
     }
 
-    /* Glowing Styles */
-    .glow-cyan-elem { filter: drop-shadow(0 0 6px #00F2FE); }
-    .glow-purple-elem { filter: drop-shadow(0 0 6px #BC34FA); }
-
-    /* Flowing Pathway Data Line */
-    .connection-flow {
-      stroke-dasharray: 20, 80;
-      animation: flow-data 4.5s linear infinite;
+    /* Ambient Nebula Glows */
+    .ambient-glow {
+      animation: breathe-glow 8s ease-in-out infinite alternate;
     }
-    @keyframes flow-data {
-      to { stroke-dashoffset: -200; }
+    .glow-cyan-nebula { fill: #00F2FE; animation-duration: 7s; }
+    .glow-purple-nebula { fill: #BC34FA; animation-duration: 10s; }
+    .glow-coral-nebula { fill: #FF7B72; animation-duration: 8s; }
+    @keyframes breathe-glow {
+      0% { opacity: 0.15; }
+      100% { opacity: 0.38; }
     }
   </style>
   <defs>
-    <!-- Gaussian Blur Filters for Soft Background Nebula -->
+    <!-- Gaussian Blur Filters -->
     <filter id="blur-nebula">
-      <feGaussianBlur stdDeviation="28" />
+      <feGaussianBlur stdDeviation="32" />
     </filter>
     <filter id="blur-reflection">
-      <feGaussianBlur stdDeviation="18" />
+      <feGaussianBlur stdDeviation="20" />
     </filter>
     <filter id="neon-blur-heavy">
-      <feGaussianBlur stdDeviation="7" />
+      <feGaussianBlur stdDeviation="8" />
     </filter>
-    <filter id="bokeh-blur">
+    <filter id="neon-blur-light">
       <feGaussianBlur stdDeviation="3" />
     </filter>
+    <filter id="bokeh-blur">
+      <feGaussianBlur stdDeviation="4" />
+    </filter>
 
-    <!-- Seamless Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#141922" stroke-width="0.75" />
-      <circle cx="40" cy="40" r="1.2" fill="#58A6FF" opacity="0.2" />
-    </pattern>
-
-    <!-- Animated Shifting Gradient for Text/Background Elements -->
-    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#58A6FF">
-        <animate attributeName="stop-color" values="#58A6FF;#BC34FA;#FF7B72;#58A6FF" dur="8s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="50%" stop-color="#BC34FA">
-        <animate attributeName="stop-color" values="#BC34FA;#FF7B72;#58A6FF;#BC34FA" dur="8s" repeatCount="indefinite" />
-      </stop>
-      <stop offset="100%" stop-color="#FF7B72">
-        <animate attributeName="stop-color" values="#FF7B72;#58A6FF;#BC34FA;#FF7B72" dur="8s" repeatCount="indefinite" />
-      </stop>
+    <!-- Fading 3D Perspective Grid Gradient -->
+    <linearGradient id="grid-fade" x1="0" y1="200" x2="0" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Holographic Scanline Gradient -->
-    <linearGradient id="scan-grad" x1="0" y1="0" x2="0" y2="1">
+    <!-- Horizon Glowing Gradient -->
+    <linearGradient id="horizon-grad" x1="0" y1="0" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#BC34FA" stop-opacity="0" />
-      <stop offset="50%" stop-color="#58A6FF" stop-opacity="0.22" />
+      <stop offset="30%" stop-color="#00F2FE" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#00F2FE" stop-opacity="0.6" />
       <stop offset="100%" stop-color="#BC34FA" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Cinematic Vignette Gradient -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="#07090E" stop-opacity="0" />
+      <stop offset="100%" stop-color="#020305" stop-opacity="0.9" />
+    </radialGradient>
+
+    <!-- Glass Reflection Gradient -->
+    <linearGradient id="glass-edge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0.5" />
+      <stop offset="40%" stop-color="#21262D" stop-opacity="0.1" />
+      <stop offset="60%" stop-color="#21262D" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0.5" />
     </linearGradient>
 
     <!-- Shooting Star Gradients -->
@@ -250,23 +234,24 @@
       <stop offset="0%" stop-color="#BC34FA" stop-opacity="0" />
       <stop offset="100%" stop-color="#FF7B72" stop-opacity="1" />
     </linearGradient>
+
+    <clipPath id="hud-clip">
+      <rect x="12" y="12" width="776" height="176" rx="6" />
+    </clipPath>
   </defs>
 
   <!-- Dark Base Canvas -->
-  <rect width="800" height="200" fill="#07090E" rx="8" />
+  <rect width="800" height="200" fill="#06080D" rx="8" />
 
-  <!-- Layer 1: Ambient Nebula Glowing Background (Breathing Neon) -->
+  <!-- Layer 1: Ambient Nebula Glow (Breathing Neon Gas) -->
   <g filter="url(#blur-nebula)">
-    <!-- Cyan Nebula Glow on Left -->
-    <circle cx="200" cy="100" r="100" class="ambient-glow glow-cyan-nebula" />
-    <!-- Purple Nebula Glow on Right -->
-    <circle cx="600" cy="100" r="110" class="ambient-glow glow-purple-nebula" />
-    <!-- Coral/Magenta Glow in Center-Right -->
-    <circle cx="450" cy="100" r="85" class="ambient-glow glow-coral-nebula" />
+    <circle cx="200" cy="100" r="105" class="ambient-glow glow-cyan-nebula" />
+    <circle cx="600" cy="100" r="115" class="ambient-glow glow-purple-nebula" />
+    <circle cx="450" cy="95" r="90" class="ambient-glow glow-coral-nebula" />
   </g>
 
-  <!-- Layer 2: Moving Reflection Light Beams (Reflection Sweeps) -->
-  <g filter="url(#blur-reflection)" opacity="0.3">
+  <!-- Layer 2: Moving Reflection Light Beams (Ambient Sweeps) -->
+  <g filter="url(#blur-reflection)" opacity="0.32">
     <line x1="-150" y1="0" x2="50" y2="200" stroke="#00F2FE" stroke-width="40">
       <animate attributeName="x1" values="-300;900" dur="14s" repeatCount="indefinite" />
       <animate attributeName="x2" values="-100;1100" dur="14s" repeatCount="indefinite" />
@@ -277,22 +262,46 @@
     </line>
   </g>
 
-  <!-- Layer 3: Moving Grid Pattern Overlay -->
-  <g>
-    <rect width="840" height="240" fill="url(#grid)" class="grid-moving" x="-40" y="-40" opacity="0.85" />
+  <!-- Layer 3: 3D Cyberspace Perspective Grid Floor -->
+  <g stroke="url(#grid-fade)" stroke-width="0.75" opacity="0.9">
+    <!-- Horizon Line Glow -->
+    <line x1="0" y1="110" x2="800" y2="110" stroke="url(#horizon-grad)" stroke-width="2.5" />
+    <line x1="0" y1="110" x2="800" y2="110" stroke="#FFFFFF" stroke-width="0.75" opacity="0.5" />
+
+    <!-- Perspective Longitudinal Lines -->
+    <line x1="400" y1="110" x2="-200" y2="200" />
+    <line x1="400" y1="110" x2="0" y2="200" />
+    <line x1="400" y1="110" x2="150" y2="200" />
+    <line x1="400" y1="110" x2="280" y2="200" />
+    <line x1="400" y1="110" x2="400" y2="200" />
+    <line x1="400" y1="110" x2="520" y2="200" />
+    <line x1="400" y1="110" x2="650" y2="200" />
+    <line x1="400" y1="110" x2="800" y2="200" />
+    <line x1="400" y1="110" x2="1000" y2="200" />
+
+    <line x1="400" y1="110" x2="-200" y2="155" />
+    <line x1="400" y1="110" x2="-200" y2="125" />
+    <line x1="400" y1="110" x2="1000" y2="155" />
+    <line x1="400" y1="110" x2="1000" y2="125" />
+
+    <!-- Perspective Latitudinal Lines -->
+    <line x1="0" y1="114" x2="800" y2="114" />
+    <line x1="0" y1="120" x2="800" y2="120" />
+    <line x1="0" y1="129" x2="800" y2="129" />
+    <line x1="0" y1="143" x2="800" y2="143" />
+    <line x1="0" y1="164" x2="800" y2="164" />
+    <line x1="0" y1="195" x2="800" y2="195" />
   </g>
 
   <!-- Layer 4: HUD Radar concentric targets (Left and Right Background) -->
-  <g opacity="0.16">
-    <!-- Left Radar Target -->
-    <g transform="translate(80, 100)">
+  <g opacity="0.18">
+    <g transform="translate(80, 95)">
       <circle r="45" fill="none" stroke="#58A6FF" stroke-width="0.5" />
       <circle r="60" fill="none" stroke="#58A6FF" stroke-width="0.75" stroke-dasharray="4 6" />
       <line x1="-75" y1="0" x2="75" y2="0" stroke="#58A6FF" stroke-width="0.5" />
       <line x1="0" y1="-75" x2="0" y2="75" stroke="#58A6FF" stroke-width="0.5" />
     </g>
-    <!-- Right Radar Target -->
-    <g transform="translate(720, 100)">
+    <g transform="translate(720, 95)">
       <circle r="45" fill="none" stroke="#BC34FA" stroke-width="0.5" />
       <circle r="60" fill="none" stroke="#BC34FA" stroke-width="0.75" stroke-dasharray="4 6" />
       <line x1="-75" y1="0" x2="75" y2="0" stroke="#BC34FA" stroke-width="0.5" />
@@ -302,24 +311,24 @@
 
   <!-- Cyber Core Containment Rings (Central Background Animation) -->
   <g opacity="0.22">
-    <circle cx="400" cy="100" r="60" fill="none" stroke="#58A6FF" stroke-width="1.2" stroke-dasharray="10 20" class="rotate-cw" />
-    <circle cx="400" cy="100" r="75" fill="none" stroke="#BC34FA" stroke-width="1.8" stroke-dasharray="40 40" class="rotate-ccw" />
-    <circle cx="400" cy="100" r="90" fill="none" stroke="#00F2FE" stroke-width="0.75" stroke-dasharray="4 8" class="rotate-cw" />
+    <circle cx="400" cy="95" r="60" fill="none" stroke="#58A6FF" stroke-width="1.2" stroke-dasharray="10 20" class="rotate-cw" />
+    <circle cx="400" cy="95" r="75" fill="none" stroke="#BC34FA" stroke-width="1.8" stroke-dasharray="40 40" class="rotate-ccw" />
+    <circle cx="400" cy="95" r="90" fill="none" stroke="#00F2FE" stroke-width="0.75" stroke-dasharray="4 8" class="rotate-cw" />
   </g>
 
   <!-- Binary Data Streams (Scrolling Background Elements) -->
-  <g opacity="0.12" fill="#58A6FF" font-family="monospace" font-size="9">
+  <g opacity="0.14" fill="#58A6FF" font-family="monospace" font-size="9">
     <text x="170" y="0">101011<animate attributeName="y" values="-50;250" dur="11s" repeatCount="indefinite" /></text>
     <text x="290" y="0">011010<animate attributeName="y" values="-50;250" dur="8s" repeatCount="indefinite" /></text>
     <text x="510" y="0">110101<animate attributeName="y" values="-50;250" dur="14s" repeatCount="indefinite" /></text>
     <text x="630" y="0">001110<animate attributeName="y" values="-50;250" dur="9s" repeatCount="indefinite" /></text>
   </g>
 
-  <!-- Shooting Stars (Fast Foreground Elements) -->
+  <!-- Shooting Stars -->
   <path d="M 100 -50 L 300 150" class="shooting-star s1" />
   <path d="M 500 -50 L 700 150" class="shooting-star s2" />
 
-  <!-- Floating Particles & Bokeh (Depth of Field Layer) -->
+  <!-- Floating Particles & Bokeh (Camera Depth) -->
   <g>
     <!-- Soft Blurred Bokeh Circles -->
     <g filter="url(#bokeh-blur)">
@@ -334,30 +343,46 @@
     <circle cx="580" cy="35" r="2" fill="#58A6FF" class="particle p4" />
   </g>
 
-  <!-- Data Flow Pathway (Behind Text) -->
-  <g opacity="0.38">
-    <path d="M 60 100 Q 230 30 400 100 T 740 100" fill="none" stroke="#1F2633" stroke-width="1.5" />
-    <path d="M 60 100 Q 230 30 400 100 T 740 100" fill="none" stroke="url(#star-grad-1)" stroke-width="1.5" class="connection-flow" />
+  <!-- Data Flow Pathway (Triple Neon Stacked Line) -->
+  <g>
+    <!-- Layer 1: Wide neon blur glow -->
+    <path d="M 60 95 Q 230 25 400 95 T 740 95" fill="none" stroke="#00F2FE" stroke-width="8" opacity="0.12" filter="url(#neon-blur-heavy)" />
+    <!-- Layer 2: Core neon color -->
+    <path d="M 60 95 Q 230 25 400 95 T 740 95" fill="none" stroke="#00F2FE" stroke-width="2.5" opacity="0.4" />
+    <!-- Layer 3: Blazing white packet flow -->
+    <path d="M 60 95 Q 230 25 400 95 T 740 95" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8" class="connection-flow" />
   </g>
 
-  <!-- Left Orbit System -->
+  <!-- Left Orbit System (Triple Neon Stacked Circles) -->
   <g>
-    <circle cx="80" cy="100" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
+    <!-- Orbit Track -->
+    <circle cx="80" cy="95" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
+    <!-- Revolving Node -->
     <g class="revolve-left">
-      <circle cx="110" cy="100" r="5" fill="#00F2FE" class="glow-cyan-elem" />
-      <circle cx="110" cy="100" r="10" fill="none" stroke="#00F2FE" stroke-width="0.5" opacity="0.4" class="glow-cyan-elem" />
+      <!-- Glow under-layer -->
+      <circle cx="110" cy="95" r="8" fill="#00F2FE" opacity="0.4" filter="url(#neon-blur-light)" />
+      <!-- Solid neon node -->
+      <circle cx="110" cy="95" r="5.5" fill="#00F2FE" />
+      <!-- Core hot spot -->
+      <circle cx="110" cy="95" r="2.2" fill="#FFFFFF" />
     </g>
-    <circle cx="80" cy="100" r="3" fill="#58A6FF" />
+    <circle cx="80" cy="95" r="3" fill="#58A6FF" />
   </g>
 
-  <!-- Right Orbit System -->
+  <!-- Right Orbit System (Triple Neon Stacked Circles) -->
   <g>
-    <circle cx="720" cy="100" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
+    <!-- Orbit Track -->
+    <circle cx="720" cy="95" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
+    <!-- Revolving Node -->
     <g class="revolve-right">
-      <circle cx="750" cy="100" r="5" fill="#BC34FA" class="glow-purple-elem" />
-      <circle cx="750" cy="100" r="10" fill="none" stroke="#BC34FA" stroke-width="0.5" opacity="0.4" class="glow-purple-elem" />
+      <!-- Glow under-layer -->
+      <circle cx="750" cy="95" r="8" fill="#BC34FA" opacity="0.4" filter="url(#neon-blur-light)" />
+      <!-- Solid neon node -->
+      <circle cx="750" cy="95" r="5.5" fill="#BC34FA" />
+      <!-- Core hot spot -->
+      <circle cx="750" cy="95" r="2.2" fill="#FFFFFF" />
     </g>
-    <circle cx="720" cy="100" r="3" fill="#FF7B72" />
+    <circle cx="720" cy="95" r="3" fill="#FF7B72" />
   </g>
 
   <!-- HUD Soundwave / Equalizer Pulse (Bottom Center) -->
@@ -378,21 +403,23 @@
     <rect x="78" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;15;3" dur="1.4s" repeatCount="indefinite" /></rect>
   </g>
 
-  <!-- HUD Outer Frame Overlay -->
+  <!-- Cinematic Vignette Shade (Darkens corners, focuses center neon) -->
+  <rect width="800" height="200" fill="url(#vignette)" pointer-events="none" />
+
+  <!-- HUD Container Border & Corner Brackets -->
   <g>
-    <!-- Border Box (Glowing) -->
-    <rect x="12" y="12" width="776" height="176" fill="none" stroke="#21262D" stroke-width="1" />
-    <rect x="12" y="12" width="776" height="176" fill="none" stroke="#58A6FF" stroke-width="1.2" opacity="0.3" class="glow-cyan-elem" />
+    <!-- Border Box with Gloss Edge -->
+    <rect x="12" y="12" width="776" height="176" fill="none" stroke="url(#glass-edge-grad)" stroke-width="1.5" rx="6" />
     
     <!-- HUD Text Indicators -->
     <text x="25" y="27" class="hud-text">SYS_STATUS: ACTIVE</text>
     <text x="25" y="182" class="hud-text">COGNITIVE_LAYER: ONLINE</text>
     <text x="690" y="27" class="hud-text">SYNC: 100%</text>
-    <text x="690" y="182" class="hud-text">GRID_MODE: AUTO</text>
+    <text x="690" y="182" class="hud-text">GRID_MODE: 3D_FLOOR</text>
 
     <!-- Glowing Corner Brackets -->
-    <path d="M 12 32 L 12 12 L 32 12" fill="none" stroke="#58A6FF" stroke-width="2" class="glow-cyan-elem" />
-    <path d="M 788 32 L 788 12 L 768 12" fill="none" stroke="#58A6FF" stroke-width="2" class="glow-cyan-elem" />
+    <path d="M 12 32 L 12 12 L 32 12" fill="none" stroke="#00F2FE" stroke-width="2" class="glow-cyan-elem" />
+    <path d="M 788 32 L 788 12 L 768 12" fill="none" stroke="#00F2FE" stroke-width="2" class="glow-cyan-elem" />
     <path d="M 12 168 L 12 188 L 32 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple-elem" />
     <path d="M 788 168 L 788 188 L 768 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple-elem" />
 
@@ -401,15 +428,21 @@
     <circle cx="680" cy="24" r="2.5" fill="#00F2FE" class="hud-blink" />
   </g>
 
-  <!-- Central Title Text Stack (Realistic Neon Light Glow) -->
+  <!-- Diagonal Gloss Reflection (Glassmorphic Sheen) -->
+  <g clip-path="url(#hud-clip)">
+    <polygon points="0,0 240,0 60,-240" fill="#FFFFFF" opacity="0.04" />
+    <polygon points="350,-240 600,0 800,0 800,-240" fill="#FFFFFF" opacity="0.02" />
+  </g>
+
+  <!-- Central Title Text Stack (Hot-Core Neon Tube Glow) -->
   <g>
-    <!-- Deep Blurred Underlayer (Emits the Neon Gas Glow) -->
-    <text x="50%" y="95" text-anchor="middle" class="title-glow-layer">SHAHANWAJ KHAN</text>
-    <!-- Sharp Hot-Core Toplayer -->
-    <text x="50%" y="95" text-anchor="middle" class="title-main-layer">SHAHANWAJ KHAN</text>
+    <!-- Underlayer: Neon Gas Aura -->
+    <text x="50%" y="90" text-anchor="middle" class="title-glow-layer">SHAHANWAJ KHAN</text>
+    <!-- Toplayer: Sharp White Hot Core -->
+    <text x="50%" y="90" text-anchor="middle" class="title-main-layer">SHAHANWAJ KHAN</text>
   </g>
   
-  <text x="50%" y="135" text-anchor="middle" class="subtitle-text">AI Engineer &amp; Full Stack Developer</text>
+  <text x="50%" y="130" text-anchor="middle" class="subtitle-text">AI Engineer &amp; Full Stack Developer</text>
 
   <!-- Holographic Scanline Overlay -->
   <rect width="800" height="6" fill="url(#scan-grad)" class="scanline" opacity="0.65" />
