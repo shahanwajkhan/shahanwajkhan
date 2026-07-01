@@ -10,7 +10,7 @@
 
 <!-- AI Status Dashboard -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/status-dashboard.svg?v=1" width="100%" alt="AI System Status" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/status-dashboard.svg?v=2" width="100%" alt="AI System Status" />
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
@@ -185,7 +185,7 @@ I am a Computer Science Engineering student specializing in building intelligent
     <td>
       <ul>
         <li>[ ] ✅ 500+ GitHub contributions</li>
-        <li>[ ] ✅ 300+ DSA problems solved</li>
+        <li>[ ] ✅ 150+ DSA problems solved</li>
         <li>[ ] ✅ Core Open Source Contributor</li>
         <li>[ ] ✅ Full-Stack / AI Dev Internship</li>
         <li>[ ] ✅ AWS Solutions Architect Associate</li>
