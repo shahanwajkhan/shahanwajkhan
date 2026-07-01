@@ -121,20 +121,68 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 ### 🌟 Featured Projects
 
-#### 🎓 [University Management System](https://github.com/shahanwajkhan)
+#### 🎓 [University Management System](https://github.com/shahanwajkhan/University-Management-System)
 > *A comprehensive, role-based platform streamlining academic and administrative workflows.*
 - **Features**: Dedicated portals for Admin, Faculty, and Students. Features include real-time attendance management, automatic timetable generator, study material distribution, placement portal, and fees management.
 - **Tech Stack**: `Django` • `SQLite` • `HTML5` • `CSS3` • `Bootstrap`
 
-#### 🏏 [Cricket Management System](https://github.com/shahanwajkhan)
+#### 🏏 [Cricket Management System](https://github.com/shahanwajkhan/Cricket-Management-System)
 > *A full-featured sports platform designed for real-time match coordination and analytics.*
 - **Features**: Seamless team management, match scheduling engine, tournament dashboards, and interactive live chat powered by web sockets.
 - **Tech Stack**: `React` • `Node.js` • `Express` • `MongoDB` • `Socket.io`
 
-#### 🤖 [DevOrbit AI Chatbot](https://github.com/shahanwajkhan)
+#### 🤖 [DevOrbit AI Chatbot](https://github.com/shahanwajkhan/Dev_Orbit)
 > *An intelligent virtual learning assistant tailored to academic tasks.*
 - **Features**: Instant quiz generation, customized assignment drafting, detailed course syllabus management, and intelligent prompt-based responses.
 - **Tech Stack**: `Flask` • `Python` • `Node.js` • `Gemini API` • `JavaScript`
+
+---
+
+### 📅 Project Development Timeline
+
+Here is a chronological timeline of my development path, tracking my transition from early frontend experiments to advanced AI-integrated architectures.
+
+#### 🌌 2026 (Advanced Full Stack & AI Integration)
+
+* **Jul 2026** — 🛡️ [**SkillGuard AI (AI-Based Skill Assessment & Recruitment System)**](https://github.com/shahanwajkhan/AI-Based-Skill-Assessment-Recruitment-System)
+  * *An AI-powered recruitment engine that conducts tests, scores dynamically, and generates candidate analysis reports.*
+  * 🛠 `JavaScript` • `Node.js` • `Generative AI` • `Web Dashboards`
+* **Jun 2026** — 🛍️ [**Saree Palace (Luxury E-commerce Boutique)**](https://github.com/shahanwajkhan/Saree-Palace)
+  * *An elegant luxury handloom storefront featuring Patron Loyalty Portal, OTP verification, dynamic filtering, and a sliding cart drawer.*
+  * 🛠 `Vanilla ES6 JS` • `HTML5` • `CSS3`
+* **May 2026** — 🌾 [**FarmTech MIS (Smart Agriculture Platform)**](https://github.com/shahanwajkhan/FarmTech-MIS)
+  * *Smart farming management system with crop advisory, yield prediction, inventory tracking, and AI scheme recommendations.*
+  * 🛠 `Laravel` • `MongoDB` • `Tailwind CSS` • `REST APIs`
+* **Apr 2026** — 💳 [**FinSight (Modern Financial Dashboard)**](https://github.com/shahanwajkhan/FinSight)
+  * *A personal finance app tracking transactions, income, and expenses with interactive charts, roles, and local simulation.*
+  * 🛠 `React` • `Tailwind CSS` • `ChartJS`
+* **Mar 2026** — 💼 [**My Portfolio (Developer Showcase)**](https://github.com/shahanwajkhan/My-Portfolio)
+  * *A responsive, animated portfolio site demonstrating full-stack projects, certifications, and technical proficiencies.*
+  * 🛠 `React` • `Tailwind CSS` • `Modern UI/UX`
+* **Feb 2026** — 🎓 [**University Management System (UMS)**](https://github.com/shahanwajkhan/University-Management-System)
+  * *A digitized portal running academic workflows, student files, course registration, and admin controls.*
+  * 🛠 `Django` • `SQLite` • `HTML` • `Bootstrap`
+* **Feb 2026** — 🤖 [**DevOrbit (AI Chatbot & Learning Companion)**](https://github.com/shahanwajkhan/Dev_Orbit)
+  * *An AI educational helper providing assignment draft generators, daily quizzes, and Gemini API integration.*
+  * 🛠 `Flask` • `Python` • `Node.js` • `Gemini API`
+
+#### ⚡ 2025 (Foundational Web & Algorithms)
+
+* **Dec 2025** — 🏏 [**Cricket Management System**](https://github.com/shahanwajkhan/Cricket-Management-System)
+  * *Full-stack tournament board mapping teams, fixture schedulers, and live Socket.io conversations.*
+  * 🛠 `React` • `Node.js` • `Express.js` • `MongoDB` • `Socket.io`
+* **Nov 2025** — 🧠 [**AI Tutor Hub Chatbot**](https://github.com/shahanwajkhan/AI-Tutor-Hub-Chatbot)
+  * *Web tutor chatbot letting students ask academic queries and request code snippets in a structured interface.*
+  * 🛠 `Flask` • `Django` • `Python` • `JavaScript`
+* **Nov 2025** — 📝 [**Student Report Card System**](https://github.com/shahanwajkhan/Student-Report-Card-System)
+  * *Console-based helper utility to index, save, search, and parse academic report card records.*
+  * 🛠 `C++` • `Java` • `File I/O`
+* **Apr 2025** — 🃏 [**AI Flashcard Generator**](https://github.com/shahanwajkhan/AI-Flashcard-Generator)
+  * *A lightweight micro-tool converting reading texts into visually study-friendly interactive cards.*
+  * 🛠 `JavaScript` • `HTML5` • `CSS3`
+* **Apr 2025** — 🚦 [**Traffic Management System**](https://github.com/shahanwajkhan/Traffic-Management-System)
+  * *Interactive portal demonstrating mock traffic signal control flows and scheduling rules.*
+  * 🛠 `HTML5` • `CSS3` • `JavaScript`
 
 ---
 
