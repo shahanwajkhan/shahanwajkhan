@@ -223,8 +223,8 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 ### 📊 GitHub Analytics
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=shahanwajkhan&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;count_private=true" alt="Shahanwaj's GitHub Stats" height="190" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shahanwajkhan&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" alt="Top Languages" height="190" />
+  <img src="https://github-stats-extended.vercel.app/api?username=shahanwajkhan&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;count_private=true" alt="Shahanwaj's GitHub Stats" height="190" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=shahanwajkhan&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" alt="Top Languages" height="190" />
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
