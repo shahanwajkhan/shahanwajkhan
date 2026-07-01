@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140" width="100%" height="140">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&amp;family=Fira+Code:wght@500&amp;display=swap');
+    .card {
+      fill: #0D1117;
+      stroke: #21262D;
+      stroke-width: 1.5;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      fill: #161B22;
+      stroke: url(#glow-grad);
+      filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.25));
+    }
+    .title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      fill: #C9D1D9;
+      transition: fill 0.3s ease;
+    }
+    .card:hover .title {
+      fill: #a78bfa;
+    }
+    .desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      fill: #8B949E;
+    }
+    .badge {
+      font-family: 'Fira Code', monospace;
+      font-size: 11px;
+      fill: #8B949E;
+      transition: fill 0.3s ease;
+    }
+    .badge-bg {
+      fill: #161B22;
+      stroke: #30363D;
+      stroke-width: 1;
+      transition: all 0.3s ease;
+    }
+    .card:hover .badge-bg {
+      stroke: #a78bfa;
+      fill: #221a30;
+    }
+    .card:hover .badge {
+      fill: #E6EDF0;
+    }
+    .btn {
+      fill: #21262D;
+      stroke: #30363D;
+      stroke-width: 1;
+      transition: all 0.3s ease;
+    }
+    .btn-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      fill: #8B949E;
+      transition: all 0.3s ease;
+    }
+    .card:hover .btn {
+      fill: #8B5CF6;
+      stroke: #8B5CF6;
+    }
+    .card:hover .btn-text {
+      fill: #0D1117;
+    }
+    .icon-container {
+      transition: transform 0.5s ease;
+      transform-origin: 40px 70px;
+    }
+    .card:hover .icon-container {
+      transform: scale(1.15) rotate(12deg);
+    }
+    .icon-bot {
+      fill: none;
+      stroke: #a78bfa;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      transition: stroke 0.3s ease;
+    }
+    .card:hover .icon-bot {
+      stroke: #a78bfa;
+      filter: drop-shadow(0 0 3px #a78bfa);
+    }
+  </style>
+  <defs>
+    <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+  
+  <rect class="card" x="2" y="2" width="796" height="136" rx="8" />
+  
+  <!-- Icon Wrapper -->
+  <g class="icon-container">
+    <circle cx="40" cy="70" r="22" fill="#161B22" stroke="#30363D" stroke-width="1" />
+    <rect class="icon-bot" x="30" y="60" width="20" height="15" rx="2" />
+    <circle cx="36" cy="67" r="1.5" fill="#a78bfa" />
+    <circle cx="44" cy="67" r="1.5" fill="#a78bfa" />
+    <path class="icon-bot" d="M35 71 L45 71 M40 60 L40 56 M38 56 L42 56" />
+  </g>
+  
+  <!-- Content -->
+  <text x="80" y="42" class="title">🧠 AI Tutor Hub Chatbot</text>
+  <text x="80" y="65" class="desc">Intelligent web tutoring bot enabling interactive concept queries and study support.</text>
+  
+  <!-- Tech Stack Badges -->
+  <g transform="translate(80, 85)">
+    <!-- Badge 1 -->
+    <rect x="0" y="0" width="75" height="22" rx="4" class="badge-bg" />
+    <text x="37.5" y="15" text-anchor="middle" class="badge">Python</text>
+    
+    <!-- Badge 2 -->
+    <rect x="83" y="0" width="70" height="22" rx="4" class="badge-bg" />
+    <text x="118" y="15" text-anchor="middle" class="badge">Flask</text>
+    
+    <!-- Badge 3 -->
+    <rect x="161" y="0" width="70" height="22" rx="4" class="badge-bg" />
+    <text x="196" y="15" text-anchor="middle" class="badge">Django</text>
+    
+    <!-- Badge 4 -->
+    <rect x="239" y="0" width="70" height="22" rx="4" class="badge-bg" />
+    <text x="274" y="15" text-anchor="middle" class="badge">JS ES6</text>
+  </g>
+  
+  <!-- Button "View Project" -->
+  <rect x="670" y="50" width="100" height="36" rx="18" class="btn" />
+  <text x="720" y="72" text-anchor="middle" class="btn-text">View Project ↗</text>
+</svg>

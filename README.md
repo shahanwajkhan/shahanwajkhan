@@ -120,75 +120,55 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 ### 🌟 Featured Projects
 
-#### 🤖 AI-Powered Applications
-
-##### 🛡️ [SkillGuard AI](https://github.com/shahanwajkhan/AI-Based-Skill-Assessment-Recruitment-System)
-> *An AI-powered skill assessment and recruitment platform for candidate evaluation.*
-- **Features**: Dynamic online testing engine, automated scoring, AI-driven candidate performance analysis, and interactive recruitment dashboards.
-- **Tech Stack**: `Node.js` • `React.js` • `Express.js` • `MongoDB` • `Tailwind CSS`
-
-##### 🧠 [AI Tutor Hub Chatbot](https://github.com/shahanwajkhan/AI-Tutor-Hub-Chatbot)
-> *A web-based intelligent tutoring chatbot helping students learn and practice concepts.*
-- **Features**: Conversational learning assistant interface, interactive QA engine, real-time explanation generator, and active practice modules.
-- **Tech Stack**: `Python` • `Flask` • `Django` • `HTML5` • `CSS3` • `JavaScript`
-
-##### 🤖 [DevOrbit AI Assistant](https://github.com/shahanwajkhan/Dev_Orbit)
-> *An intelligent virtual learning assistant tailored to academic tasks.*
-- **Features**: Instant quiz generation, customized assignment drafting, detailed course syllabus management, and intelligent prompt-based responses.
-- **Tech Stack**: `Flask` • `Python` • `Node.js` • `Gemini API` • `JavaScript` • [Live Demo](https://dev-orbit-drab.vercel.app)
-
-##### ⚡ [AI Flashcard Generator](https://github.com/shahanwajkhan/AI-Flashcard-Generator)
-> *An automated study assistant that generates educational flashcards using AI.*
-- **Features**: Automatic key concept extraction, custom deck creation, interactive quizzes, and spaced-repetition study aid interface.
-- **Tech Stack**: `React.js` • `Node.js` • `Express.js` • `Generative AI API` • `Tailwind CSS`
-
----
-
-#### 🌐 Full-Stack & Enterprise Systems
-
-##### 🌾 [FarmTech MIS](https://github.com/shahanwajkhan/FarmTech-MIS)
-> *A smart agriculture management platform for Farmers, Self-Help Groups (SHGs), and FPOs/FPGs.*
-- **Features**: Crop advisory engine, AI scheme recommendations, marketplace integrations, GIS farmer mapping, yield predictions, inventory, and rental services.
-- **Tech Stack**: `Laravel` • `Tailwind CSS` • `MongoDB` • `GIS APIs` • [Live Demo](https://farm-tech-mis.vercel.app)
-
-##### 🏫 [University Management System](https://github.com/shahanwajkhan/University-Management-System)
-> *A comprehensive digital platform for student, faculty, course, and campus administration.*
-- **Features**: Automated attendance, timetable generation, study material distribution, role-based portals (Admin/Faculty/Student), and placement portal.
-- **Tech Stack**: `Django` • `SQLite` • `HTML5` • `CSS3` • `Bootstrap` • [Live Demo](https://university-management-system-kappa-sepia.vercel.app)
-
-##### 🏏 [Cricket Management System](https://github.com/shahanwajkhan/Cricket-Management-System)
-> *A full-featured sports platform designed for real-time tournament coordination and live fan chat.*
-- **Features**: Match scheduling engine, real-time fan messaging with WebSockets, dynamic tournament dashboards, and administrative control.
-- **Tech Stack**: `React` • `Node.js` • `Express` • `MongoDB` • `Socket.io` • [Live Demo](https://cricket-hub-flax.vercel.app)
-
-##### 📊 [FinSight Dashboard](https://github.com/shahanwajkhan/FinSight)
-> *A modern financial tracker dashboard visualising transactions, income, and budgets.*
-- **Features**: User authentication, role-based controls, dynamic charting libraries for transaction analytics, and expense filtering.
-- **Tech Stack**: `React` • `Tailwind CSS` • `Local Storage API` • `Recharts` • [Live Demo](https://fin-sight-orcin.vercel.app)
-
----
-
-#### 🎨 Boutique Frontends & Utilities
-
-##### 🛍️ [Saree Palace Boutique](https://github.com/shahanwajkhan/Saree-Palace)
-> *An elegant, responsive luxury e-commerce storefront for artisanal sarees and silks.*
-- **Features**: Patron Loyalty Portal with phone OTP verification, dynamic filtering, real-time catalog search, and sliding cart drawers.
-- **Tech Stack**: `HTML5` • `CSS3` • `ES6 Vanilla JS` • [Live Demo](https://saree-palace-eight.vercel.app)
-
-##### 🚦 [Traffic Management System](https://github.com/shahanwajkhan/Traffic-Management-System)
-> *A collaborative digital platform for public traffic management and updates.*
-- **Features**: Clean UI dashboard, traffic alerts, reporting panel, and responsive routing map.
-- **Tech Stack**: `HTML5` • `CSS3` • `JavaScript` • [Live Demo](https://traffic-lime-rho.vercel.app)
-
-##### 📝 [Student Report Card System](https://github.com/shahanwajkhan/Student-Report-Card-System)
-> *A student academic record tracker and report card generator.*
-- **Features**: CRUD operations on student profiles, automated grade calculation, file handling for persistent records, and a neat console/web dashboard.
-- **Tech Stack**: `C++` • `Java` • `Python` • `Web Interface` • [Live Demo](https://student-report-card-system.vercel.app)
-
-##### 💻 [Modern Developer Portfolio](https://github.com/shahanwajkhan/My-Portfolio)
-> *An engaging, interactive web portfolio showcasing skills, projects, and achievements.*
-- **Features**: Smooth animations, fully responsive grid, performance-optimized load times, and dynamic asset management.
-- **Tech Stack**: `React.js` • `Tailwind CSS` • `Framer Motion` • [Live Demo](https://my-portfolio-omega-umber-92.vercel.app)
+<p align="center">
+  <a href="https://github.com/shahanwajkhan/AI-Based-Skill-Assessment-Recruitment-System" target="_blank">
+    <img src="assets/project-skillguard.svg" width="100%" alt="SkillGuard AI" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/Cricket-Management-System" target="_blank">
+    <img src="assets/project-cricket.svg" width="100%" alt="Cricket Management System" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/University-Management-System" target="_blank">
+    <img src="assets/project-university.svg" width="100%" alt="University Management System" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/FarmTech-MIS" target="_blank">
+    <img src="assets/project-farmtech.svg" width="100%" alt="FarmTech MIS" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/Saree-Palace" target="_blank">
+    <img src="assets/project-saree-palace.svg" width="100%" alt="Saree Palace Boutique" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/Dev_Orbit" target="_blank">
+    <img src="assets/project-devorbit.svg" width="100%" alt="DevOrbit AI Assistant" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/AI-Tutor-Hub-Chatbot" target="_blank">
+    <img src="assets/project-tutorhub.svg" width="100%" alt="AI Tutor Hub Chatbot" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/FinSight" target="_blank">
+    <img src="assets/project-finsight.svg" width="100%" alt="FinSight Dashboard" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/AI-Flashcard-Generator" target="_blank">
+    <img src="assets/project-flashcard.svg" width="100%" alt="AI Flashcard Generator" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/Traffic-Management-System" target="_blank">
+    <img src="assets/project-traffic.svg" width="100%" alt="Traffic Management System" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/Student-Report-Card-System" target="_blank">
+    <img src="assets/project-reportcard.svg" width="100%" alt="Student Report Card System" />
+  </a>
+  <br/><br/>
+  <a href="https://github.com/shahanwajkhan/My-Portfolio" target="_blank">
+    <img src="assets/project-portfolio.svg" width="100%" alt="Modern Developer Portfolio" />
+  </a>
+</p>
 
 <p align="center"><img src="assets/animated-divider.svg" width="100%" alt="divider" /></p>
 
