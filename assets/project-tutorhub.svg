@@ -88,7 +88,7 @@
       transition: all 0.3s ease;
     }
 
-    /* Brand Colors - Default State & Hover State */
+    /* Brand Colors - Default State and Hover State */
     
     /* React */
     .bg-react { fill: #0E1A24; stroke: rgba(97, 218, 251, 0.35); }
