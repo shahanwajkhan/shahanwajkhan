@@ -197,12 +197,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782989320" width="100%" alt="divider" /></p>
 
-### 📊 GitHub Analytics
-<p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/github-analytics.svg?v=1782989320" width="100%" alt="GitHub Analytics" />
-</p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782989320" width="100%" alt="divider" /></p>
 
 ### 🌍 Connect With Me
 
