@@ -52,9 +52,9 @@
     .title-text {
       font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
       font-weight: 900;
-      font-size: 32px;
+      font-size: 28px;
       fill: #ffffff;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
     }
@@ -207,31 +207,31 @@
   </g>
 
   <!-- Frosted Glass Card Panel -->
-  <g transform="translate(180, 40)">
+  <g transform="translate(150, 40)">
     <!-- Glass shadow / Glow -->
-    <rect x="-1" y="-1" width="442" height="122" rx="16" fill="#000000" fill-opacity="0.4" filter="blur(8px)" />
+    <rect x="-1" y="-1" width="502" height="122" rx="16" fill="#000000" fill-opacity="0.4" filter="blur(8px)" />
     
     <!-- Glass background with thin border -->
-    <rect x="0" y="0" width="440" height="120" rx="15" fill="#0d0a1b" fill-opacity="0.65" stroke="url(#glass-border)" stroke-width="1.5" />
+    <rect x="0" y="0" width="500" height="120" rx="15" fill="#0d0a1b" fill-opacity="0.65" stroke="url(#glass-border)" stroke-width="1.5" />
     
     <!-- Interactive-looking Corner Tech Accents -->
     <path d="M 10,20 L 10,10 L 20,10" fill="none" stroke="#00f2fe" stroke-width="2" />
-    <path d="M 430,20 L 430,10 L 420,10" fill="none" stroke="#00f2fe" stroke-width="2" />
+    <path d="M 490,20 L 490,10 L 480,10" fill="none" stroke="#00f2fe" stroke-width="2" />
     <path d="M 10,100 L 10,110 L 20,110" fill="none" stroke="#ff007f" stroke-width="2" />
-    <path d="M 430,100 L 430,110 L 420,110" fill="none" stroke="#ff007f" stroke-width="2" />
+    <path d="M 490,100 L 490,110 L 480,110" fill="none" stroke="#ff007f" stroke-width="2" />
 
     <!-- Scanning line across card -->
     <line x1="0" y1="0" x2="0" y2="120" stroke="#00f2fe" stroke-width="1.5" opacity="0.8" filter="url(#subtle-glow)" class="scan-bar" />
 
     <!-- Tech telemetry text inside card -->
     <text x="25" y="25" fill="#00f2fe" font-family="monospace" font-size="8" letter-spacing="1">SYS.LOC: 30.7333° N, 76.7794° E</text>
-    <text x="320" y="25" fill="#ff007f" font-family="monospace" font-size="8" letter-spacing="1">COGNITIVE.LAYER: ONLINE</text>
+    <text x="380" y="25" fill="#ff007f" font-family="monospace" font-size="8" letter-spacing="1">COGNITIVE.LAYER: ONLINE</text>
 
     <!-- Main Glowing Title -->
-    <text x="220" y="75" text-anchor="middle" class="title-text glowing-title">SHAHANWAJ KHAN</text>
+    <text x="250" y="75" text-anchor="middle" class="title-text glowing-title">SHAHANWAJ KHAN</text>
 
     <!-- Central Tech loading detail -->
-    <g transform="translate(145, 95)" opacity="0.8">
+    <g transform="translate(171, 95)" opacity="0.8">
       <rect x="0" y="2" width="150" height="3" fill="#1b152d" rx="1.5" />
       <!-- Animated progress indicator -->
       <rect x="30" y="2" width="40" height="3" fill="#00f2fe" rx="1.5">
