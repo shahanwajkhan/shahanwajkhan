@@ -218,7 +218,7 @@
       <circle cx="8" cy="8" r="2.5" fill="#ff007f" filter="url(#neon-pink)" />
       
       <text x="28" y="11" class="metric-label">ACTIVE FOCUS</text>
-      <text x="135" y="11" class="metric-value">AI Integration & Web SaaS Products</text>
+      <text x="135" y="11" class="metric-value">AI Integration &amp; Web SaaS Products</text>
     </g>
 
     <!-- Item 2: Coffee Level (Animated Liquid Wave) -->

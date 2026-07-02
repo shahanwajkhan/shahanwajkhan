@@ -52,9 +52,9 @@
     .title-text {
       font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
       font-weight: 900;
-      font-size: 42px;
+      font-size: 32px;
       fill: #ffffff;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
     }
@@ -228,7 +228,7 @@
     <text x="320" y="25" fill="#ff007f" font-family="monospace" font-size="8" letter-spacing="1">COGNITIVE.LAYER: ONLINE</text>
 
     <!-- Main Glowing Title -->
-    <text x="50%" y="75" text-anchor="middle" class="title-text glowing-title">SHAHANWAJ KHAN</text>
+    <text x="220" y="75" text-anchor="middle" class="title-text glowing-title">SHAHANWAJ KHAN</text>
 
     <!-- Central Tech loading detail -->
     <g transform="translate(145, 95)" opacity="0.8">
