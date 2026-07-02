@@ -10,7 +10,7 @@
 
 <!-- AI Status Dashboard -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/status-dashboard.svg?v=6" width="100%" alt="AI System Status" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/system-status.svg?v=1" width="100%" alt="AI System Status" />
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
