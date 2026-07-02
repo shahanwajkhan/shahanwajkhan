@@ -18,10 +18,9 @@ content = re.sub(r'(assets/[a-zA-Z0-9_-]+\.svg\?v=)\d+', rf'\g<1>{ts}', content)
 # Function to add or update &v=... query parameter on stats URLs
 def add_or_update_v(match):
     url = match.group(0)
-    if 'v=' in url:
-        return re.sub(r'([&?]v=)\d+', rf'\g<1>{ts}', url)
-    elif 'v&amp;=' in url or '&amp;v=' in url:
-        return re.sub(r'((&amp;|\?)v=)\d+', rf'\g<1>{ts}', url)
+    pattern = r'((?:&amp;|[&?])v=)\d+'
+    if re.search(pattern, url):
+        return re.sub(pattern, rf'\g<1>{ts}', url)
     else:
         separator = '&amp;' if '?' in url else '?'
         return f"{url}{separator}v={ts}"
