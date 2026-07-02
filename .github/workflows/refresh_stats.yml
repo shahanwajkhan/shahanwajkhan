@@ -23,6 +23,11 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Generate GitHub Stats SVG
+        run: python scratch/generate_github_stats_svg.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Cache Buster Script
         run: python scratch/auto_cache_bust.py
 
@@ -30,4 +35,4 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet || (git add README.md && git commit -m "chore: auto-refresh README cache [skip ci]" && git push)
+          git diff --quiet || (git add README.md assets/github-analytics.svg && git commit -m "chore: auto-refresh README cache [skip ci]" && git push)

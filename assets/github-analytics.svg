@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" width="100%" height="210">
+  <defs>
+    <!-- Background gradients -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#100c1e" />
+      <stop offset="60%" stop-color="#080510" />
+      <stop offset="100%" stop-color="#030206" />
+    </radialGradient>
+
+    <!-- Aurora Gradients -->
+    <radialGradient id="aurora-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aurora-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7b2cbf" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glass border -->
+    <linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      fill: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .panel-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      fill: #8e81ac;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      fill: #a097ba;
+    }
+    .value {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      fill: #ffffff;
+    }
+    .rank-text {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 900;
+      font-size: 32px;
+      fill: #00f2fe;
+      text-anchor: middle;
+      filter: drop-shadow(0 0 6px rgba(0, 242, 254, 0.6));
+    }
+    
+    /* Hover effects and keyframes */
+    @keyframes rotate-outer {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .rotating-ring {
+      animation: rotate-outer 25s linear infinite;
+      transform-origin: 310px 118px;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.3)); }
+      50% { filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.8)); }
+    }
+    .rank-pulse {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    /* Progress bar animations */
+    @keyframes grow-bar {
+      from { width: 0; }
+    }
+    .progress-fill {
+      animation: grow-bar 1.5s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+    }
+
+    /* Staggered load for rows */
+    @keyframes fade-slide-in {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .stagger-1 { animation: fade-slide-in 0.4s ease forwards; }
+    .stagger-2 { animation: fade-slide-in 0.4s ease 0.1s forwards; }
+    .stagger-3 { animation: fade-slide-in 0.4s ease 0.2s forwards; }
+    .stagger-4 { animation: fade-slide-in 0.4s ease 0.3s forwards; }
+    .stagger-5 { animation: fade-slide-in 0.4s ease 0.4s forwards; }
+    
+    /* Interactive Hover Classes */
+    .metric-row {
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .metric-row:hover {
+      transform: translateX(3px);
+    }
+    .metric-row:hover .label {
+      fill: #ffffff;
+    }
+    .lang-row {
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .lang-row:hover {
+      transform: translateX(4px);
+    }
+    .lang-row:hover .progress-fill {
+      filter: drop-shadow(0 0 5px var(--lang-color));
+    }
+    .lang-row:hover text {
+      fill: #ffffff;
+    }
+  </style>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="10" />
+  <circle cx="150" cy="100" r="120" fill="url(#aurora-cyan)" opacity="0.3" />
+  <circle cx="650" cy="110" r="130" fill="url(#aurora-purple)" opacity="0.3" />
+
+  <!-- Outer Glass Frame -->
+  <rect x="12" y="12" width="776" height="186" rx="12" fill="#0d0a1b" fill-opacity="0.5" stroke="url(#glass-border)" stroke-width="1.2" />
+
+  <!-- Header -->
+  <text x="32" y="32" class="title">GITHUB ANALYTICS // DIAGNOSTICS</text>
+  <line x1="12" y1="42" x2="788" y2="42" stroke="#251a3d" stroke-width="1" />
+
+  <!-- LEFT PANEL: Core Stats & Rank -->
+  <rect x="25" y="52" width="365" height="136" rx="10" fill="#080612" fill-opacity="0.75" stroke="url(#glass-border)" stroke-width="1" />
+  
+  <g transform="translate(40, 60)">
+    <text x="0" y="10" class="panel-title">METRIC INTERFACE</text>
+    
+    <!-- Commits -->
+    <g class="metric-row stagger-1" transform="translate(0, 22)">
+      <circle cx="8" cy="8" r="4" fill="#00f2fe" opacity="0.8" />
+      <text x="24" y="12" class="label">Total Commits</text>
+      <text x="140" y="12" class="value">125</text>
+    </g>
+    
+    <!-- Stars -->
+    <g class="metric-row stagger-2" transform="translate(0, 46)">
+      <circle cx="8" cy="8" r="4" fill="#ffb703" opacity="0.8" />
+      <text x="24" y="12" class="label">Stars Earned</text>
+      <text x="140" y="12" class="value">0</text>
+    </g>
+    
+    <!-- PRs -->
+    <g class="metric-row stagger-3" transform="translate(0, 70)">
+      <circle cx="8" cy="8" r="4" fill="#a2d2ff" opacity="0.8" />
+      <text x="24" y="12" class="label">Pull Requests</text>
+      <text x="140" y="12" class="value">0</text>
+    </g>
+    
+    <!-- Issues -->
+    <g class="metric-row stagger-4" transform="translate(0, 94)">
+      <circle cx="8" cy="8" r="4" fill="#ff4d6d" opacity="0.8" />
+      <text x="24" y="12" class="label">Total Issues</text>
+      <text x="140" y="12" class="value">0</text>
+    </g>
+  </g>
+  
+  <!-- Rank circular index (inside left panel) -->
+  <g transform="translate(310, 118)">
+    <!-- Rotating outer dashed circle -->
+    <circle r="40" fill="none" stroke="#251a3d" stroke-width="1" />
+    <circle r="40" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="8 6" class="rotating-ring" opacity="0.6" />
+    <!-- Pulse outer circle -->
+    <circle r="34" fill="none" stroke="#7b2cbf" stroke-width="1" opacity="0.4" />
+    <!-- Core glow -->
+    <circle r="28" fill="#100c1e" stroke="url(#glass-border)" stroke-width="1" class="rank-pulse" />
+    <text y="10" class="rank-text">A</text>
+    <text y="50" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#8e81ac" text-anchor="middle" letter-spacing="1">RANK INDEX</text>
+  </g>
+
+  <!-- RIGHT PANEL: Language Spectrum -->
+  <rect x="410" y="52" width="365" height="136" rx="10" fill="#080612" fill-opacity="0.75" stroke="url(#glass-border)" stroke-width="1" />
+  
+  <g transform="translate(425, 60)">
+    <text x="0" y="10" class="panel-title">LANGUAGE SPECTRUM</text>
+    
+    <!-- Language rows dynamic -->
+    <g class="lang-row stagger-1" transform="translate(0, 22)" style="--lang-color: #f1e05a;">
+      <circle cx="6" cy="6" r="4.5" fill="#f1e05a" />
+      <text x="18" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#a097ba">JavaScript</text>
+      <text x="330" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="end">42.25%</text>
+      <rect x="18" y="15" width="312" height="4" rx="2" fill="#1b1530" />
+      <rect x="18" y="15" width="131.0" height="4" rx="2" fill="#f1e05a" class="progress-fill" />
+    </g>
+    <g class="lang-row stagger-2" transform="translate(0, 43)" style="--lang-color: #e34c26;">
+      <circle cx="6" cy="6" r="4.5" fill="#e34c26" />
+      <text x="18" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#a097ba">HTML</text>
+      <text x="330" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="end">18.16%</text>
+      <rect x="18" y="15" width="312" height="4" rx="2" fill="#1b1530" />
+      <rect x="18" y="15" width="56.3" height="4" rx="2" fill="#e34c26" class="progress-fill" />
+    </g>
+    <g class="lang-row stagger-3" transform="translate(0, 64)" style="--lang-color: #f7523f;">
+      <circle cx="6" cy="6" r="4.5" fill="#f7523f" />
+      <text x="18" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#a097ba">Blade</text>
+      <text x="330" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="end">17.04%</text>
+      <rect x="18" y="15" width="312" height="4" rx="2" fill="#1b1530" />
+      <rect x="18" y="15" width="52.8" height="4" rx="2" fill="#f7523f" class="progress-fill" />
+    </g>
+    <g class="lang-row stagger-4" transform="translate(0, 85)" style="--lang-color: #563d7c;">
+      <circle cx="6" cy="6" r="4.5" fill="#563d7c" />
+      <text x="18" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#a097ba">CSS</text>
+      <text x="330" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="end">11.6%</text>
+      <rect x="18" y="15" width="312" height="4" rx="2" fill="#1b1530" />
+      <rect x="18" y="15" width="36.0" height="4" rx="2" fill="#563d7c" class="progress-fill" />
+    </g>
+    <g class="lang-row stagger-5" transform="translate(0, 106)" style="--lang-color: #3572A5;">
+      <circle cx="6" cy="6" r="4.5" fill="#3572A5" />
+      <text x="18" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#a097ba">Python</text>
+      <text x="330" y="10" font-family="'Inter', -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="end">6.95%</text>
+      <rect x="18" y="15" width="312" height="4" rx="2" fill="#1b1530" />
+      <rect x="18" y="15" width="21.5" height="4" rx="2" fill="#3572A5" class="progress-fill" />
+    </g>
+  </g>
+</svg>
