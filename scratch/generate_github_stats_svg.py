@@ -302,19 +302,20 @@ svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" 
     }}
 
     /* Staggered load for rows */
-    @keyframes fade-slide-in {{
-      from {{ opacity: 0; transform: translateY(5px); }}
-      to {{ opacity: 1; transform: translateY(0); }}
+    @keyframes fade-in {{
+      from {{ opacity: 0; }}
+      to {{ opacity: 1; }}
     }}
-    .stagger-1 {{ animation: fade-slide-in 0.4s ease forwards; }}
-    .stagger-2 {{ animation: fade-slide-in 0.4s ease 0.1s forwards; }}
-    .stagger-3 {{ animation: fade-slide-in 0.4s ease 0.2s forwards; }}
-    .stagger-4 {{ animation: fade-slide-in 0.4s ease 0.3s forwards; }}
-    .stagger-5 {{ animation: fade-slide-in 0.4s ease 0.4s forwards; }}
+    .stagger-1 {{ animation: fade-in 0.5s ease forwards; }}
+    .stagger-2 {{ animation: fade-in 0.5s ease 0.1s forwards; }}
+    .stagger-3 {{ animation: fade-in 0.5s ease 0.2s forwards; }}
+    .stagger-4 {{ animation: fade-in 0.5s ease 0.3s forwards; }}
+    .stagger-5 {{ animation: fade-in 0.5s ease 0.4s forwards; }}
     
     /* Interactive Hover Classes */
     .metric-row {{
-      transition: transform 0.2s ease;
+      opacity: 0;
+      transition: transform 0.2s ease, opacity 0.3s ease;
       cursor: pointer;
     }}
     .metric-row:hover {{
@@ -324,7 +325,8 @@ svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" 
       fill: #ffffff;
     }}
     .lang-row {{
-      transition: transform 0.2s ease;
+      opacity: 0;
+      transition: transform 0.2s ease, opacity 0.3s ease;
       cursor: pointer;
     }}
     .lang-row:hover {{
@@ -346,41 +348,41 @@ svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" 
   <rect x="12" y="12" width="776" height="186" rx="12" fill="#0d0a1b" fill-opacity="0.5" stroke="url(#glass-border)" stroke-width="1.2" />
 
   <!-- Header -->
-  <text x="32" y="32" class="title">GITHUB ANALYTICS // DIAGNOSTICS</text>
+  <text x="32" y="32" class="title">AI WORKSPACE // COGNITIVE DIAGNOSTICS</text>
   <line x1="12" y1="42" x2="788" y2="42" stroke="#251a3d" stroke-width="1" />
 
   <!-- LEFT PANEL: Core Stats & Rank -->
   <rect x="25" y="52" width="365" height="136" rx="10" fill="#080612" fill-opacity="0.75" stroke="url(#glass-border)" stroke-width="1" />
   
   <g transform="translate(40, 60)">
-    <text x="0" y="10" class="panel-title">METRIC INTERFACE</text>
+    <text x="0" y="10" class="panel-title">COGNITIVE CORES</text>
     
     <!-- Commits -->
     <g class="metric-row stagger-1" transform="translate(0, 22)">
       <circle cx="8" cy="8" r="4" fill="#00f2fe" opacity="0.8" />
-      <text x="24" y="12" class="label">Total Commits</text>
-      <text x="140" y="12" class="value">{stats["commits"]}</text>
+      <text x="24" y="12" class="label">Synaptic Commits</text>
+      <text x="210" y="12" class="value">{stats["commits"]}</text>
     </g>
     
     <!-- Stars -->
     <g class="metric-row stagger-2" transform="translate(0, 46)">
       <circle cx="8" cy="8" r="4" fill="#ffb703" opacity="0.8" />
-      <text x="24" y="12" class="label">Stars Earned</text>
-      <text x="140" y="12" class="value">{stats["stars"]}</text>
+      <text x="24" y="12" class="label">Stellar Stars</text>
+      <text x="210" y="12" class="value">{stats["stars"]}</text>
     </g>
     
     <!-- PRs -->
     <g class="metric-row stagger-3" transform="translate(0, 70)">
       <circle cx="8" cy="8" r="4" fill="#a2d2ff" opacity="0.8" />
-      <text x="24" y="12" class="label">Pull Requests</text>
-      <text x="140" y="12" class="value">{stats["prs"]}</text>
+      <text x="24" y="12" class="label">System Merges (PRs)</text>
+      <text x="210" y="12" class="value">{stats["prs"]}</text>
     </g>
     
     <!-- Issues -->
     <g class="metric-row stagger-4" transform="translate(0, 94)">
       <circle cx="8" cy="8" r="4" fill="#ff4d6d" opacity="0.8" />
-      <text x="24" y="12" class="label">Total Issues</text>
-      <text x="140" y="12" class="value">{stats["issues"]}</text>
+      <text x="24" y="12" class="label">Diagnostic Alerts (Issues)</text>
+      <text x="210" y="12" class="value">{stats["issues"]}</text>
     </g>
   </g>
   
@@ -394,14 +396,14 @@ svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" 
     <!-- Core glow -->
     <circle r="28" fill="#100c1e" stroke="url(#glass-border)" stroke-width="1" class="rank-pulse" />
     <text y="10" class="rank-text">{rank}</text>
-    <text y="50" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#8e81ac" text-anchor="middle" letter-spacing="1">RANK INDEX</text>
+    <text y="50" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#8e81ac" text-anchor="middle" letter-spacing="1">CORE LEVEL</text>
   </g>
 
   <!-- RIGHT PANEL: Language Spectrum -->
   <rect x="410" y="52" width="365" height="136" rx="10" fill="#080612" fill-opacity="0.75" stroke="url(#glass-border)" stroke-width="1" />
   
   <g transform="translate(425, 60)">
-    <text x="0" y="10" class="panel-title">LANGUAGE SPECTRUM</text>
+    <text x="0" y="10" class="panel-title">TECH STACK SPECTRUM</text>
     
     <!-- Language rows dynamic -->
 {language_rows}  </g>
