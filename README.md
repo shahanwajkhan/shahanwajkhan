@@ -98,7 +98,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 <p align="center">
   <a href="https://github.com/shahanwajkhan/AI-Based-Skill-Assessment-Recruitment-System" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-skillguard-v2.svg?v=2" width="100%" alt="SkillGuard AI" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-skillguard-v2.svg?v=10" width="100%" alt="SkillGuard AI" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/Cricket-Management-System" target="_blank">
