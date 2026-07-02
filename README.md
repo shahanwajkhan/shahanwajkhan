@@ -207,23 +207,11 @@ I am a Computer Science Engineering student specializing in building intelligent
 
 ### 🌍 Connect With Me
 
-<p align="left">
-  <a href="mailto:shahanwajk581@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" alt="Email" />
-  </a>
-  <a href="https://www.linkedin.com/in/skhan234/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://skhan.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&amp;logo=About.me&amp;logoColor=white" alt="Portfolio" />
-  </a>
-  <a href="https://github.com/shahanwajkhan" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub" />
-  </a>
-  <a href="#" target="_blank">
-    <img src="https://img.shields.io/badge/Resume-58A6FF?style=for-the-badge&amp;logo=Read-the-Docs&amp;logoColor=white" alt="Resume" />
-  </a>
-</p>
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shahanwajk581@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/skhan234/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://skhan.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shahanwajkhan)
+[![Resume](https://img.shields.io/badge/Resume-58A6FF?style=for-the-badge&logo=Read-the-Docs&logoColor=white)](#)
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
 
