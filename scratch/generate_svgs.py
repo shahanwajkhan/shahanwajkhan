@@ -175,7 +175,7 @@ BADGE_COLORS_CSS = """
 
 projects = [
     {
-        "filename": "project-skillguard.svg",
+        "filename": "project-skillguard-v2.svg",
         "title": "🛡️ SkillGuard AI",
         "desc": "AI-powered skill assessment and recruitment platform analyzing candidate test performances.",
         "badges": [
