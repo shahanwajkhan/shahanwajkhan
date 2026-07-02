@@ -176,8 +176,8 @@
       <path d="M 1,5 L 3,5 M 1,8 L 3,8 M 1,11 L 3,11 M 13,5 L 15,5 M 13,8 L 15,8 M 13,11 L 15,11 M 5,1 L 5,3 M 8,1 L 8,3 M 11,1 L 11,3 M 5,13 L 5,15 M 8,13 L 8,15 M 11,13 L 11,15" stroke="#ff007f" stroke-width="0.75" />
       <circle cx="8" cy="8" r="2.5" fill="#ff007f" filter="url(#neon-pink)" />
       
-      <text x="28" y="11" class="metric-label">AI CORES</text>
-      <text x="145" y="11" class="metric-value">Gemini / Deep Learning / agents</text>
+      <text x="28" y="11" class="metric-label">FULL STACK</text>
+      <text x="145" y="11" class="metric-value">Frontend / Backend / DB / DevOps</text>
     </g>
 
     <!-- Item 3: Tech Engine / Stack -->
