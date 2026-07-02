@@ -1,0 +1,33 @@
+name: Refresh README Cache
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Run every 6 hours to keep the dynamic stats fresh
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  refresh-cache:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run Cache Buster Script
+        run: python scratch/auto_cache_bust.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || (git add README.md && git commit -m "chore: auto-refresh README cache [skip ci]" && git push)

@@ -1,6 +1,6 @@
 <!-- Hero Section -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/hero-banner.svg?v=144" width="100%" alt="Shahanwaj Khan Banner" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/hero-banner.svg?v=1782984796" width="100%" alt="Shahanwaj Khan Banner" />
 </p>
 
 <p align="center">
@@ -10,10 +10,10 @@
 
 <!-- AI Status Dashboard -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/system-status.svg?v=1" width="100%" alt="AI System Status" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/system-status.svg?v=1782984796" width="100%" alt="AI System Status" />
 </p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 🚀 About Me
 
@@ -27,7 +27,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   - Designing custom AI agents and agentic workflows.
 - 🎯 **The Goal**: To build high-impact, scalable SaaS and AI products used by millions worldwide.
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### ⚡ Tech Stack
 
@@ -81,7 +81,7 @@ I am a Computer Science Engineering student specializing in building intelligent
   <img src="https://img.shields.io/badge/XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white" alt="XAMPP" />
 </p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 📚 Core Fundamentals
 
@@ -92,61 +92,61 @@ I am a Computer Science Engineering student specializing in building intelligent
 - ✔ **Authentication, Authorization & Role-Based Access Control (RBAC)**
 - ✔ **Socket Programming & Real-time Web Communication**
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 🌟 Featured Projects
 
 <p align="center">
   <a href="https://github.com/shahanwajkhan/AI-Based-Skill-Assessment-Recruitment-System" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-skillguard-v3.svg?v=1" width="100%" alt="SkillGuard AI" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-skillguard-v3.svg?v=1782984796" width="100%" alt="SkillGuard AI" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/Cricket-Management-System" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-cricket.svg?v=5" width="100%" alt="Cricket Management System" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-cricket.svg?v=1782984796" width="100%" alt="Cricket Management System" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/University-Management-System" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-university.svg?v=5" width="100%" alt="University Management System" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-university.svg?v=1782984796" width="100%" alt="University Management System" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/FarmTech-MIS" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-farmtech.svg?v=5" width="100%" alt="FarmTech MIS" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-farmtech.svg?v=1782984796" width="100%" alt="FarmTech MIS" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/Saree-Palace" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-saree-palace.svg?v=5" width="100%" alt="Saree Palace Boutique" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-saree-palace.svg?v=1782984796" width="100%" alt="Saree Palace Boutique" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/Dev_Orbit" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-devorbit.svg?v=5" width="100%" alt="DevOrbit AI Assistant" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-devorbit.svg?v=1782984796" width="100%" alt="DevOrbit AI Assistant" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/AI-Tutor-Hub-Chatbot" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-tutorhub.svg?v=5" width="100%" alt="AI Tutor Hub Chatbot" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-tutorhub.svg?v=1782984796" width="100%" alt="AI Tutor Hub Chatbot" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/FinSight" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-finsight.svg?v=5" width="100%" alt="FinSight Dashboard" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-finsight.svg?v=1782984796" width="100%" alt="FinSight Dashboard" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/AI-Flashcard-Generator" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-flashcard.svg?v=5" width="100%" alt="AI Flashcard Generator" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-flashcard.svg?v=1782984796" width="100%" alt="AI Flashcard Generator" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/Traffic-Management-System" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-traffic.svg?v=5" width="100%" alt="Traffic Management System" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-traffic.svg?v=1782984796" width="100%" alt="Traffic Management System" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/Student-Report-Card-System" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-reportcard.svg?v=5" width="100%" alt="Student Report Card System" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-reportcard.svg?v=1782984796" width="100%" alt="Student Report Card System" />
   </a>
   <br/><br/>
   <a href="https://github.com/shahanwajkhan/My-Portfolio" target="_blank">
-    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-portfolio.svg?v=5" width="100%" alt="Modern Developer Portfolio" />
+    <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/project-portfolio.svg?v=1782984796" width="100%" alt="Modern Developer Portfolio" />
   </a>
 </p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 📜 Certifications & Achievements
 
@@ -163,7 +163,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 - 🎤 **Student Volunteer** organizing technical community events.
 - 💻 Built and deployed **multiple full-stack web applications**.
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 📊 Currently Working On & 2026 Goals
 
@@ -195,15 +195,15 @@ I am a Computer Science Engineering student specializing in building intelligent
   </tr>
 </table>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 📊 GitHub Analytics
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=shahanwajkhan&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;count_private=true" alt="Shahanwaj's GitHub Stats" height="190" />
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=shahanwajkhan&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" alt="Top Languages" height="190" />
+  <img src="https://github-stats-extended.vercel.app/api?username=shahanwajkhan&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;count_private=true&amp;v=1782984796" alt="Shahanwaj's GitHub Stats" height="190" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=shahanwajkhan&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;v=1782984796" alt="Top Languages" height="190" />
 </p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 🌍 Connect With Me
 
@@ -213,7 +213,7 @@ I am a Computer Science Engineering student specializing in building intelligent
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shahanwajkhan)
 [![Resume](https://img.shields.io/badge/Resume-58A6FF?style=for-the-badge&logo=Read-the-Docs&logoColor=white)](#)
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 ### 💭 Developer Quote
 ```javascript
@@ -230,7 +230,7 @@ while (status !== "success") {
 - 🚀 Turning complex ideas into user-centric digital products is my jam.
 - 🌍 Always reading up on the latest advances in LLMs and agentic workflows.
 
-<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=1782984796" width="100%" alt="divider" /></p>
 
 <div align="center">
   <p>⭐ Thanks for visiting my profile! If you like my work, feel free to leave a ⭐ on my repositories.</p>
