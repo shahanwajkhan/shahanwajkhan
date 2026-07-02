@@ -1,474 +1,281 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="200">
-  <style>
-    /* Cyber Core Rotations */
-    .rotate-cw {
-      animation: rot-cw 25s linear infinite;
-      transform-origin: 400px 95px;
-    }
-    .rotate-ccw {
-      animation: rot-ccw 30s linear infinite;
-      transform-origin: 400px 95px;
-    }
-    @keyframes rot-cw {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes rot-ccw {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-
-    /* Realistic Neon Stacked Title (Hot-Core Glow) */
-    .title-glow-layer {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-weight: 800;
-      font-size: 42px;
-      fill: #BC34FA;
-      letter-spacing: 3px;
-      filter: url(#neon-blur-heavy);
-      animation: neon-pulse 4s ease-in-out infinite alternate;
-    }
-    .title-main-layer {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-weight: 800;
-      font-size: 42px;
-      fill: #FFFFFF;
-      letter-spacing: 3px;
-      filter: drop-shadow(0 0 3px #00F2FE);
-      animation: glitch-pulse 6s infinite;
-    }
-    
-    @keyframes neon-pulse {
-      0% { opacity: 0.6; }
-      100% { opacity: 0.95; }
-    }
-
-    @keyframes glitch-pulse {
-      0%, 94%, 98%, 100% {
-        transform: translate(0);
-        filter: drop-shadow(0 0 3px #00F2FE);
-      }
-      95% {
-        transform: translate(-2px, 1px);
-        filter: drop-shadow(-2.5px 0 #00F2FE) drop-shadow(2.5px 0 #FF7B72);
-      }
-      96% {
-        transform: translate(2px, -1px);
-        filter: drop-shadow(-2.5px 0 #FF7B72) drop-shadow(2.5px 0 #00F2FE);
-      }
-      97% {
-        transform: translate(-1px, -2px);
-      }
-    }
-
-    /* Subtitle style */
-    .subtitle-text {
-      font-family: "Courier New", Courier, monospace;
-      font-weight: 600;
-      font-size: 15px;
-      fill: #00F2FE;
-      letter-spacing: 2px;
-      filter: drop-shadow(0 0 2px rgba(0, 242, 254, 0.4));
-    }
-
-    /* HUD Corner Blinking */
-    .hud-blink {
-      animation: blink 2s infinite alternate;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-
-    .hud-text {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 9px;
-      fill: #58A6FF;
-      opacity: 0.7;
-    }
-
-    /* Orbiting Systems */
-    .revolve-left {
-      animation: rotate-left 10s linear infinite;
-      transform-origin: 80px 95px;
-    }
-    .revolve-right {
-      animation: rotate-right 14s linear infinite;
-      transform-origin: 720px 95px;
-    }
-    @keyframes rotate-left {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes rotate-right {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-
-    /* Holographic Scanline Overlay */
-    .scanline {
-      animation: scan 4.5s linear infinite;
-    }
-    @keyframes scan {
-      0% { transform: translateY(-10px); }
-      100% { transform: translateY(210px); }
-    }
-
-    /* Floating Particles (Depth of Field Blur) */
-    .particle {
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
-    }
-    .p1 { animation: float-1 8s infinite alternate; }
-    .p2 { animation: float-2 11s infinite alternate; }
-    .p3 { animation: float-3 6s infinite alternate; }
-    .p4 { animation: float-4 9s infinite alternate; }
-
-    @keyframes float-1 {
-      0% { transform: translate(0, 0); opacity: 0.3; }
-      100% { transform: translate(15px, -20px); opacity: 0.9; }
-    }
-    @keyframes float-2 {
-      0% { transform: translate(0, 0); opacity: 0.2; }
-      100% { transform: translate(-12px, -10px); opacity: 0.7; }
-    }
-    @keyframes float-3 {
-      0% { transform: translate(0, 0); opacity: 0.4; }
-      100% { transform: translate(10px, 15px); opacity: 1.0; }
-    }
-    @keyframes float-4 {
-      0% { transform: translate(0, 0); opacity: 0.3; }
-      100% { transform: translate(-16px, 14px); opacity: 0.8; }
-    }
-
-    /* Shooting Stars */
-    .shooting-star {
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-dasharray: 50 250;
-      stroke-dashoffset: 300;
-    }
-    .s1 { stroke: url(#star-grad-1); animation: shoot-1 8s ease-in-out infinite; }
-    .s2 { stroke: url(#star-grad-2); animation: shoot-2 11s ease-in-out infinite; animation-delay: 4s; }
-    
-    @keyframes shoot-1 {
-      0% { stroke-dashoffset: 300; opacity: 0; }
-      10% { stroke-dashoffset: 0; opacity: 1; }
-      20% { stroke-dashoffset: -300; opacity: 0; }
-      100% { stroke-dashoffset: -300; opacity: 0; }
-    }
-    @keyframes shoot-2 {
-      0% { stroke-dashoffset: 300; opacity: 0; }
-      8% { stroke-dashoffset: 0; opacity: 1; }
-      16% { stroke-dashoffset: -300; opacity: 0; }
-      100% { stroke-dashoffset: -300; opacity: 0; }
-    }
-
-    /* Glowing Styles */
-    .glow-cyan-elem { filter: drop-shadow(0 0 6px #00F2FE); }
-    .glow-purple-elem { filter: drop-shadow(0 0 6px #BC34FA); }
-
-    /* Flowing Pathway Data Line */
-    .connection-flow {
-      stroke-dasharray: 20, 80;
-      animation: flow-data 4.5s linear infinite;
-    }
-    @keyframes flow-data {
-      to { stroke-dashoffset: -200; }
-    }
-  </style>
   <defs>
-    <!-- Gaussian Blur Filters -->
-    <filter id="blur-nebula">
-      <feGaussianBlur stdDeviation="32" />
-    </filter>
-    <filter id="blur-reflection">
-      <feGaussianBlur stdDeviation="20" />
-    </filter>
-    <filter id="neon-blur-heavy">
-      <feGaussianBlur stdDeviation="8" />
-    </filter>
-    <filter id="neon-blur-light">
-      <feGaussianBlur stdDeviation="3" />
-    </filter>
-    <filter id="bokeh-blur">
-      <feGaussianBlur stdDeviation="4" />
-    </filter>
-
-    <!-- Typewriter Clip Path (Repeats 4s typing animation) -->
-    <clipPath id="typewriter-clip">
-      <rect x="250" y="110" width="0" height="30">
-        <animate attributeName="width" values="0; 300; 300; 0; 0" keyTimes="0; 0.45; 0.85; 0.95; 1" dur="4s" repeatCount="indefinite" />
-      </rect>
-    </clipPath>
-
-    <!-- Fading 3D Perspective Grid Gradient -->
-    <linearGradient id="grid-fade" x1="0" y1="200" x2="0" y2="110" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.35" />
-      <stop offset="50%" stop-color="#00F2FE" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Horizon Glowing Gradient -->
-    <linearGradient id="horizon-grad" x1="0" y1="0" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#BC34FA" stop-opacity="0" />
-      <stop offset="30%" stop-color="#00F2FE" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.8" />
-      <stop offset="70%" stop-color="#00F2FE" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0" />
-    </linearGradient>
-
-    <!-- Cinematic Vignette Gradient -->
-    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
-      <stop offset="60%" stop-color="#07090E" stop-opacity="0" />
-      <stop offset="100%" stop-color="#020305" stop-opacity="0.9" />
+    <!-- Background gradients -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#120c1f" />
+      <stop offset="60%" stop-color="#0a0712" />
+      <stop offset="100%" stop-color="#050308" />
     </radialGradient>
 
-    <!-- Glass Reflection Gradient -->
-    <linearGradient id="glass-edge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0.5" />
-      <stop offset="40%" stop-color="#21262D" stroke-opacity="0.1" />
-      <stop offset="60%" stop-color="#21262D" stroke-opacity="0.1" />
-      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0.5" />
+    <!-- Aurora Glowing Gradients -->
+    <radialGradient id="aurora-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aurora-pink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff007f" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ff007f" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aurora-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7b2cbf" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glassmorphic Card border gradient -->
+    <linearGradient id="glass-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="30%" stop-color="#00f2fe" stop-opacity="0.35" />
+      <stop offset="70%" stop-color="#ff007f" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1" />
     </linearGradient>
 
-    <!-- Shooting Star Gradients -->
-    <linearGradient id="star-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#58A6FF" stop-opacity="0" />
-      <stop offset="100%" stop-color="#00F2FE" stop-opacity="1" />
-    </linearGradient>
-    <linearGradient id="star-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#BC34FA" stop-opacity="0" />
-      <stop offset="100%" stop-color="#FF7B72" stop-opacity="1" />
-    </linearGradient>
+    <!-- Text Neon Blur Filters -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
 
-    <clipPath id="hud-clip">
-      <rect x="12" y="12" width="776" height="176" rx="6" />
-    </clipPath>
+    <filter id="subtle-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
 
-  <!-- Dark Base Canvas -->
-  <rect width="800" height="200" fill="#06080D" rx="8" />
-
-  <!-- Layer 1: Ambient Nebula Glow (Breathing Neon Gas) -->
-  <g filter="url(#blur-nebula)">
-    <circle cx="200" cy="100" r="105" class="ambient-glow glow-cyan-nebula" />
-    <circle cx="600" cy="100" r="115" class="ambient-glow glow-purple-nebula" />
-    <circle cx="450" cy="95" r="90" class="ambient-glow glow-coral-nebula" />
-  </g>
-
-  <!-- Layer 2: Moving Reflection Light Beams -->
-  <g filter="url(#blur-reflection)" opacity="0.32">
-    <line x1="-150" y1="0" x2="50" y2="200" stroke="#00F2FE" stroke-width="40">
-      <animate attributeName="x1" values="-300;900" dur="14s" repeatCount="indefinite" />
-      <animate attributeName="x2" values="-100;1100" dur="14s" repeatCount="indefinite" />
-    </line>
-    <line x1="-100" y1="0" x2="100" y2="200" stroke="#BC34FA" stroke-width="35">
-      <animate attributeName="x1" values="-500;700" dur="17s" repeatCount="indefinite" />
-      <animate attributeName="x2" values="-300;900" dur="17s" repeatCount="indefinite" />
-    </line>
-  </g>
-
-  <!-- Layer 3: 3D Cyberspace Perspective Grid Floor -->
-  <g stroke="url(#grid-fade)" stroke-width="0.75" opacity="0.9">
-    <!-- Horizon Line Glow -->
-    <line x1="0" y1="110" x2="800" y2="110" stroke="url(#horizon-grad)" stroke-width="2.5" />
-    <line x1="0" y1="110" x2="800" y2="110" stroke="#FFFFFF" stroke-width="0.75" opacity="0.5" />
-
-    <!-- Perspective Longitudinal Lines -->
-    <line x1="400" y1="110" x2="-200" y2="200" />
-    <line x1="400" y1="110" x2="0" y2="200" />
-    <line x1="400" y1="110" x2="150" y2="200" />
-    <line x1="400" y1="110" x2="280" y2="200" />
-    <line x1="400" y1="110" x2="400" y2="200" />
-    <line x1="400" y1="110" x2="520" y2="200" />
-    <line x1="400" y1="110" x2="650" y2="200" />
-    <line x1="400" y1="110" x2="800" y2="200" />
-    <line x1="400" y1="110" x2="1000" y2="200" />
-
-    <line x1="400" y1="110" x2="-200" y2="155" />
-    <line x1="400" y1="110" x2="-200" y2="125" />
-    <line x1="400" y1="110" x2="1000" y2="155" />
-    <line x1="400" y1="110" x2="1000" y2="125" />
-
-    <!-- Perspective Latitudinal Lines -->
-    <line x1="0" y1="114" x2="800" y2="114" />
-    <line x1="0" y1="120" x2="800" y2="120" />
-    <line x1="0" y1="129" x2="800" y2="129" />
-    <line x1="0" y1="143" x2="800" y2="143" />
-    <line x1="0" y1="164" x2="800" y2="164" />
-    <line x1="0" y1="195" x2="800" y2="195" />
-  </g>
-
-  <!-- Layer 4: HUD Radar concentric targets (Left and Right Background) -->
-  <g opacity="0.18">
-    <g transform="translate(80, 95)">
-      <circle r="45" fill="none" stroke="#58A6FF" stroke-width="0.5" />
-      <circle r="60" fill="none" stroke="#58A6FF" stroke-width="0.75" stroke-dasharray="4 6" />
-      <line x1="-75" y1="0" x2="75" y2="0" stroke="#58A6FF" stroke-width="0.5" />
-      <line x1="0" y1="-75" x2="0" y2="75" stroke="#58A6FF" stroke-width="0.5" />
-    </g>
-    <g transform="translate(720, 95)">
-      <circle r="45" fill="none" stroke="#BC34FA" stroke-width="0.5" />
-      <circle r="60" fill="none" stroke="#BC34FA" stroke-width="0.75" stroke-dasharray="4 6" />
-      <line x1="-75" y1="0" x2="75" y2="0" stroke="#BC34FA" stroke-width="0.5" />
-      <line x1="0" y1="-75" x2="0" y2="75" stroke="#BC34FA" stroke-width="0.5" />
-    </g>
-  </g>
-
-  <!-- Cyber Core Containment Rings (Central Background Animation) -->
-  <g opacity="0.22">
-    <circle cx="400" cy="95" r="60" fill="none" stroke="#58A6FF" stroke-width="1.2" stroke-dasharray="10 20" class="rotate-cw" />
-    <circle cx="400" cy="95" r="75" fill="none" stroke="#BC34FA" stroke-width="1.8" stroke-dasharray="40 40" class="rotate-ccw" />
-    <circle cx="400" cy="95" r="90" fill="none" stroke="#00F2FE" stroke-width="0.75" stroke-dasharray="4 8" class="rotate-cw" />
-  </g>
-
-  <!-- Binary Data Streams (Scrolling Background Elements) -->
-  <g opacity="0.14" fill="#58A6FF" font-family="monospace" font-size="9">
-    <text x="170" y="0">101011<animate attributeName="y" values="-50;250" dur="11s" repeatCount="indefinite" /></text>
-    <text x="290" y="0">011010<animate attributeName="y" values="-50;250" dur="8s" repeatCount="indefinite" /></text>
-    <text x="510" y="0">110101<animate attributeName="y" values="-50;250" dur="14s" repeatCount="indefinite" /></text>
-    <text x="630" y="0">001110<animate attributeName="y" values="-50;250" dur="9s" repeatCount="indefinite" /></text>
-  </g>
-
-  <!-- Shooting Stars -->
-  <path d="M 100 -50 L 300 150" class="shooting-star s1" />
-  <path d="M 500 -50 L 700 150" class="shooting-star s2" />
-
-  <!-- Floating Particles & Bokeh (Camera Depth) -->
-  <g>
-    <!-- Soft Blurred Bokeh Circles -->
-    <g filter="url(#bokeh-blur)">
-      <circle cx="160" cy="60" r="5" fill="#00F2FE" class="particle p1" />
-      <circle cx="660" cy="140" r="7" fill="#BC34FA" class="particle p2" />
-      <circle cx="560" cy="50" r="6" fill="#58A6FF" class="particle p4" />
-    </g>
-    <!-- Sharp Small Sparkles -->
-    <circle cx="230" cy="165" r="1.5" fill="#FF7B72" class="particle p3" />
-    <circle cx="120" cy="45" r="2" fill="#00F2FE" class="particle p1" />
-    <circle cx="680" cy="155" r="2.5" fill="#BC34FA" class="particle p2" />
-    <circle cx="580" cy="35" r="2" fill="#58A6FF" class="particle p4" />
-  </g>
-
-  <!-- Data Flow Pathway (Triple Neon Stacked Line) -->
-  <g>
-    <!-- Layer 1: Wide neon blur glow -->
-    <path d="M 60 95 Q 230 25 400 95 T 740 95" fill="none" stroke="#00F2FE" stroke-width="8" opacity="0.12" filter="url(#neon-blur-heavy)" />
-    <!-- Layer 2: Core neon color -->
-    <path d="M 60 95 Q 230 25 400 95 T 740 95" fill="none" stroke="#00F2FE" stroke-width="2.5" opacity="0.4" />
-    <!-- Layer 3: Blazing white packet flow -->
-    <path d="M 60 95 Q 230 25 400 95 T 740 95" fill="none" stroke="#FFFFFF" stroke-width="1.2" opacity="0.8" class="connection-flow" />
-  </g>
-
-  <!-- Left Orbit System (Triple Neon Stacked Circles) -->
-  <g>
-    <!-- Orbit Track -->
-    <circle cx="80" cy="95" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
-    <!-- Revolving Node -->
-    <g class="revolve-left">
-      <!-- Glow under-layer -->
-      <circle cx="110" cy="95" r="8" fill="#00F2FE" opacity="0.4" filter="url(#neon-blur-light)" />
-      <!-- Solid neon node -->
-      <circle cx="110" cy="95" r="5.5" fill="#00F2FE" />
-      <!-- Core hot spot -->
-      <circle cx="110" cy="95" r="2.2" fill="#FFFFFF" />
-    </g>
-    <circle cx="80" cy="95" r="3" fill="#58A6FF" />
-  </g>
-
-  <!-- Right Orbit System (Triple Neon Stacked Circles) -->
-  <g>
-    <!-- Orbit Track -->
-    <circle cx="720" cy="95" r="30" fill="none" stroke="#1F242C" stroke-dasharray="3 3" />
-    <!-- Revolving Node -->
-    <g class="revolve-right">
-      <!-- Glow under-layer -->
-      <circle cx="750" cy="95" r="8" fill="#BC34FA" opacity="0.4" filter="url(#neon-blur-light)" />
-      <!-- Solid neon node -->
-      <circle cx="750" cy="95" r="5.5" fill="#BC34FA" />
-      <!-- Core hot spot -->
-      <circle cx="750" cy="95" r="2.2" fill="#FFFFFF" />
-    </g>
-    <circle cx="720" cy="95" r="3" fill="#FF7B72" />
-  </g>
-
-  <!-- HUD Soundwave / Equalizer Pulse (Bottom Center) -->
-  <g transform="translate(360, 158)" opacity="0.45">
-    <rect x="0" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="5;20;5" dur="1s" repeatCount="indefinite" /></rect>
-    <rect x="6" y="0" width="2" height="18" fill="#58A6FF" rx="1"><animate attributeName="height" values="9;28;9" dur="0.8s" repeatCount="indefinite" /></rect>
-    <rect x="12" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;15;3" dur="1.4s" repeatCount="indefinite" /></rect>
-    <rect x="18" y="0" width="2" height="18" fill="#FF7B72" rx="1"><animate attributeName="height" values="7;24;7" dur="1.1s" repeatCount="indefinite" /></rect>
-    <rect x="24" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="12;32;12" dur="0.9s" repeatCount="indefinite" /></rect>
-    <rect x="30" y="0" width="2" height="18" fill="#58A6FF" rx="1"><animate attributeName="height" values="6;22;6" dur="1.2s" repeatCount="indefinite" /></rect>
-    <rect x="36" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="3;12;3" dur="1.5s" repeatCount="indefinite" /></rect>
-    <rect x="42" y="0" width="2" height="18" fill="#FF7B72" rx="1"><animate attributeName="height" values="8;26;8" dur="0.7s" repeatCount="indefinite" /></rect>
-    <rect x="48" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="5;19;5" dur="1.3s" repeatCount="indefinite" /></rect>
-    <rect x="54" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="7;24;7" dur="1.1s" repeatCount="indefinite" /></rect>
-    <rect x="60" y="0" width="2" height="18" fill="#58A6FF" rx="1"><animate attributeName="height" values="2;12;2" dur="1.7s" repeatCount="indefinite" /></rect>
-    <rect x="66" y="0" width="2" height="18" fill="#00F2FE" rx="1"><animate attributeName="height" values="6;20;6" dur="1s" repeatCount="indefinite" /></rect>
-    <rect x="72" y="0" width="2" height="18" fill="#FF7B72" rx="1"><animate attributeName="height" values="9;28;9" dur="0.8s" repeatCount="indefinite" /></rect>
-    <rect x="78" y="0" width="2" height="18" fill="#BC34FA" rx="1"><animate attributeName="height" values="3;15;3" dur="1.4s" repeatCount="indefinite" /></rect>
-  </g>
-
-  <!-- Cinematic Vignette Shade (Darkens corners, focuses center neon) -->
-  <rect width="800" height="200" fill="url(#vignette)" pointer-events="none" />
-
-  <!-- HUD Container Border & Corner Brackets -->
-  <g>
-    <!-- Border Box with Gloss Edge -->
-    <rect x="12" y="12" width="776" height="176" fill="none" stroke="url(#glass-edge-grad)" stroke-width="1.5" rx="6" />
+  <style>
+    /* Reset and base styles */
+    .title-text {
+      font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 900;
+      font-size: 42px;
+      fill: #ffffff;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
+    }
     
-    <!-- HUD Text Indicators -->
-    <text x="25" y="27" class="hud-text">SYS_STATUS: ACTIVE</text>
-    <text x="25" y="182" class="hud-text">COGNITIVE_LAYER: ONLINE</text>
-    <text x="690" y="27" class="hud-text">SYNC: 100%</text>
-    <text x="690" y="182" class="hud-text">GRID_MODE: 3D_FLOOR</text>
+    /* Keyframe Animations */
+    
+    /* Aurora moving animation */
+    @keyframes float-aurora-1 {
+      0% { transform: translate(-40px, -20px) scale(1); }
+      50% { transform: translate(40px, 20px) scale(1.1); }
+      100% { transform: translate(-40px, -20px) scale(1); }
+    }
+    @keyframes float-aurora-2 {
+      0% { transform: translate(30px, 30px) scale(1.1); }
+      50% { transform: translate(-30px, -10px) scale(0.9); }
+      100% { transform: translate(30px, 30px) scale(1.1); }
+    }
+    @keyframes float-aurora-3 {
+      0% { transform: translate(0px, -40px) scale(0.9); }
+      50% { transform: translate(20px, 30px) scale(1.05); }
+      100% { transform: translate(0px, -40px) scale(0.9); }
+    }
+    
+    .aurora-1 { animation: float-aurora-1 12s ease-in-out infinite; transform-origin: 300px 100px; }
+    .aurora-2 { animation: float-aurora-2 15s ease-in-out infinite; transform-origin: 500px 100px; }
+    .aurora-3 { animation: float-aurora-3 10s ease-in-out infinite; transform-origin: 400px 100px; }
 
-    <!-- Glowing Corner Brackets -->
-    <path d="M 12 32 L 12 12 L 32 12" fill="none" stroke="#00F2FE" stroke-width="2" class="glow-cyan-elem" />
-    <path d="M 788 32 L 788 12 L 768 12" fill="none" stroke="#00F2FE" stroke-width="2" class="glow-cyan-elem" />
-    <path d="M 12 168 L 12 188 L 32 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple-elem" />
-    <path d="M 788 168 L 788 188 L 768 188" fill="none" stroke="#BC34FA" stroke-width="2" class="glow-purple-elem" />
+    /* Perspective grid flow */
+    @keyframes grid-flow {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(20px); }
+    }
+    .grid-lines {
+      animation: grid-flow 3s linear infinite;
+    }
 
-    <!-- Blinking Sys Nodes -->
-    <circle cx="140" cy="24" r="2.5" fill="#58A6FF" class="hud-blink" />
-    <circle cx="680" cy="24" r="2.5" fill="#00F2FE" class="hud-blink" />
+    /* Subtle title sheen/pulse */
+    @keyframes text-glow-pulse {
+      0% { opacity: 0.8; filter: drop-shadow(0 0 4px rgba(0, 242, 254, 0.6)); }
+      50% { opacity: 1; filter: drop-shadow(0 0 12px rgba(0, 242, 254, 0.9)) drop-shadow(0 0 25px rgba(255, 0, 127, 0.4)); }
+      100% { opacity: 0.8; filter: drop-shadow(0 0 4px rgba(0, 242, 254, 0.6)); }
+    }
+    .glowing-title {
+      animation: text-glow-pulse 4s ease-in-out infinite;
+    }
+
+    /* Floating particles */
+    @keyframes float-particles {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+      50% { transform: translateY(-10px) rotate(180deg); opacity: 0.8; }
+      100% { transform: translateY(0px) rotate(360deg); opacity: 0.3; }
+    }
+    .particle {
+      animation: float-particles 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .p-delay-1 { animation-delay: 1.5s; animation-duration: 8s; }
+    .p-delay-2 { animation-delay: 3s; animation-duration: 7s; }
+    
+    /* Cyber Scanning Bar */
+    @keyframes scanner-move {
+      0% { transform: translateX(-10%); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateX(110%); opacity: 0; }
+    }
+    .scan-bar {
+      animation: scanner-move 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Equalizer/Telemetry Animation */
+    @keyframes eq-height {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+    .eq-bar {
+      animation: eq-height 1s ease-in-out infinite;
+      transform-origin: bottom;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="10" />
+
+  <!-- Animated Auroras (Under the grid & card for depth) -->
+  <g opacity="0.85">
+    <circle cx="280" cy="80" r="130" fill="url(#aurora-cyan)" class="aurora-1" />
+    <circle cx="520" cy="120" r="140" fill="url(#aurora-pink)" class="aurora-2" />
+    <circle cx="400" cy="60" r="120" fill="url(#aurora-purple)" class="aurora-3" />
   </g>
 
-  <!-- Diagonal Gloss Reflection (Glassmorphic Sheen) -->
-  <g clip-path="url(#hud-clip)">
-    <polygon points="0,0 240,0 60,-240" fill="#FFFFFF" opacity="0.04" />
-    <polygon points="350,-240 600,0 800,0 800,-240" fill="#FFFFFF" opacity="0.02" />
-  </g>
+  <!-- perspective grid floor at bottom -->
+  <g opacity="0.15">
+    <!-- Perspective lines clipping -->
+    <mask id="grid-mask">
+      <rect x="0" y="100" width="800" height="100" fill="#ffffff" />
+    </mask>
+    <g mask="url(#grid-mask)">
+      <!-- longitudinal perspective lines -->
+      <line x1="400" y1="100" x2="-400" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="-200" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="0" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="200" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="400" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="600" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="800" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="1000" y2="200" stroke="#00f2fe" stroke-width="1" />
+      <line x1="400" y1="100" x2="1200" y2="200" stroke="#00f2fe" stroke-width="1" />
 
-  <!-- Central Title Text Stack (Hot-Core Neon Tube Glow) -->
-  <g>
-    <!-- Underlayer: Neon Gas Aura -->
-    <text x="50%" y="90" text-anchor="middle" class="title-glow-layer">SHAHANWAJ KHAN</text>
-    <!-- Toplayer: Sharp White Hot Core -->
-    <text x="50%" y="90" text-anchor="middle" class="title-main-layer">SHAHANWAJ KHAN</text>
-  </g>
-
-  <!-- Subtitle Text Cycling Group with Typewriter effect -->
-  <g class="subtitle-text">
-    <!-- Subtitle Role 1 -->
-    <g clip-path="url(#typewriter-clip)">
-      <text x="325" y="130">🚀 AI Engineer</text>
-      <animate attributeName="opacity" values="1;1;0;0;0;0;1" keyTimes="0;0.32;0.33;0.65;0.66;0.98;1" dur="12s" repeatCount="indefinite" />
+      <!-- Latitudinal flowing lines -->
+      <g class="grid-lines" stroke="#00f2fe" stroke-width="1">
+        <line x1="0" y1="100" x2="800" y2="100" />
+        <line x1="0" y1="115" x2="800" y2="115" />
+        <line x1="0" y1="135" x2="800" y2="135" />
+        <line x1="0" y1="160" x2="800" y2="160" />
+        <line x1="0" y1="190" x2="800" y2="190" />
+      </g>
     </g>
-    <!-- Subtitle Role 2 -->
-    <g clip-path="url(#typewriter-clip)" opacity="0">
-      <text x="300" y="130">💻 Full Stack Developer</text>
-      <animate attributeName="opacity" values="0;0;1;1;0;0;0" keyTimes="0;0.32;0.33;0.65;0.66;0.98;1" dur="12s" repeatCount="indefinite" />
-    </g>
-    <!-- Subtitle Role 3 -->
-    <g clip-path="url(#typewriter-clip)" opacity="0">
-      <text x="310" y="130">🧠 Generative AI Dev</text>
-      <animate attributeName="opacity" values="0;0;0;0;1;1;0" keyTimes="0;0.65;0.66;0.98;0.99;0.99;1" dur="12s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Floating Particles/Sparkles -->
+  <g fill="#ffffff">
+    <circle cx="150" cy="50" r="1.5" class="particle" />
+    <circle cx="680" cy="150" r="2" class="particle p-delay-1" />
+    <circle cx="230" cy="140" r="1" class="particle p-delay-2" />
+    <circle cx="600" cy="40" r="2.5" class="particle p-delay-1" opacity="0.6" />
+    <polygon points="120,130 122,133 125,133 123,135 124,138 120,136 116,138 117,135 115,133 118,133" fill="#00f2fe" class="particle p-delay-2" />
+    <polygon points="700,70 701.5,73 704.5,73 702,75 703,78 700,76 697,78 698,75 695.5,73 698.5,73" fill="#ff007f" class="particle" />
+  </g>
+
+  <!-- Glowing Neural Connections (AI theme) -->
+  <g stroke="#ffffff" stroke-opacity="0.15" stroke-width="0.75" fill="none">
+    <!-- Left network -->
+    <path d="M 50,60 L 100,40 L 130,80 L 80,110 Z" />
+    <circle cx="50" cy="60" r="3" fill="#00f2fe" filter="url(#subtle-glow)" />
+    <circle cx="100" cy="40" r="3" fill="#7b2cbf" />
+    <circle cx="130" cy="80" r="4" fill="#ff007f" filter="url(#subtle-glow)" />
+    <circle cx="80" cy="110" r="2.5" fill="#00f2fe" />
+    <line x1="100" y1="40" x2="150" y2="60" stroke="#00f2fe" stroke-dasharray="2 3" />
+    <line x1="130" y1="80" x2="190" y2="70" stroke="#ff007f" />
+
+    <!-- Right network -->
+    <path d="M 750,140 L 700,160 L 670,120 L 720,90 Z" />
+    <circle cx="750" cy="140" r="3" fill="#ff007f" filter="url(#subtle-glow)" />
+    <circle cx="700" cy="160" r="2.5" fill="#00f2fe" />
+    <circle cx="670" cy="120" r="4" fill="#7b2cbf" filter="url(#subtle-glow)" />
+    <circle cx="720" cy="90" r="3" fill="#00f2fe" />
+    <line x1="700" y1="160" x2="650" y2="140" stroke="#ff007f" stroke-dasharray="2 3" />
+    <line x1="670" y1="120" x2="610" y2="130" stroke="#00f2fe" />
+  </g>
+
+  <!-- Frosted Glass Card Panel -->
+  <g transform="translate(180, 40)">
+    <!-- Glass shadow / Glow -->
+    <rect x="-1" y="-1" width="442" height="122" rx="16" fill="#000000" fill-opacity="0.4" filter="blur(8px)" />
+    
+    <!-- Glass background with thin border -->
+    <rect x="0" y="0" width="440" height="120" rx="15" fill="#0d0a1b" fill-opacity="0.65" stroke="url(#glass-border)" stroke-width="1.5" />
+    
+    <!-- Interactive-looking Corner Tech Accents -->
+    <path d="M 10,20 L 10,10 L 20,10" fill="none" stroke="#00f2fe" stroke-width="2" />
+    <path d="M 430,20 L 430,10 L 420,10" fill="none" stroke="#00f2fe" stroke-width="2" />
+    <path d="M 10,100 L 10,110 L 20,110" fill="none" stroke="#ff007f" stroke-width="2" />
+    <path d="M 430,100 L 430,110 L 420,110" fill="none" stroke="#ff007f" stroke-width="2" />
+
+    <!-- Scanning line across card -->
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#00f2fe" stroke-width="1.5" opacity="0.8" filter="url(#subtle-glow)" class="scan-bar" />
+
+    <!-- Tech telemetry text inside card -->
+    <text x="25" y="25" fill="#00f2fe" font-family="monospace" font-size="8" letter-spacing="1">SYS.LOC: 30.7333° N, 76.7794° E</text>
+    <text x="320" y="25" fill="#ff007f" font-family="monospace" font-size="8" letter-spacing="1">COGNITIVE.LAYER: ONLINE</text>
+
+    <!-- Main Glowing Title -->
+    <text x="50%" y="75" text-anchor="middle" class="title-text glowing-title">SHAHANWAJ KHAN</text>
+
+    <!-- Central Tech loading detail -->
+    <g transform="translate(145, 95)" opacity="0.8">
+      <rect x="0" y="2" width="150" height="3" fill="#1b152d" rx="1.5" />
+      <!-- Animated progress indicator -->
+      <rect x="30" y="2" width="40" height="3" fill="#00f2fe" rx="1.5">
+        <animate attributeName="x" values="0; 110; 0" dur="3s" repeatCount="indefinite" />
+      </rect>
+      <!-- Small blinking node -->
+      <circle cx="158" cy="3.5" r="2.5" fill="#ff007f">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite" />
+      </circle>
     </g>
   </g>
 
-  <!-- Holographic Scanline Overlay -->
-  <rect width="800" height="6" fill="url(#scan-grad)" class="scanline" opacity="0.65" />
+  <!-- Interactive widgets at the edges of the banner -->
+  
+  <!-- Left Side: Live Activity Monitor widget -->
+  <g transform="translate(25, 60)" opacity="0.85">
+    <circle cx="20" cy="20" r="18" fill="#110d21" stroke="#251a3d" stroke-width="1" />
+    <!-- Blinking radar circle -->
+    <circle cx="20" cy="20" r="12" fill="none" stroke="#00f2fe" stroke-width="1" opacity="0.6">
+      <animate attributeName="r" values="4; 16; 4" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8; 0; 0.8" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- Pulser Dot -->
+    <circle cx="20" cy="20" r="3.5" fill="#00f2fe" filter="url(#subtle-glow)" />
+    <text x="45" y="18" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="10">SYS ACTIVE</text>
+    <text x="45" y="28" fill="#8e81ac" font-family="monospace" font-size="7">PING: 24MS</text>
+  </g>
+
+  <!-- Right Side: Small Audio-Wave/Equalizer widget -->
+  <g transform="translate(705, 60)" opacity="0.85">
+    <circle cx="20" cy="20" r="18" fill="#110d21" stroke="#251a3d" stroke-width="1" />
+    <!-- Mini Equalizer bars -->
+    <g transform="translate(11, 28) scale(1, -1)" fill="#ff007f">
+      <rect x="0" y="0" width="2.5" height="12" rx="1" class="eq-bar" style="animation-delay: 0.1s; animation-duration: 0.8s;" />
+      <rect x="4" y="0" width="2.5" height="16" rx="1" class="eq-bar" style="animation-delay: 0.3s; animation-duration: 1.1s;" />
+      <rect x="8" y="0" width="2.5" height="8" rx="1" class="eq-bar" style="animation-delay: 0s; animation-duration: 0.6s;" />
+      <rect x="12" y="0" width="2.5" height="14" rx="1" class="eq-bar" style="animation-delay: 0.4s; animation-duration: 0.9s;" />
+      <rect x="16" y="0" width="2.5" height="10" rx="1" class="eq-bar" style="animation-delay: 0.2s; animation-duration: 0.7s;" />
+    </g>
+    <text x="-65" y="18" text-anchor="start" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="10" transform="translate(45, 0)">AI STREAM</text>
+    <text x="-65" y="28" text-anchor="start" fill="#8e81ac" font-family="monospace" font-size="7" transform="translate(45, 0)">FPS: 60</text>
+  </g>
+
+  <!-- Glass diagonal glare sheen -->
+  <path d="M 0,0 L 200,0 L 50,200 L -150,200 Z" fill="#ffffff" opacity="0.03" pointer-events="none" />
+  <path d="M 600,0 L 800,0 L 650,200 L 450,200 Z" fill="#ffffff" opacity="0.015" pointer-events="none" />
 </svg>

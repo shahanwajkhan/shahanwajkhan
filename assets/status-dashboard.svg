@@ -1,309 +1,274 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 210" width="100%" height="210">
-  <style>
-    /* Title bar */
-    .title-text {
-      font-family: "Courier New", Courier, monospace;
-      font-weight: 900;
-      font-size: 13px;
-      fill: #FFFFFF;
-      letter-spacing: 2px;
-      filter: drop-shadow(0 0 6px #00F2FE);
-    }
-
-    /* Field label (left-side key) */
-    .label {
-      font-family: "Courier New", Courier, monospace;
-      font-weight: 700;
-      font-size: 12px;
-      fill: #58A6FF;
-      letter-spacing: 1px;
-      filter: drop-shadow(0 0 3px rgba(88,166,255,0.5));
-    }
-
-    /* Field value (right-side content) */
-    .value {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-      fill: #E6EDF3;
-      letter-spacing: 0.5px;
-    }
-
-    /* Green online value */
-    .value-online {
-      font-family: "Courier New", Courier, monospace;
-      font-weight: 800;
-      font-size: 13px;
-      fill: #39D353;
-      letter-spacing: 1px;
-      filter: drop-shadow(0 0 5px #39D353);
-    }
-
-    /* Mission (cyan tinted) */
-    .value-mission {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 12.5px;
-      fill: #79C0FF;
-      letter-spacing: 0.4px;
-    }
-
-    /* HUD decorative tiny text */
-    .hud-tiny {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 8px;
-      fill: #388BFD;
-      opacity: 0.7;
-    }
-
-    /* Heartbeat dot */
-    .status-pulse {
-      animation: pulse-glow 1.6s ease-in-out infinite alternate;
-    }
-    @keyframes pulse-glow {
-      0%   { opacity: 0.35; filter: drop-shadow(0 0 3px #39D353); r: 5; }
-      100% { opacity: 1;    filter: drop-shadow(0 0 12px #39D353); r: 6.5; }
-    }
-
-    /* Generic blink */
-    .blink {
-      animation: blink-anim 1.8s step-end infinite;
-    }
-    @keyframes blink-anim {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
-    }
-
-    /* Corner bracket glow flicker */
-    .bracket-cyan {
-      stroke: #00F2FE;
-      filter: drop-shadow(0 0 5px #00F2FE);
-      animation: bracket-flicker 4s ease-in-out infinite alternate;
-    }
-    .bracket-purple {
-      stroke: #BC34FA;
-      filter: drop-shadow(0 0 5px #BC34FA);
-      animation: bracket-flicker 5s ease-in-out infinite alternate;
-    }
-    @keyframes bracket-flicker {
-      0%   { opacity: 0.7; }
-      70%  { opacity: 1;   }
-      100% { opacity: 0.85;}
-    }
-
-    /* Divider line pulse */
-    .divider-pulse {
-      animation: div-pulse 3s ease-in-out infinite alternate;
-    }
-    @keyframes div-pulse {
-      0%   { opacity: 0.3; }
-      100% { opacity: 0.9; }
-    }
-
-    /* Ambient nebula breathing */
-    .nebula {
-      animation: nebula-breath 7s ease-in-out infinite alternate;
-    }
-    .nebula-cyan  { fill: #00F2FE; animation-duration: 6s; }
-    .nebula-purple{ fill: #BC34FA; animation-duration: 9s; }
-    @keyframes nebula-breath {
-      0%   { opacity: 0.1; }
-      100% { opacity: 0.28;}
-    }
-
-    /* Progress bar shimmer */
-    .bar-shimmer {
-      animation: shimmer 2.5s linear infinite;
-    }
-    @keyframes shimmer {
-      0%   { transform: translateX(-160px); }
-      100% { transform: translateX(160px);  }
-    }
-
-    /* Scan line */
-    .scan {
-      animation: scan-move 5s linear infinite;
-    }
-    @keyframes scan-move {
-      0%   { transform: translateY(0px);   opacity: 0;   }
-      5%   {                                opacity: 0.5; }
-      95%  {                                opacity: 0.3; }
-      100% { transform: translateY(210px); opacity: 0;   }
-    }
-  </style>
   <defs>
-    <filter id="blur-nebula">
-      <feGaussianBlur stdDeviation="32"/>
+    <!-- Background gradients -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#100c1e" />
+      <stop offset="60%" stop-color="#080510" />
+      <stop offset="100%" stop-color="#030206" />
+    </radialGradient>
+
+    <!-- Aurora Gradients -->
+    <radialGradient id="aurora-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7b2cbf" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#7b2cbf" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="aurora-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glass borders -->
+    <linearGradient id="glass-border-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05" />
+    </linearGradient>
+    <linearGradient id="glass-border-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neon-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
-    <filter id="glow-sm">
-      <feGaussianBlur stdDeviation="2" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="neon-pink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
     </filter>
 
-    <!-- Glass border gradient -->
-    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#00F2FE" stop-opacity="0.7"/>
-      <stop offset="50%"  stop-color="#1C2333" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0.7"/>
+    <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="50%" stop-color="#7b2cbf" />
+      <stop offset="100%" stop-color="#ff007f" />
     </linearGradient>
-
-    <!-- Coffee bar gradient -->
-    <linearGradient id="coffee-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="#C084FC"/>
-      <stop offset="60%"  stop-color="#A855F7"/>
-      <stop offset="100%" stop-color="#7C3AED"/>
-    </linearGradient>
-    <!-- Shimmer overlay -->
-    <linearGradient id="shimmer-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"   stop-color="white" stop-opacity="0"/>
-      <stop offset="50%"  stop-color="white" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="white" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Vertical mid divider gradient -->
-    <linearGradient id="vdiv-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="#00F2FE" stop-opacity="0"/>
-      <stop offset="30%"  stop-color="#00F2FE" stop-opacity="0.6"/>
-      <stop offset="70%"  stop-color="#BC34FA" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#BC34FA" stop-opacity="0"/>
-    </linearGradient>
-
-    <!-- Clip paths -->
-    <clipPath id="card-clip">
-      <rect x="12" y="12" width="776" height="186" rx="7"/>
-    </clipPath>
-    <clipPath id="bar-clip">
-      <rect x="133" y="112" width="144" height="12" rx="3"/>
-    </clipPath>
   </defs>
 
-  <!-- ── BASE CANVAS ── -->
-  <rect width="800" height="210" fill="#080C14" rx="9"/>
+  <style>
+    /* Typography & styles */
+    .dashboard-title {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      fill: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .panel-header {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      fill: #8e81ac;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .metric-label {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 10.5px;
+      fill: #a097ba;
+      letter-spacing: 0.5px;
+    }
+    .metric-value {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      fill: #ffffff;
+    }
+    .metric-highlight {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 800;
+      font-size: 12px;
+      fill: #00f2fe;
+      filter: drop-shadow(0 0 3px rgba(0,242,254,0.4));
+    }
+    
+    /* Animations */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 8px #39d353); }
+    }
+    .pulse-dot {
+      animation: heartbeat 2s ease-in-out infinite;
+      transform-origin: 28px 23px;
+    }
 
-  <!-- ── AMBIENT NEBULAE ── -->
-  <g filter="url(#blur-nebula)">
-    <circle cx="170" cy="105" r="90"  class="nebula nebula-cyan"/>
-    <circle cx="630" cy="105" r="100" class="nebula nebula-purple"/>
+    @keyframes fluid-wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .coffee-wave {
+      animation: fluid-wave 4s linear infinite;
+    }
+
+    @keyframes cognitive-pulse {
+      0%, 100% { stroke-dashoffset: 0; }
+      50% { stroke-dashoffset: -40; }
+    }
+    .cognitive-line {
+      stroke-dasharray: 8 4;
+      animation: cognitive-pulse 2s linear infinite;
+    }
+
+    @keyframes card-hover-glow {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.3; }
+    }
+    .hover-glow {
+      animation: card-hover-glow 4s ease-in-out infinite alternate;
+    }
+  </style>
+
+  <!-- Base background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="10" />
+
+  <!-- Background Ambient Aurora Glows -->
+  <circle cx="150" cy="100" r="120" fill="url(#aurora-cyan)" class="hover-glow" />
+  <circle cx="650" cy="110" r="130" fill="url(#aurora-purple)" class="hover-glow" style="animation-delay: 2s;" />
+
+  <!-- Outer Glass Frame / Dashboard Container -->
+  <rect x="12" y="12" width="776" height="186" rx="12" fill="#0d0a1b" fill-opacity="0.5" stroke="url(#glass-border-cyan)" stroke-width="1.2" />
+
+  <!-- ================= HEADER SECTION ================= -->
+  <!-- Status dot -->
+  <circle cx="28" cy="23" r="5" fill="#39d353" class="pulse-dot" />
+  <circle cx="28" cy="23" r="2.5" fill="#ffffff" />
+  <text x="44" y="27" class="dashboard-title">AI System Status Dashboard</text>
+
+  <!-- Telemetry detail details -->
+  <g font-family="monospace" font-size="8" fill="#8e81ac" text-anchor="end" letter-spacing="1">
+    <text x="765" y="26">SYS.SECURE // CERT.LEVEL.1</text>
+  </g>
+  <line x1="12" y1="38" x2="788" y2="38" stroke="#251a3d" stroke-width="1" />
+
+  <!-- ================= DUAL PANELS ================= -->
+
+  <!-- --- LEFT PANEL: Core Systems (MERN & AI Engine) --- -->
+  <!-- Glass backdrop for left panel -->
+  <rect x="25" y="48" width="365" height="140" rx="10" fill="#080612" fill-opacity="0.75" stroke="url(#glass-border-cyan)" stroke-width="1" />
+  <path d="M 35,48 L 45,48 M 25,58 L 25,68" stroke="#00f2fe" stroke-width="1.5" />
+  
+  <g transform="translate(40, 56)">
+    <!-- Header -->
+    <text x="0" y="12" class="panel-header">CORE PROCESSORS</text>
+    
+    <!-- Item 1: Status -->
+    <g transform="translate(0, 24)">
+      <!-- Pulsing Node Icon -->
+      <path d="M 2 8 C 2 3.5, 5.5 2, 10 2 C 14.5 2, 18 3.5, 18 8 C 18 12.5, 14.5 14, 10 14 C 5.5 14, 2 12.5, 2 8 Z" fill="none" stroke="#00f2fe" stroke-width="1" />
+      <circle cx="10" cy="8" r="3.5" fill="#00f2fe" filter="url(#neon-cyan)" />
+      <circle cx="10" cy="8" r="1.5" fill="#ffffff" />
+      
+      <text x="28" y="11" class="metric-label">SYSTEM STATUS</text>
+      <text x="145" y="11" class="metric-highlight">ONLINE // SECURE</text>
+    </g>
+
+    <!-- Item 2: AI Engine -->
+    <g transform="translate(0, 52)">
+      <!-- AI Chip Icon -->
+      <rect x="2" y="2" width="12" height="12" rx="2.5" fill="none" stroke="#ff007f" stroke-width="1" />
+      <path d="M 1,5 L 3,5 M 1,8 L 3,8 M 1,11 L 3,11 M 13,5 L 15,5 M 13,8 L 15,8 M 13,11 L 15,11 M 5,1 L 5,3 M 8,1 L 8,3 M 11,1 L 11,3 M 5,13 L 5,15 M 8,13 L 8,15 M 11,13 L 11,15" stroke="#ff007f" stroke-width="0.75" />
+      <circle cx="8" cy="8" r="2.5" fill="#ff007f" filter="url(#neon-pink)" />
+      
+      <text x="28" y="11" class="metric-label">AI CORES</text>
+      <text x="145" y="11" class="metric-value">Gemini / Deep Learning / agents</text>
+    </g>
+
+    <!-- Item 3: Tech Engine / Stack -->
+    <g transform="translate(0, 80)">
+      <!-- Stack layers Icon -->
+      <path d="M 1 4 L 8 1 L 15 4 L 8 7 Z M 1 8 L 8 11 L 15 8 M 1 12 L 8 15 L 15 12" fill="none" stroke="#00f2fe" stroke-width="1" />
+      
+      <text x="28" y="11" class="metric-label">TECH ENGINE</text>
+      <text x="145" y="11" class="metric-value">MERN Stack • Django • Python</text>
+    </g>
+
+    <!-- Item 4: Location -->
+    <g transform="translate(0, 108)">
+      <!-- Map Pin Icon -->
+      <path d="M 8 1 C 4.5 1, 2 3.5, 2 7 C 2 11, 8 15, 8 15 C 8 15, 14 11, 14 7 C 14 3.5, 11.5 1, 8 1 Z" fill="none" stroke="#ff007f" stroke-width="1" />
+      <circle cx="8" cy="6" r="2" fill="#ff007f" />
+      
+      <text x="28" y="11" class="metric-label">LOCATION</text>
+      <text x="145" y="11" class="metric-value">Punjab, India</text>
+    </g>
   </g>
 
-  <!-- ── SCAN LINE ── -->
-  <rect x="12" y="0" width="776" height="3" fill="url(#shimmer-grad)" class="scan" clip-path="url(#card-clip)"/>
 
-  <!-- ── GRID LINES ── -->
-  <g stroke="#1A2132" stroke-width="1">
-    <!-- Title separator -->
-    <line x1="12" y1="58" x2="788" y2="58" class="divider-pulse" stroke="#1E3A5F"/>
-    <!-- Vertical mid-line -->
-    <line x1="400" y1="58" x2="400" y2="178" stroke="url(#vdiv-grad)" stroke-width="1.2"/>
-    <!-- Row separators -->
-    <line x1="12"  y1="98"  x2="390" y2="98"  stroke="#1E2D45" stroke-width="0.8"/>
-    <line x1="410" y1="98"  x2="788" y2="98"  stroke="#1E2D45" stroke-width="0.8"/>
-    <line x1="12"  y1="138" x2="390" y2="138" stroke="#1E2D45" stroke-width="0.8"/>
-    <line x1="410" y1="138" x2="788" y2="138" stroke="#1E2D45" stroke-width="0.8"/>
-    <!-- Mission separator -->
-    <line x1="12" y1="178" x2="788" y2="178" stroke="#1E3A5F" stroke-width="0.8" class="divider-pulse"/>
-  </g>
+  <!-- --- RIGHT PANEL: Activity Logs & Dynamic Visuals --- -->
+  <!-- Glass backdrop for right panel -->
+  <rect x="410" y="48" width="365" height="140" rx="10" fill="#080612" fill-opacity="0.75" stroke="url(#glass-border-pink)" stroke-width="1" />
+  <path d="M 740,48 L 750,48 M 775,58 L 775,68" stroke="#ff007f" stroke-width="1.5" />
 
-  <!-- ── TITLE BAR ── -->
-  <g>
-    <text x="35" y="40" class="title-text">🤖 AI SYSTEM STATUS DASHBOARD</text>
-    <!-- Underline accent -->
-    <line x1="35" y1="48" x2="290" y2="48" stroke="#00F2FE" stroke-width="1.5" opacity="0.8"/>
-    <!-- Status dot + label -->
-    <circle cx="310" cy="36" r="5" fill="#39D353" class="status-pulse"/>
-    <text x="322" y="40" class="hud-tiny" fill="#39D353" style="font-size:9px;font-weight:700;">SYSTEMS: ONLINE</text>
-    <!-- Right corner HUD -->
-    <text x="680" y="40" class="hud-tiny">SYNC: 100%</text>
-    <circle cx="670" cy="36" r="2.5" fill="#00F2FE" class="blink"/>
-  </g>
+  <g transform="translate(425, 56)">
+    <!-- Header -->
+    <text x="0" y="12" class="panel-header">OPERATING METRICS</text>
 
-  <!-- ══════════════════════════════════════════════════════════════
-       LEFT COLUMN
-  ══════════════════════════════════════════════════════════════ -->
+    <!-- Item 1: Current Focus -->
+    <g transform="translate(0, 24)">
+      <!-- Target Icon -->
+      <circle cx="8" cy="8" r="7" fill="none" stroke="#ff007f" stroke-width="1" />
+      <circle cx="8" cy="8" r="4.5" fill="none" stroke="#ffffff" stroke-width="0.75" />
+      <circle cx="8" cy="8" r="2.5" fill="#ff007f" filter="url(#neon-pink)" />
+      
+      <text x="28" y="11" class="metric-label">ACTIVE FOCUS</text>
+      <text x="135" y="11" class="metric-value">AI Integration & Web SaaS Products</text>
+    </g>
 
-  <!-- Row 1 L: Status -->
-  <g transform="translate(28, 65)">
-    <text y="18" class="label">🟢  STATUS</text>
-    <text x="115" y="18" class="value-online">ONLINE // SECURE</text>
-    <!-- ripple rings -->
-    <circle cx="9" cy="14" r="8" fill="none" stroke="#39D353" stroke-width="1" opacity="0.4">
-      <animate attributeName="r" values="5;14;5" dur="2.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.6;0;0.6" dur="2.2s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+    <!-- Item 2: Coffee Level (Animated Liquid Wave) -->
+    <g transform="translate(0, 52)">
+      <!-- Coffee Mug Icon -->
+      <path d="M 2 2 L 11 2 L 11 11 C 11 13.5, 9 14, 6.5 14 C 4 14, 2 13.5, 2 11 Z M 11 5 C 13 5, 14 6, 14 7.5 C 14 9, 13 10, 11 10" fill="none" stroke="#00f2fe" stroke-width="1" />
+      
+      <text x="28" y="11" class="metric-label">COFFEE LEVEL</text>
+      
+      <!-- Custom Wave Progress Bar -->
+      <g transform="translate(135, 1)">
+        <rect x="0" y="0" width="130" height="12" rx="6" fill="#150f28" stroke="#2c214c" stroke-width="1" />
+        
+        <!-- Mask for clipping the waves inside the bar -->
+        <mask id="bar-mask">
+          <rect x="0.5" y="0.5" width="129" height="11" rx="5.5" fill="#ffffff" />
+        </mask>
+        
+        <g mask="url(#bar-mask)">
+          <!-- Wave group -->
+          <g class="coffee-wave" transform="translate(0, 0)">
+            <path d="M 0 6 Q 15 3, 30 6 T 60 6 T 90 6 T 120 6 T 150 6 T 180 6 T 210 6 T 240 6 L 240 15 L 0 15 Z" fill="#00f2fe" opacity="0.6" />
+            <path d="M 0 8 Q 15 5, 30 8 T 60 8 T 90 8 T 120 8 T 150 8 T 180 8 T 210 8 T 240 8 L 240 15 L 0 15 Z" fill="#7b2cbf" opacity="0.75" />
+          </g>
+        </g>
+        <text x="142" y="10" class="metric-highlight" font-size="10">92%</text>
+      </g>
+    </g>
 
-  <!-- Row 2 L: AI Engine -->
-  <g transform="translate(28, 105)">
-    <text y="18" class="label">🧠  AI ENGINE</text>
-    <text x="115" y="18" class="value">Gemini / Django / MERN</text>
-  </g>
+    <!-- Item 3: Cognitive Layer Status (Animated Waveform) -->
+    <g transform="translate(0, 80)">
+      <!-- Activity Wave Icon -->
+      <path d="M 1 8 C 4 8, 5 2, 7.5 2 C 10 2, 11 14, 13.5 14 C 16 14, 17 8, 20 8" fill="none" stroke="#ff007f" stroke-width="1" />
+      
+      <text x="28" y="11" class="metric-label">COGNITIVE LAYER</text>
+      
+      <!-- Pulse Line Visualizer -->
+      <g transform="translate(135, 1)">
+        <path d="M 0 6 Q 15 0, 30 6 T 60 6 T 90 6 T 120 6" fill="none" stroke="url(#wave-grad)" stroke-width="1.5" class="cognitive-line" />
+        <text x="142" y="10" class="metric-highlight" font-size="10" fill="#ff007f" style="filter: drop-shadow(0 0 3px rgba(255,0,127,0.4));">SYNCED</text>
+      </g>
+    </g>
 
-  <!-- Row 3 L: Location -->
-  <g transform="translate(28, 145)">
-    <text y="18" class="label">📍  LOCATION</text>
-    <text x="115" y="18" class="value">Punjab, India</text>
-  </g>
-
-  <!-- ══════════════════════════════════════════════════════════════
-       RIGHT COLUMN
-  ══════════════════════════════════════════════════════════════ -->
-
-  <!-- Row 1 R: Current Role -->
-  <g transform="translate(415, 65)">
-    <text y="18" class="label">💻  CURRENT ROLE</text>
-    <text x="140" y="18" class="value">Full Stack Dev &amp; AI Engineer</text>
-  </g>
-
-  <!-- Row 2 R: Current Focus -->
-  <g transform="translate(415, 105)">
-    <text y="18" class="label">🚀  CURRENT FOCUS</text>
-    <text x="140" y="18" class="value">MERN • Django • Gen AI</text>
-  </g>
-
-  <!-- Row 3 R: Coffee Level (animated bar) -->
-  <g transform="translate(415, 145)">
-    <text y="18" class="label">☕  COFFEE LEVEL</text>
-    <!-- Track -->
-    <rect x="133" y="6" width="160" height="12" rx="4" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
-    <!-- Animated fill -->
-    <rect x="133" y="6" width="0" height="12" rx="4" fill="url(#coffee-grad)" filter="url(#glow-sm)">
-      <animate attributeName="width" from="0" to="144" dur="1.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"/>
-    </rect>
-    <!-- Shimmer on top -->
-    <rect x="133" y="6" width="40" height="12" rx="4" fill="url(#shimmer-grad)" class="bar-shimmer" clip-path="url(#bar-clip)"/>
-    <!-- Percentage -->
-    <text x="302" y="18" class="value" fill="#C084FC" style="font-size:13px;font-weight:800;filter:drop-shadow(0 0 4px #A855F7);">90%</text>
-  </g>
-
-  <!-- ══════════════════════════════════════════════════════════════
-       MISSION ROW (bottom full-width)
-  ══════════════════════════════════════════════════════════════ -->
-  <g transform="translate(28, 180)">
-    <text y="18" class="label">🎯  MISSION</text>
-    <text x="115" y="18" class="value-mission">
-      Building production-grade, AI-powered solutions that solve real-world problems.
-    </text>
-    <tspan class="blink" fill="#00F2FE" dx="2">▌</tspan>
-  </g>
-
-  <!-- ── HUD FRAME ── -->
-  <!-- Main border -->
-  <rect x="12" y="12" width="776" height="186" fill="none" stroke="url(#border-grad)" stroke-width="1.8" rx="7"/>
-
-  <!-- Corner brackets cyan (top) -->
-  <path d="M 12 36 L 12 12 L 36 12" fill="none" stroke-width="2.5" class="bracket-cyan"/>
-  <path d="M 788 36 L 788 12 L 764 12" fill="none" stroke-width="2.5" class="bracket-cyan"/>
-  <!-- Corner brackets purple (bottom) -->
-  <path d="M 12 174 L 12 198 L 36 198" fill="none" stroke-width="2.5" class="bracket-purple"/>
-  <path d="M 788 174 L 788 198 L 764 198" fill="none" stroke-width="2.5" class="bracket-purple"/>
-
-  <!-- Bottom HUD text -->
-  <text x="680" y="205" class="hud-tiny">GRID_MODE: ACTIVE</text>
-  <text x="35"  y="205" class="hud-tiny">COGNITIVE_LAYER: ONLINE</text>
-
-  <!-- Glass sheen overlay -->
-  <g clip-path="url(#card-clip)">
-    <polygon points="0,0 220,0 50,-220" fill="#FFFFFF" opacity="0.03"/>
-    <polygon points="480,-220 700,0 800,0 800,-220" fill="#FFFFFF" opacity="0.02"/>
+    <!-- Item 4: Mission -->
+    <g transform="translate(0, 108)">
+      <!-- Mission Rocket Icon -->
+      <path d="M 8 1 C 8 1, 13 4, 13 9 C 13 12, 11 14, 8 15 C 5 14, 3 12, 3 9 C 3 4, 8 1, 8 1 Z M 5 13 L 3 15 M 11 13 L 13 15" fill="none" stroke="#00f2fe" stroke-width="1" stroke-linejoin="round" />
+      
+      <text x="28" y="11" class="metric-label">MISSION</text>
+      <text x="135" y="11" class="metric-value" fill="#79c0ff" font-size="10.5">Building high-impact intelligent SaaS products.</text>
+    </g>
   </g>
 </svg>

@@ -1,16 +1,16 @@
 <!-- Hero Section -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/hero-banner.svg?v=140" width="100%" alt="Shahanwaj Khan Banner" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/hero-banner.svg?v=141" width="100%" alt="Shahanwaj Khan Banner" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=20&amp;duration=3000&amp;pause=1000&amp;color=58A6FF&amp;center=true&amp;vCenter=true&amp;width=500&amp;lines=Full+Stack+Developer;AI+Engineer;Cloud+Practitioner;Building+intelligent+solutions" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=20&amp;duration=3000&amp;pause=1000&amp;color=00F2FE&amp;center=true&amp;vCenter=true&amp;width=500&amp;lines=Full+Stack+Developer;AI+Engineer;Cloud+Practitioner;Building+intelligent+solutions" alt="Typing SVG" />
 </p>
 
 
 <!-- AI Status Dashboard -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/status-dashboard.svg?v=2" width="100%" alt="AI System Status" />
+  <img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/status-dashboard.svg?v=3" width="100%" alt="AI System Status" />
 </p>
 
 <p align="center"><img src="https://raw.githubusercontent.com/shahanwajkhan/shahanwajkhan/main/assets/animated-divider.svg?v=5" width="100%" alt="divider" /></p>
