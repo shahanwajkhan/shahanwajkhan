@@ -266,16 +266,20 @@
       <text x="37.5" y="15" text-anchor="middle" class="badge-text txt-django">Django</text>
     </g>
     <g class="badge-item badge-3" transform="translate(166, 0)">
+      <rect x="0" y="0" width="75" height="22" rx="4" class="badge-bg bg-react" />
+      <text x="37.5" y="15" text-anchor="middle" class="badge-text txt-react">React.js</text>
+    </g>
+    <g class="badge-item badge-4" transform="translate(249, 0)">
       <rect x="0" y="0" width="70" height="22" rx="4" class="badge-bg bg-sqlite" />
       <text x="35.0" y="15" text-anchor="middle" class="badge-text txt-sqlite">SQLite</text>
     </g>
-    <g class="badge-item badge-4" transform="translate(244, 0)">
+    <g class="badge-item badge-5" transform="translate(327, 0)">
       <rect x="0" y="0" width="110" height="22" rx="4" class="badge-bg bg-django" />
       <text x="55.0" y="15" text-anchor="middle" class="badge-text txt-django">Django Admin</text>
     </g>
-    <g class="badge-item badge-5" transform="translate(362, 0)">
-      <rect x="0" y="0" width="70" height="22" rx="4" class="badge-bg bg-html" />
-      <text x="35.0" y="15" text-anchor="middle" class="badge-text txt-html">HTML5</text>
+    <g class="badge-item badge-6" transform="translate(445, 0)">
+      <rect x="0" y="0" width="85" height="22" rx="4" class="badge-bg bg-bootstrap" />
+      <text x="42.5" y="15" text-anchor="middle" class="badge-text txt-bootstrap">Bootstrap</text>
     </g>
   </g>
   

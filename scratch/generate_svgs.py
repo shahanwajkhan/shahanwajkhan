@@ -181,9 +181,10 @@ projects = [
         "badges": [
             {"text": "Python", "class": "python", "width": 75},
             {"text": "Django", "class": "django", "width": 75},
+            {"text": "React.js", "class": "react", "width": 75},
             {"text": "SQLite", "class": "sqlite", "width": 70},
             {"text": "Django Admin", "class": "django", "width": 110},
-            {"text": "HTML5", "class": "html", "width": 70}
+            {"text": "Bootstrap", "class": "bootstrap", "width": 85}
         ],
         "accent": "#58A6FF",
         "gradient": ("#58A6FF", "#00F2FE"),
