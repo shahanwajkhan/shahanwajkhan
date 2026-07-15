@@ -6,7 +6,9 @@ import urllib.error
 
 # Config
 USERNAME = "shahanwajkhan"
-OUTPUT_PATH = r"c:\Users\shaha\shahanwajkhan\assets\github-analytics.svg"
+# Resolve path dynamically relative to this script's directory
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "assets", "github-analytics.svg"))
 
 # Default baseline stats if API fails or is unauthenticated
 stats = {
